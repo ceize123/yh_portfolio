@@ -1,26 +1,38 @@
-import React, { Component }  from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./css/all.css";
+import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
+import Navbar from './components/Navbar.js';
+import Wrapper from "./components/Wrapper.js";
+import LandingPage from "./components/pages/LandingPage.js";
+import Uiux from "./components/pages/uiux.js";
+import Footer from "./components/Footer.js";
+
+const NoMatch = ({ location }) => (
+  <div id='noMatch'>
+    <header>
+      <h1>No match for '<code>{location.pathname}</code>'</h1>
+      <p>Incorrect Path</p>
+    </header>
+  </div>
+)
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+        <Router basename={process.env.PUBLIC_URL}>
+            <Wrapper>
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' component={LandingPage} />
+                    {/* <Route path='/uiux' component={Jewelry} /> */}
+                    <Route exact path='/works/uiux/:title' component={Uiux} />
+                    <Route component={NoMatch} />
+                </Switch>
+                <Footer />
+            </Wrapper>
+        </Router>
+        </>
+    );
 }
 
 export default App;
