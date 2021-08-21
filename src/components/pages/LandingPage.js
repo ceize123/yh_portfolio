@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import WorkSectionImg from '../../imgs/WorkSectionImg.svg';
-import Portrait from '../../imgs/Portrait.svg';
+import workSectionImg from '../../imgs/workSectionImg.svg';
+import portrait from '../../imgs/portrait.svg';
 import uiuxDetail from '../uiuxDetails';
 
 function LandingPage() { 
@@ -10,7 +10,7 @@ function LandingPage() {
             <section className="hero">
                 <div className="d-flex justify-content-center">
                     <div>
-                        <img src={Portrait} alt="Portrait" />
+                        <img src={portrait} alt="Portrait" />
                     </div>
                     <div className="description">
                         <h1>Yung-Shin Ko</h1>
@@ -69,11 +69,11 @@ function LandingPage() {
                         </ul>
                     </div>
                 </div>
-                <Link className="d-block text-center">------------Know more about me------------</Link>
+                <Link className="d-block text-center">------------Download Resume------------</Link>
             </section>
 
             <section className="workSection">
-                <img className="workSectionBgc" src={WorkSectionImg} alt="WorkSectionImg" />
+                <img className="workSectionBgc" src={workSectionImg} alt="WorkSectionImg" />
                 <div className="row justify-content-center">
                     <div className="col align-self-center text-center workCat">
                         <h3>Work</h3>

@@ -7,7 +7,7 @@ function Navbar() {
             <div className="nav d-block">
                 <ul className="d-flex justify-content-end mb-0">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/about">Resume</Link></li>
                     <li><Link to="/work">Work</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>

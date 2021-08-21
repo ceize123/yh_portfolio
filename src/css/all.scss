@@ -16,7 +16,6 @@ body {
 }
 
 h1 {
-    margin: 0;
     font-weight: bold;
     color: $secondary;
 }
@@ -33,10 +32,23 @@ p {
     font-size: 24px;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
 a {
     text-decoration: none;
     color: $secondary;
 
+}
+
+// star
+path {
+    fill: #000;
+}
+svg {
+    margin-top: 7px;
+    // transform: scale(1.5);
 }
 
 // general ends
@@ -45,6 +57,7 @@ a {
 header {
     position: relative;
 }
+
 .nav {
     position: absolute;
     width: 100%;
@@ -61,6 +74,8 @@ header {
 }
 
 // navbar ends
+
+// -------- landing page --------
 
 // hero starts
 .hero {
@@ -112,6 +127,7 @@ header {
 
         ul {
             padding: 0;
+            margin: 0;
         }
 
         li {
@@ -119,15 +135,15 @@ header {
         }
 
     }
+
     a {
-        margin-top: 47px;
+        margin-top: 36px;
         font-size: 14px;
         color: $info;
     }
 }
 
 // skill section ends
-
 
 // work section starts
 .workSection {
@@ -194,6 +210,134 @@ header {
 
 // contact section ends
 
+// -------- landing page --------
+
+
+// -------- work page (uiux) --------
+
+// title starts
+.uiuxTitle {
+    padding-top: 197px;
+    margin-bottom: 100px;
+    margin-left: 95px;
+
+    h2 {
+        margin-bottom: 15px;
+    }
+}
+
+// title ends
+
+// step section starts
+.stepSection {
+    margin: 0 auto;
+    overflow: hidden;
+    
+    > div {
+        overflow: hidden;
+    }
+    .star {
+        position: relative;
+        height: 36px;
+        
+        span::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 1000vh;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: $primary;
+            top: calc(100% + 2px);
+        }
+    }
+
+    article {
+        margin: 0 55px;
+        margin-bottom: 100px;
+        h3 {
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        li {
+            font-size: 24px;
+        }
+
+        .mockupSec {
+            margin-bottom: 100px;
+
+            .videoSection {
+                position: relative;
+
+                img {
+                    max-height: 485px;
+                    z-index: 1;
+                }
+                
+                video {
+                    object-fit: fill;
+                }
+
+                .mobileVideo {
+                    position: absolute;
+                    border: 1px solid #ccc;
+                    width: 200px;
+                    height: 363px;
+                    top: 55px;
+                    left: 67px;   
+                }
+
+                .desktopVideo {
+                    width: 90%;
+                    height: auto;
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: -10px;
+                }
+                
+            }
+
+            .imgSection {
+                position: relative;
+
+                img {
+                    z-index: 1;
+                }
+                
+            }
+
+            .mockupBgc {
+                position: absolute;
+                top: 114px;
+                width: 100%;
+                height: calc(100% - 50px);
+                border: 1px solid;
+                border-radius: 10px;
+                z-index: -1;
+            }
+
+            .akBgc {
+                background-color: #1F2533;
+            }
+        }
+
+        .mockupSec:not(:first-of-type) {
+            margin-bottom: 136px;
+        }
+        
+    }
+}
+
+// step section ends
+
+
+// -------- work page (uiux) --------
 
 // footer starts
 footer {

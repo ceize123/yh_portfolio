@@ -10761,7 +10761,6 @@ body {
 }
 
 h1, .h1 {
-  margin: 0;
   font-weight: bold;
   color: #94401E;
 }
@@ -10778,9 +10777,21 @@ p {
   font-size: 24px;
 }
 
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: #94401E;
+}
+
+path {
+  fill: #000;
+}
+
+svg {
+  margin-top: 7px;
 }
 
 header {
@@ -10840,12 +10851,13 @@ header {
 }
 .skillSection .skills ul {
   padding: 0;
+  margin: 0;
 }
 .skillSection .skills li {
   margin-top: 10px;
 }
 .skillSection a {
-  margin-top: 47px;
+  margin-top: 36px;
   font-size: 14px;
   color: #655A3C;
 }
@@ -10900,6 +10912,101 @@ header {
 .contactSection small, .contactSection .small {
   font-size: 14px;
   color: #94401E;
+}
+
+.uiuxTitle {
+  padding-top: 197px;
+  margin-bottom: 100px;
+  margin-left: 95px;
+}
+.uiuxTitle h2, .uiuxTitle .h2 {
+  margin-bottom: 15px;
+}
+
+.stepSection {
+  margin: 0 auto;
+  overflow: hidden;
+}
+.stepSection > div {
+  overflow: hidden;
+}
+.stepSection .star {
+  position: relative;
+  height: 36px;
+}
+.stepSection .star span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 1000vh;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #AD8255;
+  top: calc(100% + 2px);
+}
+.stepSection article {
+  margin: 0 55px;
+  margin-bottom: 100px;
+}
+.stepSection article h3, .stepSection article .h3 {
+  margin-bottom: 50px;
+}
+.stepSection article p {
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+.stepSection article li {
+  font-size: 24px;
+}
+.stepSection article .mockupSec {
+  margin-bottom: 100px;
+}
+.stepSection article .mockupSec .videoSection {
+  position: relative;
+}
+.stepSection article .mockupSec .videoSection img {
+  max-height: 485px;
+  z-index: 1;
+}
+.stepSection article .mockupSec .videoSection video {
+  object-fit: fill;
+}
+.stepSection article .mockupSec .videoSection .mobileVideo {
+  position: absolute;
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 363px;
+  top: 55px;
+  left: 67px;
+}
+.stepSection article .mockupSec .videoSection .desktopVideo {
+  width: 90%;
+  height: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: -10px;
+}
+.stepSection article .mockupSec .imgSection {
+  position: relative;
+}
+.stepSection article .mockupSec .imgSection img {
+  z-index: 1;
+}
+.stepSection article .mockupSec .mockupBgc {
+  position: absolute;
+  top: 114px;
+  width: 100%;
+  height: calc(100% - 50px);
+  border: 1px solid;
+  border-radius: 10px;
+  z-index: -1;
+}
+.stepSection article .mockupSec .akBgc {
+  background-color: #1F2533;
+}
+.stepSection article .mockupSec:not(:first-of-type) {
+  margin-bottom: 136px;
 }
 
 footer h3, footer .h3 {
