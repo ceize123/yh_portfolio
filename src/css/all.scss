@@ -258,15 +258,17 @@ header {
 .stepSection {
     margin-left: 40px;
     overflow: hidden;
-    
+    position: relative;
+
     > div {
         overflow: hidden;
     }
+    
     .star {
         position: relative;
         height: 30px;
         margin: 22px 15px 15px 15px;
-        
+
         .greyLine::after {
             content: '';
             position: absolute;
@@ -281,11 +283,9 @@ header {
         }
 
         .primaryLine {
-            content: '';
             position: absolute;
             left: 50%;
             width: 3px;
-            height: 0px;
             max-height: 1000vh;
             -webkit-transform: translateX(-50%);
             transform: translateX(-50%);

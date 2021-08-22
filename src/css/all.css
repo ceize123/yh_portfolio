@@ -10951,6 +10951,7 @@ header {
 .stepSection {
   margin-left: 40px;
   overflow: hidden;
+  position: relative;
 }
 .stepSection > div {
   overflow: hidden;
@@ -10973,11 +10974,9 @@ header {
   z-index: -2;
 }
 .stepSection .star .primaryLine {
-  content: "";
   position: absolute;
   left: 50%;
   width: 3px;
-  height: 0px;
   max-height: 1000vh;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
