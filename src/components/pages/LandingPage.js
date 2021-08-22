@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import workSectionImg from '../../imgs/workSectionImg.svg';
 import portrait from '../../imgs/portrait.svg';
 import uiuxDetail from '../uiuxDetails';
+import { Contact } from '../general.js';
 
 function LandingPage() { 
     return (
@@ -103,19 +104,7 @@ function LandingPage() {
                 </div>
             </section>
 
-            <section className="contactSection text-center">
-                <h3>Contact</h3>
-                <div className="d-flex justify-content-center">
-                    <div className="iconBlock">
-                        <i className="las la-envelope d-block"></i>
-                        <small>Email</small>
-                    </div>
-                    <div className="iconBlock">
-                        <i className="lab la-linkedin-in d-block"></i>
-                        <small>LinkedIn</small>
-                    </div>
-                </div>
-            </section>
+            <Contact />
         </main>
     );
 }

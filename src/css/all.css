@@ -10787,13 +10787,38 @@ a {
 }
 
 path {
-  fill: #000;
+  fill: #E5E5E5;
 }
 
-svg {
-  margin-top: 7px;
+.animation {
+  animation-name: scale;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.3);
+  }
+  30% {
+    transform: scale(1.6);
+  }
+  45% {
+    transform: scale(1.9);
+  }
+  60% {
+    transform: scale(2.2);
+  }
+  75% {
+    transform: scale(2.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 header {
   position: relative;
 }
@@ -10916,7 +10941,7 @@ header {
 
 .uiuxTitle {
   padding-top: 197px;
-  margin-bottom: 100px;
+  margin-bottom: 85px;
   margin-left: 95px;
 }
 .uiuxTitle h2, .uiuxTitle .h2 {
@@ -10924,7 +10949,7 @@ header {
 }
 
 .stepSection {
-  margin: 0 auto;
+  margin-left: 40px;
   overflow: hidden;
 }
 .stepSection > div {
@@ -10932,25 +10957,46 @@ header {
 }
 .stepSection .star {
   position: relative;
-  height: 36px;
+  height: 30px;
+  margin: 22px 15px 15px 15px;
 }
-.stepSection .star span::after {
+.stepSection .star .greyLine::after {
   content: "";
   position: absolute;
   left: 50%;
-  width: 2px;
+  width: 3px;
   height: 1000vh;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #E5E5E5;
+  top: calc(100% + 2px);
+  z-index: -2;
+}
+.stepSection .star .primaryLine {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  height: 0px;
+  max-height: 1000vh;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-color: #AD8255;
   top: calc(100% + 2px);
+  z-index: -1;
 }
 .stepSection article {
-  margin: 0 55px;
+  margin: 0 40px;
   margin-bottom: 100px;
 }
 .stepSection article h3, .stepSection article .h3 {
   margin-bottom: 50px;
+}
+.stepSection article h3:first-of-type, .stepSection article .h3:first-of-type {
+  margin-top: 15px;
+}
+.stepSection article h4, .stepSection article .h4 {
+  margin-bottom: 10px;
 }
 .stepSection article p {
   font-size: 1rem;
@@ -10959,20 +11005,35 @@ header {
 .stepSection article li {
   font-size: 24px;
 }
-.stepSection article .mockupSec {
+.stepSection article img {
+  transition-duration: 0.3s;
+}
+.stepSection article img:hover {
+  transform: scale(1.05);
+}
+.stepSection article .researchSection:first-of-type {
   margin-bottom: 100px;
 }
-.stepSection article .mockupSec .videoSection {
+.stepSection article .textSection {
+  margin-bottom: 50px;
+}
+.stepSection article .mockupSection {
+  margin-bottom: 100px;
+}
+.stepSection article .mockupSection .videoSection {
   position: relative;
 }
-.stepSection article .mockupSec .videoSection img {
+.stepSection article .mockupSection .videoSection img {
   max-height: 485px;
   z-index: 1;
 }
-.stepSection article .mockupSec .videoSection video {
+.stepSection article .mockupSection .videoSection img:hover {
+  pointer-events: none;
+}
+.stepSection article .mockupSection .videoSection video {
   object-fit: fill;
 }
-.stepSection article .mockupSec .videoSection .mobileVideo {
+.stepSection article .mockupSection .videoSection .mobileVideo {
   position: absolute;
   border: 1px solid #ccc;
   width: 200px;
@@ -10980,20 +11041,22 @@ header {
   top: 55px;
   left: 67px;
 }
-.stepSection article .mockupSec .videoSection .desktopVideo {
+.stepSection article .mockupSection .videoSection .desktopVideo {
   width: 90%;
   height: auto;
   margin-left: 50%;
   transform: translateX(-50%);
   margin-bottom: -10px;
+  border-radius: 10px;
 }
-.stepSection article .mockupSec .imgSection {
+.stepSection article .mockupSection .imgSection {
   position: relative;
 }
-.stepSection article .mockupSec .imgSection img {
+.stepSection article .mockupSection .imgSection img {
   z-index: 1;
+  margin: 0 22.5px;
 }
-.stepSection article .mockupSec .mockupBgc {
+.stepSection article .mockupSection .mockupBgc {
   position: absolute;
   top: 114px;
   width: 100%;
@@ -11002,11 +11065,21 @@ header {
   border-radius: 10px;
   z-index: -1;
 }
-.stepSection article .mockupSec .akBgc {
+.stepSection article .mockupSection .akBgc {
   background-color: #1F2533;
 }
 .stepSection article .mockupSec:not(:first-of-type) {
-  margin-bottom: 136px;
+  margin-bottom: 154px;
+}
+.stepSection article .mockupSec:last-of-type {
+  margin-bottom: 54px;
+}
+.stepSection .workTogether h3, .stepSection .workTogether .h3 {
+  margin-bottom: 30px;
+}
+.stepSection .workTogether h3:last-of-type, .stepSection .workTogether .h3:last-of-type {
+  color: #94401E;
+  margin-bottom: 0;
 }
 
 footer h3, footer .h3 {
