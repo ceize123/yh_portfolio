@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import workSectionImg from '../../imgs/workSectionImg.svg';
 import portrait from '../../imgs/portrait.svg';
@@ -6,6 +6,7 @@ import uiuxDetail from '../uiuxDetails';
 import { Contact } from '../general.js';
 
 function LandingPage() { 
+
     return (
         <main>
             <section className="hero">
@@ -17,10 +18,10 @@ function LandingPage() {
                         <h1>Yung-Shin Ko</h1>
                         <h4>I’d like to help you make life easier!</h4>
                         <p>
-                                I am a UI/UX designer. My job is to transform a
-                                complicated concept into easy understanding. I have been
-                                committed to making the design look fabulous and make
-                                the user experience intuitive.
+                            I am a UI/UX designer. My job is to transform a
+                            complicated concept into easy understanding. I have been
+                            committed to making the design look fabulous and make
+                            the user experience intuitive.
                         </p>
                     </div>
                 </div>
@@ -96,7 +97,7 @@ function LandingPage() {
                             <p>Redesign adopted process of the website. </p>
                         </div>
                         <div>
-                            <Link to={`/works/uiux/${uiuxDetail[0].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Mentorship" /></Link>
+                            <Link to={`/works/uiux/${uiuxDetail[2].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Mentorship" /></Link>
                             <h4>Seneca College Mentorship App</h4>
                             <p>Design a App for Seneca’s Students to find mentors on the platform.</p>
                         </div>

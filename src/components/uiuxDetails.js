@@ -30,8 +30,29 @@ import rb6 from '../imgs/work/rabbit_step5-2.png';
 import rb7 from '../imgs/work/rabbit_step5-3.png';
 import rb8 from '../imgs/work/rabbit_step5-4.png';
 import rb9 from '../imgs/work/rabbit_step5-5.png';
+import ms1 from '../imgs/work/ms_step1-1.png';
+import ms2 from '../imgs/work/ms_step1-2.png';
+import ms3 from '../imgs/work/ms_step2.png';
+import ms4 from '../imgs/work/ms_step3-1.png';
+import ms5 from '../imgs/work/ms_step3-2.png';
+import ms6 from '../imgs/work/ms_step3-3.png';
+import ms7 from '../imgs/work/ms_step3-4.png';
+import ms8 from '../imgs/work/ms_step3-5.png';
+import ms9 from '../imgs/work/ms_step3-6.png';
+import ms10 from '../imgs/work/ms_step3-7.png';
+import ms11 from '../imgs/work/ms_step3-8.png';
+import ms12 from '../imgs/work/ms_step3-9.png';
+import ms13 from '../imgs/work/ms_step3-10.png';
+import ms14 from '../imgs/work/ms_step3-11.png';
+import ms15 from '../imgs/work/ms_step3-12.png';
+import ms16 from '../imgs/work/ms_step3-13.png';
+import ms17 from '../imgs/work/ms_step3-14.png';
+import ms18 from '../imgs/work/ms_step3-15.png';
+import ms19 from '../imgs/work/ms_step3-16.png';
+import ms20 from '../imgs/work/ms_step3-17.png';
 import akVideo1 from '../imgs/work/ak_video1.mov';
 import akVideo2 from '../imgs/work/ak_video2.mov';
+import msVideo from '../imgs/work/ms_video.mp4';
 
 const uiuxDetail = [
     // AK_Jewelry
@@ -71,22 +92,24 @@ const uiuxDetail = [
                             'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours.Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
                 frame: ak5,
                 video: akVideo1,
-                background: false,
             },
             {
                 title: 'Homepage',
                 paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan and call to action. The second part is the access to the “About.” The third part is the latest course information for users to follow up.'],
                 img: [ak7, ak8, ak9],
+                backgroundColor:'akBgc',
             },
             {
                 title: 'Hamburger',
                 paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan and call to action. The second part is the access to the “About.” The third part is the latest course information for users to follow up.'],
                 img: [ak10, ak11],
+                backgroundColor:'akBgc',
             },
             {
                 title: 'About',
                 paragraph: ['On the about page, the user can see the introduction of the teacher’s experience relates to the jewelry industry. Moreover, they can see the pros of taking courses in Andrea Ko\'s jewelry design class.'],
                 img: [ak12, ak13],
+                backgroundColor:'akBgc',
             },
             {
                 title: 'Jewelry Design Course-Beginner',
@@ -94,20 +117,24 @@ const uiuxDetail = [
                             'There is a Registration form right under the bottom of the page. It allows users to register on the same page without leaving it to other pages or windows. ',
                             'If users want to register for the course, but they are not able to attend the latest class, they have access to tell Andrea Ko Jewelry Design when they are available for the class. Andrea will always take students\' needs into consideration.'],
                 img: [ak14, ak15, ak16, ak17],
+                backgroundColor:'akBgc',
             },
             {
                 title: 'Portfolio',
                 paragraph: ['I used a black background to present the jewelry design. With the contrast of shining jewelry and black, design works can jump out at the user.'],
                 img: [ak18, ak19, ak20],
+                backgroundColor:'akBgc',
             },
             {
                 title: 'Blog',
                 paragraph: ['Users can click the classification, which has four sections on the bar. There are three pictures in every article. Users can also see the recommended article with a high click-through rate on the bottom.'],
                 img: [ak21, ak22, ak23, ak24],
+                backgroundColor:'akBgc',
             },
             {
                 title: 'Desktop',
                 video: akVideo2,
+                backgroundColor:'akBgc',
             }
         ]
     },
@@ -147,13 +174,18 @@ const uiuxDetail = [
         mockup: [
             {
                 title: 'Overview',
-                paragraph: ['I use pink as the main color of website. Pink represents soft, gentle and cute impression to people. There is not much animation in this project. Everything is simple and intuitive.'],
+                paragraph: [
+                    'Most users came from Instagram and Facebook to the website, so that mobile phone experience would be significant.',
+                    'The website’s style is minimalism with abstract painting. Black, grey and white are the three main colours, and dark blue and dark red are secondary colours. Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'
+                ],
                 video: akVideo2,
+                backgroundColor:'rbBgc',
             },
             {
                 title: 'Homepage',
                 paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan ”Hello! Could you please help me? ” and a donating button under the sentence. The second part is the carousel of a bulletin board. In the third part, users can see three recommended rabbits for adoption. They also can click the “see all the rabbits” button in this section.'],
                 img: [rb5],
+                backgroundColor:'rbBgc',
             },
             {
                 title: 'Classification',
@@ -162,23 +194,91 @@ const uiuxDetail = [
                     'On the result part, some vital information is listed under the image, such as name, adopted status, age, variety, and weight. If there is no data for the searching result, the system will recommend other rabbits with a sentence like "These rabbits are eager for a sweet home" to stimulate the users\' empathy.',
                 ],
                 img: [rb6, rb7],
+                inline: false,
+                backgroundColor:'rbBgc',
             },
             {
                 title: 'Rabbit Introduction',
                 paragraph: ['On the individual rabbit introduction page, users can see basic information and the background story of the rabbit, which stimulate users\' empathy. Further, there are detailed health records for people to know the status of the rabbit. By offering information on the up and up, it will improve credibility for the user.'],
                 img: [rb8],
+                backgroundColor:'rbBgc',
             },
             {
                 title: 'Must Know Before Adoption',
                 paragraph: ['When they click the “Adoption” button, users will come to the page with all the information they should know before they move on. This page eliminates those who aren’t qualified or aren’t well prepared to welcome a new family member. Moreover, there are common questions and answers for users to check before moving to the next step.'],
                 img: [rb9],
+                backgroundColor:'rbBgc',
             },
             {
                 title: 'Adoption Form',
                 paragraph: ['As the association requires, the button will lead to a google form to apply for adoption. Therefore, the process of an adopted redesign of the website is finished.'],
             },
         ]
-    }
+    },
+    // Mentorship
+    { 
+        urlName: 'Mentorship_App',
+        mainTitle: 'Seneca Collage Mentorship App',
+        description: 'Seneca Mentorship App is an idea for Seneca students to find mentors and ask questions. It mainly divides into two parts; one is searching mentors the other one is a discussion board. This project was done by two students and me in Seneca.',
+        research: [
+            {
+                inline: true,
+                title: 'Empathy Map',
+                paragraph: 'Commonly, students are hard to get the answer efficiently from school. Sometimes they don’t know who to ask for help with their school life. In such conditions, they usually feel nervous, anxious, and angry. ',
+                img: ms1,
+            },
+            {
+                inline: true,
+                title: 'Six Hats',
+                paragraph: 'Through the app, students will find the answer quickly. Nevertheless, there are still some potential challenges, such as lacking mentors, unclear information, etc. However, if the app had been well organized, it could be beneficial for students.',
+                img: ms2,
+            }
+        ],
+        informationArchitecture: {
+            paragraph: 'We mainly focus on the process of discussion board and finding mentors.',
+            img: ms3,
+        },
+        mockup: [
+            {
+                inline: true,
+                title: 'Overview',
+                paragraph: ['Most users came from Instagram and Facebook to the website, so that mobile phone experience would be significant.',
+                            'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours.Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
+                frame: ak5,
+                video: msVideo,
+            },
+            {
+                title: 'Launch Screen/ Sign up/ Sign in',
+                paragraph: ['User can either choose sign up or log in the app. The interface is clean and simple which makes the set up process wasier for user.'],
+                img: [ms4, ms5, ms6, ms7],
+                backgroundColor:'msBgc',
+            },
+            {
+                title: 'Discussion Board',
+                paragraph: ['There are three parts on the top bar, “All,” “Sort,” “Followed.” The “All” page is the default. “Sort” is for users to find different topics,  and they also can follow the topics they see the most.'],
+                img: [ms8, ms9, ms10, ms11],
+                backgroundColor:'msBgc',
+            },
+            {
+                title: 'The Post',
+                paragraph: ['Users can either see the comments from mentors or save the post as their collection on this page. Only mentors have the comment icon on the bottom right of their interface.'],
+                img: [ms12, ms13],
+                backgroundColor:'msBgc',
+            },
+            {
+                title: 'Mentor Section',
+                paragraph: ['Students can use the filter to search for mentors by clicking the filter icon. There are also few weekly best mentors for users to consult. They can see the basic information of mentors, the number of their replies, and how many mentees they get in a week.'],
+                img: [ms14, ms15, ms16],
+                backgroundColor:'msBgc',
+            },
+            {
+                title: 'Mentor ‘s Info and Chatting Room.',
+                paragraph: ['On the mentor’s info page, the user can see the basic information of the mentor. They also can rate the mentor by clicking “Rate this mentor,” which is under the stars. When users click “Chat with mentor!”, it will go to private message directly.'],
+                img: [ms17, ms18, ms19, ms20],
+                backgroundColor:'msBgc',
+            },
+        ]
+    },
 ]
 
 export default uiuxDetail;

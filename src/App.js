@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./css/all.css";
 import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
 import Navbar from './components/Navbar.js';
@@ -16,10 +16,19 @@ const NoMatch = ({ location }) => (
   </div>
 )
 
+function ScrollToTop() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    return null
+}
+
 function App() {
     return (
         <>
         <Router basename={process.env.PUBLIC_URL}>
+            <ScrollToTop></ScrollToTop>
             <Wrapper>
                 <Navbar />
                 <Switch>

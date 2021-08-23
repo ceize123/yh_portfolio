@@ -10790,7 +10790,7 @@ path {
   fill: #E5E5E5;
 }
 
-.animation {
+.scale {
   animation-name: scale;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -10817,6 +10817,24 @@ path {
   }
   100% {
     transform: scale(1);
+  }
+}
+.jump {
+  transform: scale(1);
+  animation-name: jump;
+  animation-duration: 0.5s;
+  animation-iteration-count: 2;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: 0;
   }
 }
 header {
@@ -10966,7 +10984,7 @@ header {
   position: absolute;
   left: 50%;
   width: 3px;
-  height: 1000vh;
+  height: 1200vh;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-color: #E5E5E5;
@@ -10977,7 +10995,6 @@ header {
   position: absolute;
   left: 50%;
   width: 3px;
-  max-height: 1000vh;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-color: #AD8255;
@@ -11005,6 +11022,7 @@ header {
   font-size: 24px;
 }
 .stepSection article img {
+  position: relative;
   transition-duration: 0.3s;
 }
 .stepSection article img:hover {
@@ -11053,24 +11071,32 @@ header {
 }
 .stepSection article .mockupSection .imgSection img {
   z-index: 1;
-  margin: 0 22.5px;
+  margin: 15px 22.5px;
+}
+.stepSection article .mockupSection .imgSection img:hover {
+  transform: scale(1);
 }
 .stepSection article .mockupSection .mockupBgc {
   position: absolute;
   top: 114px;
   width: 100%;
   height: calc(100% - 50px);
-  border: 1px solid;
   border-radius: 10px;
   z-index: -1;
 }
 .stepSection article .mockupSection .akBgc {
   background-color: #1F2533;
 }
-.stepSection article .mockupSec:not(:first-of-type) {
+.stepSection article .mockupSection .rbBgc {
+  background-color: #FFF1F9;
+}
+.stepSection article .mockupSection .msBgc {
+  background-color: #DD8E58;
+}
+.stepSection article .mockupSection:not(:first-of-type) {
   margin-bottom: 154px;
 }
-.stepSection article .mockupSec:last-of-type {
+.stepSection article .mockupSection:last-of-type {
   margin-bottom: 54px;
 }
 .stepSection .workTogether h3, .stepSection .workTogether .h3 {
@@ -11081,6 +11107,10 @@ header {
   margin-bottom: 0;
 }
 
+footer {
+  position: relative;
+  padding-bottom: 50px;
+}
 footer h3, footer .h3 {
   color: #94401E;
   font-weight: 600;
@@ -11090,6 +11120,7 @@ footer p {
 }
 footer ul {
   padding-left: 5px;
+  margin: 0;
 }
 footer ul li {
   letter-spacing: 0.03em;
@@ -11100,6 +11131,18 @@ footer ul li::before {
   font-weight: bold;
   display: inline-block;
   width: 1rem;
+}
+footer .backToTop {
+  position: absolute;
+  bottom: 45px;
+  right: 55px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #AD8255;
+}
+footer .backToTop:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=all.css.map */

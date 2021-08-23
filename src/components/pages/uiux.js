@@ -72,8 +72,6 @@ function InformationArchitecture(props) {
 function Mockup(props) {
     const { content } = props;
 
-    // 用useState改背景顏色
-
     return (
         <>
            {content.map((item, key) => ( // can't use forEach, it can't display properly
@@ -94,12 +92,14 @@ function Mockup(props) {
                         <video className={item.frame !== undefined ? 'mobileVideo' : 'desktopVideo'} controls>
                             <source src={item.video} type="video/mp4" />
                         </video>
-                       {item.background !== false ? <div className="mockupBgc akBgc"></div> : ""} 
+                       {item.backgroundColor !== undefined ? <div className={`mockupBgc ${item.backgroundColor}`}></div> : ""} 
                     </div>
                     
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
-                        {item.img !== undefined ? item.img.map(imgs => (<img src={imgs} alt={item.title}/>)): ""}
-                        {item.background !== false ? <div className="mockupBgc akBgc"></div> : ""} 
+                        <div className={item.inline === false ? 'd-flex flex-column' : ""}>
+                            {item.img !== undefined ? item.img.map(imgs => (<img src={imgs} alt={item.title} />)) : ""}
+                        </div>
+                        {item.backgroundColor !== undefined ? <div className={`mockupBgc ${item.backgroundColor}`}></div> : ""} 
                     </div>
                 </div>
             ))}
@@ -123,7 +123,7 @@ function Uiux() {
         star.forEach((item, idx, ary) => {
             if (idx === 0) {
                 if (item.getBoundingClientRect().top <= 330) {
-                    primaryLine[idx].style.height = `${window.pageYOffset - 250}px`;
+                    primaryLine[idx].style.height = `${window.pageYOffset - 180}px`;
                 } else {
                     primaryLine[idx].style.height = '0px';
                 }
@@ -143,11 +143,10 @@ function Uiux() {
 
         if (sectionTop <= 330) {
             spot[sectionIndex].style.fill = "#AD8255";
-            svg[sectionIndex].classList.add("animation");
+            svg[sectionIndex].classList.add("scale");
         } else {
-            if (sectionIndex > 0) {
-                svg[sectionIndex - 1].classList.remove("animation");
-            }
+            spot[sectionIndex].style.fill = "#E5E5E5";
+            svg[sectionIndex].classList.remove("scale");
         }
     };
 
@@ -157,6 +156,24 @@ function Uiux() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    let detection = document.querySelectorAll(".imgSection img");
+    const detectImg = () => {
+    }
+
+    useEffect(() => {
+        detection.forEach(item => {
+            item.addEventListener("mouseover", function () {
+                console.log(item);
+                item.classList.add("jump");
+            });
+        })
+        return () => {
+            detection.forEach(item => {
+                item.addEventListener("mouseover", function () {});
+            })
+        };
+    }, [detection]);
 
     return (
         <main onScroll={handleScroll}>
@@ -169,42 +186,51 @@ function Uiux() {
                     </section>
                     
                     <section className="stepSection">
-                        <div className={content.research !== undefined ? "d-flex" : "d-none"}>
-                            <SVGStar />
-                            <article>
-                                <h3>Step {stepCount++}: Research</h3>
-                                <Research content={content.research} />
-                            </article>
-                        </div>
-                        <div className={content.ppAnalysis !== undefined ? "d-flex" : "d-none"}>
-                            <SVGStar />
-                            <article>
-                                <h3>Step {stepCount++}: Pain Point Analysis</h3>
-                                <PPAnalysis content={content.ppAnalysis} />
-                            </article>
-                        </div>
-                        <div className={content.informationArchitecture !== undefined ? "d-flex" : "d-none"}>
-                            <SVGStar />
-                            <article>
-                                <h3>Step {stepCount++}:  Information Architecture</h3>
-                                <InformationArchitecture content={content.informationArchitecture} />
-                            </article>
-                        </div>
-                        <div className={content.wireframe !== undefined ? "d-flex" : "d-none"}>
-                            <SVGStar />
-                            <article>
-                                <h3>Step {stepCount++}: Wireframe</h3>
-                                <img src={content.wireframe} alt="wireframe"/>
-                            </article>
-                        </div>
-                        <div className={content.mockup !== undefined ? "d-flex" : "d-none"}>
-                            <SVGStar />
-                            <article>
-                                <h3>Step {stepCount++}: Mockup</h3>
-                                <Mockup content={content.mockup} />
-                            </article>
-                        </div>
-
+                        {content.research !== undefined ?
+                            <div className="d-flex">
+                                <SVGStar />
+                                <article>
+                                    <h3>Step {stepCount++}: Research</h3>
+                                    <Research content={content.research} />
+                                </article>
+                            </div> : ""}
+                        
+                        {content.ppAnalysis !== undefined ?
+                            <div className="d-flex">
+                                <SVGStar />
+                                <article>
+                                    <h3>Step {stepCount++}: Pain Point Analysis</h3>
+                                    <PPAnalysis content={content.ppAnalysis} />
+                                </article>
+                            </div> : ""}
+                        
+                        {content.informationArchitecture !== undefined ?
+                            <div className="d-flex">
+                                <SVGStar />
+                                <article>
+                                    <h3>Step {stepCount++}:  Information Architecture</h3>
+                                    <InformationArchitecture content={content.informationArchitecture} />
+                                </article>
+                            </div> : ""}
+                        
+                        {content.wireframe !== undefined ?
+                            <div className="d-flex">
+                                <SVGStar />
+                                <article>
+                                    <h3>Step {stepCount++}: Wireframe</h3>
+                                    <img src={content.wireframe} alt="wireframe"/>
+                                </article>
+                            </div> : ""}
+                        
+                        {content.mockup !== undefined ?
+                            <div className="d-flex">
+                                <SVGStar />
+                                <article>
+                                    <h3>Step {stepCount++}: Mockup</h3>
+                                    <Mockup content={content.mockup} />
+                                </article>
+                            </div> : ""}
+                        
                         <div className="d-flex">
                             <div className="star">
                                 <span>
