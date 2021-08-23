@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import workSectionImg from '../../imgs/workSectionImg.svg';
 import portrait from '../../imgs/portrait.svg';
-import uiuxDetail from '../uiuxDetails';
+import uiuxData from '../uiuxData';
 import { Contact } from '../general.js';
 
 function LandingPage() { 
+
+    let [selection, setSelection] = useState(0);
 
     return (
         <main>
@@ -79,25 +81,34 @@ function LandingPage() {
                 <div className="row justify-content-center">
                     <div className="col align-self-center text-center workCat">
                         <h3>Work</h3>
-                        <p>UI/UX Design</p>
-                        <p>Graphic Design</p>
-                        <p>Code</p>
+                        <p
+                            className={selection === 0 ? 'selection' : 'jumping'}
+                            onClick={() => { setSelection(selection = 0); }}
+                        >UI/UX Design</p>
+                        <p
+                            className={selection === 1 ? 'selection' : 'jumping'}
+                            onClick={() => { setSelection(selection = 1); }}
+                        >Graphic Design</p>
+                        <p
+                            className={selection === 2 ? 'selection' : 'jumping'}
+                            onClick={() => { setSelection(selection = 2); }}
+                        >Code</p>
                     </div>
                     <div className="col gallery">
                         {/* 要用map拉資料，所有資訊存到object裡面(landing page也是)。
                             參考blog.js */}
                         <div>
-                            <Link to={`/works/uiux/${uiuxDetail[0].urlName}`}><img src="https://via.placeholder.com/515x309" alt="AK_Jewlery" /></Link>
+                            <Link to={`/works/uiux/${uiuxData[0].urlName}`}><img src="https://via.placeholder.com/515x309" alt="AK_Jewlery" /></Link>
                             <h4>Andrea Ko Jewelry Design Website</h4>
                             <p>Redesign the website of jewelry design courses</p>
                         </div>
                         <div>
-                            <Link to={`/works/uiux/${uiuxDetail[1].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Rabbit" /></Link>
+                            <Link to={`/works/uiux/${uiuxData[1].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Rabbit" /></Link>
                             <h4>Taiwan Rabbit Saving Association Website</h4>
                             <p>Redesign adopted process of the website. </p>
                         </div>
                         <div>
-                            <Link to={`/works/uiux/${uiuxDetail[2].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Mentorship" /></Link>
+                            <Link to={`/works/uiux/${uiuxData[2].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Mentorship" /></Link>
                             <h4>Seneca College Mentorship App</h4>
                             <p>Design a App for Seneca’s Students to find mentors on the platform.</p>
                         </div>

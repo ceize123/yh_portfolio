@@ -54,7 +54,7 @@ import akVideo1 from '../imgs/work/ak_video1.mov';
 import akVideo2 from '../imgs/work/ak_video2.mov';
 import msVideo from '../imgs/work/ms_video.mp4';
 
-const uiuxDetail = [
+const uiuxData = [
     // AK_Jewelry
     { 
         urlName: 'AK_Jewelry',
@@ -281,4 +281,4 @@ const uiuxDetail = [
     },
 ]
 
-export default uiuxDetail;
+export default uiuxData;

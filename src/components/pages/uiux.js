@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import uiuxDetail from '../uiuxDetails';
+import uiuxData from '../uiuxData';
 import { Contact } from '../general.js';
 
 function SVGStar() {
@@ -97,7 +97,8 @@ function Mockup(props) {
                     
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
                         <div className={item.inline === false ? 'd-flex flex-column' : ""}>
-                            {item.img !== undefined ? item.img.map(imgs => (<img src={imgs} alt={item.title} />)) : ""}
+                           {item.img !== undefined ? item.img.map(imgs => (
+                               <img src={imgs} alt={item.title} />)) : ""}
                         </div>
                         {item.backgroundColor !== undefined ? <div className={`mockupBgc ${item.backgroundColor}`}></div> : ""} 
                     </div>
@@ -157,28 +158,10 @@ function Uiux() {
         };
     }, []);
 
-    let detection = document.querySelectorAll(".imgSection img");
-    const detectImg = () => {
-    }
-
-    useEffect(() => {
-        detection.forEach(item => {
-            item.addEventListener("mouseover", function () {
-                console.log(item);
-                item.classList.add("jump");
-            });
-        })
-        return () => {
-            detection.forEach(item => {
-                item.addEventListener("mouseover", function () {});
-            })
-        };
-    }, [detection]);
-
     return (
         <main onScroll={handleScroll}>
             {/* use the result of filter function */}
-            {uiuxDetail.filter(content => content.urlName === title).map((content, key) => (
+            {uiuxData.filter(content => content.urlName === title).map((content, key) => (
                 <div key={key}>
                     <section className="uiuxTitle">
                         <h2>{content.mainTitle}</h2>

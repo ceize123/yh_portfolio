@@ -10915,10 +10915,65 @@ header {
 }
 .workSection .workCat {
   z-index: 1;
+  margin-top: -50px;
+}
+.workSection .workCat .selection {
+  animation-name: selection;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  transform: scale(2);
+}
+@keyframes selection {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2.5);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+.workSection .workCat .selection:hover {
+  animation-name: jumpingSelection;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes jumpingSelection {
+  0% {
+    transform: scale(1.7);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1.7);
+  }
+}
+.workSection .workCat .jumping:hover {
+  animation-name: jumping;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes jumping {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .workSection .workCat p {
   color: #94401E;
   font-weight: 600;
+  width: 150px;
+  margin: 25px auto 0 auto;
+}
+.workSection .workCat p:hover {
+  cursor: pointer;
 }
 .workSection .gallery img {
   margin-bottom: 9px;
@@ -10929,6 +10984,8 @@ header {
 .workSection .gallery p {
   font-size: 18px;
   letter-spacing: 0.03em;
+}
+.workSection .gallery div:not(:last-child) p {
   margin-bottom: 35px;
 }
 
@@ -11045,6 +11102,7 @@ header {
   z-index: 1;
 }
 .stepSection article .mockupSection .videoSection img:hover {
+  transform: scale(1);
   pointer-events: none;
 }
 .stepSection article .mockupSection .videoSection video {
