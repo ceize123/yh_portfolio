@@ -59,6 +59,7 @@ const uiuxData = [
     { 
         urlName: 'AK_Jewelry',
         mainTitle: 'Andrea Ko Jewelry Design (RWD)',
+        subtitle: 'Redesign the website of jewelry design courses.',
         description: '“Andrea Ko Jewelry Design Website” is mainly for recruiting students. However, the original online presence and the information were lacking. After I talked to Andrea, she told us most website visitors were first-time users, and they came to the website to search the information of jewelry beginner course. Thus, I redesigned the whole website (RWD) to make it more organized and clean, primarily focused on the user flow of the jewelry beginner course.',
         research: [
             {
@@ -142,6 +143,7 @@ const uiuxData = [
     {
         urlName: 'TPE_Rabbit_Association',
         mainTitle: 'Taipei Rabbit Saving Association Website (RWD)',
+        subtitle: 'Redesign adopted process of the website.',
         description: 'Taipei Rabbit Saving Association is a nonprofit organization that dedicates to save stray rabbits. However, they had a really complicated website. There was too much information without being well organized. Thus, I redesigned one of the vital services, the adopted process, to help them enhance the chance of adoption.',
         research: [
             {
@@ -219,6 +221,7 @@ const uiuxData = [
     { 
         urlName: 'Mentorship_App',
         mainTitle: 'Seneca Collage Mentorship App',
+        subtitle: 'Design a App for Seneca’s Students to find mentors on the platform.',
         description: 'Seneca Mentorship App is an idea for Seneca students to find mentors and ask questions. It mainly divides into two parts; one is searching mentors the other one is a discussion board. This project was done by two students and me in Seneca.',
         research: [
             {

@@ -107,7 +107,7 @@ header {
     position: absolute;
     width: 100%;
     padding: 25px 0;
-    border: 1px solid;
+    // border: 1px solid;
 
     li {
         margin-right: 39px;
@@ -126,8 +126,7 @@ header {
 .hero {
     padding-top: 79px;
     width: 100%;
-    height: 1024px;
-    border: 1px solid;
+    height: 1126.4px;
     background-image: url('../imgs/heroImg.svg');
     background-position: top;
     background-repeat: no-repeat;
@@ -160,7 +159,7 @@ header {
 
 // skill section starts
 .skillSection {
-    margin-bottom: 227px;
+    margin-bottom: 150px;
     h3 {
         margin-bottom: 50px;
     }
@@ -193,14 +192,14 @@ header {
 // work section starts
 .workSection {
     position: relative;
-    margin-bottom: 227px;
+    margin-bottom: 150px;
 
     .workSectionBgc {
         position: absolute;
         top: -314px;
     }
 
-    .workCat {
+    .workCat { //left text
         z-index: 1;
         margin-top: -50px;
 
@@ -272,6 +271,13 @@ header {
     }
 
     .gallery {
+        overflow: hidden;
+        height: 1189px;
+        > div {
+            position: relative;
+            height: 100%;
+        }
+
         img {
             margin-bottom: 9px;
         }
@@ -283,7 +289,23 @@ header {
             letter-spacing: 0.03em;
         }
 
-        div:not(:last-child) p {
+        .slidesIn {
+            position: relative;
+            animation-name: slide;
+            animation-duration: 0.6s;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes slide {
+            0% {
+                left: 1000px;
+            }
+            100% {
+                left: 0;
+            }
+        }
+
+        .works:not(:last-child) p {
             margin-bottom: 35px;
         }
     }
@@ -524,7 +546,7 @@ header {
 // footer starts
 footer {
     position: relative;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     h3 {
         color: $secondary;
         font-weight: 600;
@@ -552,7 +574,7 @@ footer {
 
     .backToTop {
         position: absolute;
-        bottom: 45px;
+        bottom: 95px;
         right: 55px;
         width: 48px;
         height: 48px;

@@ -3,19 +3,97 @@ import { Link } from 'react-router-dom';
 import workSectionImg from '../../imgs/workSectionImg.svg';
 import portrait from '../../imgs/portrait.svg';
 import uiuxData from '../uiuxData';
+import graphicData from '../graphicData';
+import codingData from '../codingData';
 import { Contact } from '../general.js';
 
-function LandingPage() { 
 
+function WorkSection() {
+    
+    const dataAry = [uiuxData, graphicData, codingData];
+    // Work section selection event
     let [selection, setSelection] = useState(0);
+    const [isActive, setActive] = useState("false");
+    
+    const slide = (event) => {
+
+        // --- useful ---
+        // let preSelection = event.target.getAttribute('data-key'); 
+
+        // --- toggle slide animation ---
+        setActive(!isActive);
+        setTimeout(function(){ setActive("false"); }, 100);
+    }
+
+    return (
+        <>
+            <div className="col align-self-center text-center workCat">
+                <h3>Work</h3>
+                <p
+                    className={selection === 0 ? 'selection' : 'jumping'}
+                    // data-key="0"
+                    onClick={() => {
+                        setSelection(selection = 0);
+                        slide();
+                    }}
+                >UI/UX Design</p>
+                <p
+                    className={selection === 1 ? 'selection' : 'jumping'}
+                    // data-key="1"
+                    onClick={() => {
+                        setSelection(selection = 1);
+                        slide();
+                    }}
+                >Graphic Design</p>
+                <p
+                    className={selection === 2 ? 'selection' : 'jumping'}
+                    // data-key="2"
+                    onClick={() => {
+                        setSelection(selection = 2);
+                        slide();
+                    }}
+                >Code</p>
+            </div>
+            <div className="col gallery">
+                {/* 要用map拉資料，所有資訊存到object裡面(landing page也是)。
+                    參考blog.js */}
+                <div className="d-flex flex-column justify-content-center">
+                    {/* <div className="works">
+                        <Link to={`/works/uiux/${uiuxData[0].urlName}`}><img src="https://via.placeholder.com/515x309" alt="AK_Jewlery" /></Link>
+                        <h4>Andrea Ko Jewelry Design Website</h4>
+                        <p>Redesign the website of jewelry design courses</p>
+                    </div>
+                    <div className="works">
+                        <Link to={`/works/uiux/${uiuxData[1].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Rabbit" /></Link>
+                        <h4>Taiwan Rabbit Saving Association Website</h4>
+                        <p>Redesign adopted process of the website. </p>
+                    </div>
+                    <div className="works">
+                        <Link to={`/works/uiux/${uiuxData[2].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Mentorship" /></Link>
+                        <h4>Seneca College Mentorship App</h4>
+                        <p>Design a App for Seneca’s Students to find mentors on the platform.</p>
+                    </div> */}
+                    {dataAry[selection].map((item, key) => (
+                        <div className={isActive ? "works slidesIn" : "d-none"} key={key}>
+                            <Link to={`/works/uiux/${item.urlName}`}>
+                                <img src="https://via.placeholder.com/515x309" alt="AK_Jewlery" />
+                            </Link>
+                            <h4>{item.mainTitle}</h4>
+                            <p>{item.subtitle}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+   )
+}
+
+function LandingPage() { 
 
     return (
         <main>
             <section className="hero">
                 <div className="d-flex justify-content-center">
-                    <div>
-                        <img src={portrait} alt="Portrait" />
-                    </div>
                     <div className="description">
                         <h1>Yung-Shin Ko</h1>
                         <h4>I’d like to help you make life easier!</h4>
@@ -25,6 +103,9 @@ function LandingPage() {
                             committed to making the design look fabulous and make
                             the user experience intuitive.
                         </p>
+                    </div>
+                    <div>
+                        <img src={portrait} alt="Portrait" />
                     </div>
                 </div>
             </section>
@@ -79,40 +160,7 @@ function LandingPage() {
             <section className="workSection">
                 <img className="workSectionBgc" src={workSectionImg} alt="WorkSectionImg" />
                 <div className="row justify-content-center">
-                    <div className="col align-self-center text-center workCat">
-                        <h3>Work</h3>
-                        <p
-                            className={selection === 0 ? 'selection' : 'jumping'}
-                            onClick={() => { setSelection(selection = 0); }}
-                        >UI/UX Design</p>
-                        <p
-                            className={selection === 1 ? 'selection' : 'jumping'}
-                            onClick={() => { setSelection(selection = 1); }}
-                        >Graphic Design</p>
-                        <p
-                            className={selection === 2 ? 'selection' : 'jumping'}
-                            onClick={() => { setSelection(selection = 2); }}
-                        >Code</p>
-                    </div>
-                    <div className="col gallery">
-                        {/* 要用map拉資料，所有資訊存到object裡面(landing page也是)。
-                            參考blog.js */}
-                        <div>
-                            <Link to={`/works/uiux/${uiuxData[0].urlName}`}><img src="https://via.placeholder.com/515x309" alt="AK_Jewlery" /></Link>
-                            <h4>Andrea Ko Jewelry Design Website</h4>
-                            <p>Redesign the website of jewelry design courses</p>
-                        </div>
-                        <div>
-                            <Link to={`/works/uiux/${uiuxData[1].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Rabbit" /></Link>
-                            <h4>Taiwan Rabbit Saving Association Website</h4>
-                            <p>Redesign adopted process of the website. </p>
-                        </div>
-                        <div>
-                            <Link to={`/works/uiux/${uiuxData[2].urlName}`}><img src="https://via.placeholder.com/515x309" alt="Mentorship" /></Link>
-                            <h4>Seneca College Mentorship App</h4>
-                            <p>Design a App for Seneca’s Students to find mentors on the platform.</p>
-                        </div>
-                    </div>
+                    <WorkSection />
                 </div>
             </section>
 
