@@ -11201,25 +11201,22 @@ header {
 .graphic .graphicHero h2, .graphic .graphicHero .h2 {
   font-size: 48px;
 }
-.graphic .graphicHero .friendsLogo {
+.graphic .graphicHero .heroImg {
   position: relative;
 }
-.graphic .graphicHero .friendsLogo .door {
+.graphic .graphicHero .heroImg .enlarge {
   animation-name: enlarge;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-iteration-count: 1;
-  animation-delay: 0.3s;
+  animation-delay: 0.4s;
+  animation-timing-function: linear;
 }
-.graphic .graphicHero .friendsLogo .title {
-  display: none;
+.graphic .graphicHero .heroImg .title {
   position: absolute;
   left: 0;
   right: 0;
   margin: 89px auto 0 auto;
-  animation-name: enlarge;
-  animation-duration: 0.4s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
+  animation-delay: 0.5s;
 }
 @keyframes enlarge {
   0% {

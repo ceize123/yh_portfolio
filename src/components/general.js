@@ -1,5 +1,15 @@
-import React, { useRef } from 'react';
+import React, {useEffect} from 'react';
+import { useLocation } from "react-router";
 
+
+const ScrollToTop = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{props.children}</>
+};
 
 export function Contact() {
     return (
@@ -18,3 +28,5 @@ export function Contact() {
         </section>
     )
 }
+
+export default ScrollToTop;

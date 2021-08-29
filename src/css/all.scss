@@ -560,27 +560,24 @@ header {
             font-size: 48px;
         }
 
-        .friendsLogo {
+        .heroImg {
             position: relative;
-            
-            .door {
+
+            .enlarge {
                 animation-name: enlarge;
-                animation-duration: 0.5s;
+                animation-duration: 0.4s;
                 animation-iteration-count: 1;
-                animation-delay: 0.3s;
+                animation-delay: 0.4s;
+                animation-timing-function: linear;
             }
 
             .title {
-                display: none;
                 position: absolute;
                 left: 0;
                 right: 0;
                 margin: 89px auto 0 auto;
-                animation-name: enlarge;
-                animation-duration: 0.4s;
-                animation-iteration-count: 1;
-                // animation-delay: 0.15s;
-                animation-timing-function: linear;
+                animation-delay: 0.5s;
+                
             }
 
             @keyframes enlarge {

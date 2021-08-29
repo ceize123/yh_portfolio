@@ -11,22 +11,22 @@ import introduction from '../../imgs/work/graphic/introduction.png';
 function Graphic() { 
     const { title } = useParams();
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            const friends = document.querySelector(".title");
-            friends.classList.add("d-inline");
-        }, 300);
-        return () => clearTimeout(timer);
-    }, []);
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         const friends = document.querySelector(".title");
+    //         friends.classList.add("d-inline");
+    //     }, 400);
+    //     return () => clearTimeout(timer);
+    // }, []);
 
     return (
         <main>
             {graphicData.filter(content => content.urlName === title).map((content, key) => (
                 <div key={key} className="graphic">
                     <div className="graphicHero text-center">
-                        <div className="friendsLogo">
-                            <img className="door" src={door} alt="door"/>
-                            <img className="title" src={titleText} alt="FRIENDS"/>
+                        <div className="heroImg">
+                            <img className="door enlarge" src={door} alt="door"/>
+                            <img className="title enlarge" src={titleText} alt="FRIENDS"/>
                         </div>
                         <h2 className="mt-5">Icon Guide Book</h2>
                         <div className="introduction text-center row">
