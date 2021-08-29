@@ -1,58 +1,61 @@
-import ak1 from '../imgs/work/ak_step1-1.png';
-import ak2 from '../imgs/work/ak_step1-2.png';
-import ak3 from '../imgs/work/ak_step3.png';
-import ak4 from '../imgs/work/ak_step4.png';
-import ak5 from '../imgs/work/ak_step5-0.png';
-import ak7 from '../imgs/work/ak_step5-2.png';
-import ak8 from '../imgs/work/ak_step5-3.png';
-import ak9 from '../imgs/work/ak_step5-4.png';
-import ak10 from '../imgs/work/ak_step5-5.png';
-import ak11 from '../imgs/work/ak_step5-6.png';
-import ak12 from '../imgs/work/ak_step5-7.png';
-import ak13 from '../imgs/work/ak_step5-8.png';
-import ak14 from '../imgs/work/ak_step5-9.png';
-import ak15 from '../imgs/work/ak_step5-10.png';
-import ak16 from '../imgs/work/ak_step5-11.png';
-import ak17 from '../imgs/work/ak_step5-12.png';
-import ak18 from '../imgs/work/ak_step5-13.png';
-import ak19 from '../imgs/work/ak_step5-14.png';
-import ak20 from '../imgs/work/ak_step5-15.png';
-import ak21 from '../imgs/work/ak_step5-16.png';
-import ak22 from '../imgs/work/ak_step5-17.png';
-import ak23 from '../imgs/work/ak_step5-18.png';
-import ak24 from '../imgs/work/ak_step5-19.png';
-import rb1 from '../imgs/work/rabbit_step1-1.png';
-import rb2 from '../imgs/work/rabbit_step1-2.png';
-import rb3 from '../imgs/work/rabbit_step3.png';
-import rb4 from '../imgs/work/rabbit_step4.png';
-import rb5 from '../imgs/work/rabbit_step5-1.png';
-import rb6 from '../imgs/work/rabbit_step5-2.png';
-import rb7 from '../imgs/work/rabbit_step5-3.png';
-import rb8 from '../imgs/work/rabbit_step5-4.png';
-import rb9 from '../imgs/work/rabbit_step5-5.png';
-import ms1 from '../imgs/work/ms_step1-1.png';
-import ms2 from '../imgs/work/ms_step1-2.png';
-import ms3 from '../imgs/work/ms_step2.png';
-import ms4 from '../imgs/work/ms_step3-1.png';
-import ms5 from '../imgs/work/ms_step3-2.png';
-import ms6 from '../imgs/work/ms_step3-3.png';
-import ms7 from '../imgs/work/ms_step3-4.png';
-import ms8 from '../imgs/work/ms_step3-5.png';
-import ms9 from '../imgs/work/ms_step3-6.png';
-import ms10 from '../imgs/work/ms_step3-7.png';
-import ms11 from '../imgs/work/ms_step3-8.png';
-import ms12 from '../imgs/work/ms_step3-9.png';
-import ms13 from '../imgs/work/ms_step3-10.png';
-import ms14 from '../imgs/work/ms_step3-11.png';
-import ms15 from '../imgs/work/ms_step3-12.png';
-import ms16 from '../imgs/work/ms_step3-13.png';
-import ms17 from '../imgs/work/ms_step3-14.png';
-import ms18 from '../imgs/work/ms_step3-15.png';
-import ms19 from '../imgs/work/ms_step3-16.png';
-import ms20 from '../imgs/work/ms_step3-17.png';
-import akVideo1 from '../imgs/work/ak_video1.mov';
-import akVideo2 from '../imgs/work/ak_video2.mov';
-import msVideo from '../imgs/work/ms_video.mp4';
+import ak1 from '../imgs/work/uiux/ak_step1-1.png';
+import ak2 from '../imgs/work/uiux/ak_step1-2.png';
+import ak3 from '../imgs/work/uiux/ak_step3.png';
+import ak4 from '../imgs/work/uiux/ak_step4.png';
+import ak5 from '../imgs/work/uiux/ak_step5-0.png';
+import ak7 from '../imgs/work/uiux/ak_step5-2.png';
+import ak8 from '../imgs/work/uiux/ak_step5-3.png';
+import ak9 from '../imgs/work/uiux/ak_step5-4.png';
+import ak10 from '../imgs/work/uiux/ak_step5-5.png';
+import ak11 from '../imgs/work/uiux/ak_step5-6.png';
+import ak12 from '../imgs/work/uiux/ak_step5-7.png';
+import ak13 from '../imgs/work/uiux/ak_step5-8.png';
+import ak14 from '../imgs/work/uiux/ak_step5-9.png';
+import ak15 from '../imgs/work/uiux/ak_step5-10.png';
+import ak16 from '../imgs/work/uiux/ak_step5-11.png';
+import ak17 from '../imgs/work/uiux/ak_step5-12.png';
+import ak18 from '../imgs/work/uiux/ak_step5-13.png';
+import ak19 from '../imgs/work/uiux/ak_step5-14.png';
+import ak20 from '../imgs/work/uiux/ak_step5-15.png';
+import ak21 from '../imgs/work/uiux/ak_step5-16.png';
+import ak22 from '../imgs/work/uiux/ak_step5-17.png';
+import ak23 from '../imgs/work/uiux/ak_step5-18.png';
+import ak24 from '../imgs/work/uiux/ak_step5-19.png';
+import rb1 from '../imgs/work/uiux/rabbit_step1-1.png';
+import rb2 from '../imgs/work/uiux/rabbit_step1-2.png';
+import rb3 from '../imgs/work/uiux/rabbit_step3.png';
+import rb4 from '../imgs/work/uiux/rabbit_step4.png';
+import rb5 from '../imgs/work/uiux/rabbit_step5-1.png';
+import rb6 from '../imgs/work/uiux/rabbit_step5-2.png';
+import rb7 from '../imgs/work/uiux/rabbit_step5-3.png';
+import rb8 from '../imgs/work/uiux/rabbit_step5-4.png';
+import rb9 from '../imgs/work/uiux/rabbit_step5-5.png';
+import ms1 from '../imgs/work/uiux/ms_step1-1.png';
+import ms2 from '../imgs/work/uiux/ms_step1-2.png';
+import ms3 from '../imgs/work/uiux/ms_step2.png';
+import ms4 from '../imgs/work/uiux/ms_step3-1.png';
+import ms5 from '../imgs/work/uiux/ms_step3-2.png';
+import ms6 from '../imgs/work/uiux/ms_step3-3.png';
+import ms7 from '../imgs/work/uiux/ms_step3-4.png';
+import ms8 from '../imgs/work/uiux/ms_step3-5.png';
+import ms9 from '../imgs/work/uiux/ms_step3-6.png';
+import ms10 from '../imgs/work/uiux/ms_step3-7.png';
+import ms11 from '../imgs/work/uiux/ms_step3-8.png';
+import ms12 from '../imgs/work/uiux/ms_step3-9.png';
+import ms13 from '../imgs/work/uiux/ms_step3-10.png';
+import ms14 from '../imgs/work/uiux/ms_step3-11.png';
+import ms15 from '../imgs/work/uiux/ms_step3-12.png';
+import ms16 from '../imgs/work/uiux/ms_step3-13.png';
+import ms17 from '../imgs/work/uiux/ms_step3-14.png';
+import ms18 from '../imgs/work/uiux/ms_step3-15.png';
+import ms19 from '../imgs/work/uiux/ms_step3-16.png';
+import ms20 from '../imgs/work/uiux/ms_step3-17.png';
+import landingRb from '../imgs/work/uiux/landing_rb.png';
+import landingAk from '../imgs/work/uiux/landing_ak.png';
+import landingMs from '../imgs/work/uiux/landing_ms.png';
+import akVideo1 from '../imgs/work/uiux/ak_video1.mov';
+import akVideo2 from '../imgs/work/uiux/ak_video2.mov';
+import msVideo from '../imgs/work/uiux/ms_video.mp4';
 
 const uiuxData = [
     // AK_Jewelry
@@ -60,7 +63,8 @@ const uiuxData = [
         urlName: 'AK_Jewelry',
         mainTitle: 'Andrea Ko Jewelry Design (RWD)',
         subtitle: 'Redesign the website of jewelry design courses.',
-        description: '“Andrea Ko Jewelry Design Website” is mainly for recruiting students. However, the original online presence and the information were lacking. After I talked to Andrea, she told us most website visitors were first-time users, and they came to the website to search the information of jewelry beginner course. Thus, I redesigned the whole website (RWD) to make it more organized and clean, primarily focused on the user flow of the jewelry beginner course.',
+        gallery: landingAk,
+        description: '“Andrea Ko Jewelry Design Website” is mainly for recruiting students. However, the original online presence and the information were lacking. After I talked to Andrea, she told me most website visitors were first-time users, and they came to the website to search the information of jewelry beginner course. Thus, I redesigned the whole website (RWD) to make it more organized and clean, primarily focused on the user flow of the jewelry beginner course.',
         research: [
             {
                 inline: true,
@@ -144,6 +148,7 @@ const uiuxData = [
         urlName: 'TPE_Rabbit_Association',
         mainTitle: 'Taipei Rabbit Saving Association Website (RWD)',
         subtitle: 'Redesign adopted process of the website.',
+        gallery: landingRb,
         description: 'Taipei Rabbit Saving Association is a nonprofit organization that dedicates to save stray rabbits. However, they had a really complicated website. There was too much information without being well organized. Thus, I redesigned one of the vital services, the adopted process, to help them enhance the chance of adoption.',
         research: [
             {
@@ -222,6 +227,7 @@ const uiuxData = [
         urlName: 'Mentorship_App',
         mainTitle: 'Seneca Collage Mentorship App',
         subtitle: 'Design a App for Seneca’s Students to find mentors on the platform.',
+        gallery: landingMs,
         description: 'Seneca Mentorship App is an idea for Seneca students to find mentors and ask questions. It mainly divides into two parts; one is searching mentors the other one is a discussion board. This project was done by two students and me in Seneca.',
         research: [
             {

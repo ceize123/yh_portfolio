@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route, useLocation } from "react-route
 import Navbar from './components/Navbar.js';
 import Wrapper from "./components/Wrapper.js";
 import LandingPage from "./components/pages/LandingPage.js";
-import Uiux from "./components/pages/uiux.js";
+import Uiux from "./components/pages/Uiux.js";
+import Graphic from "./components/pages/Graphic.js";
 import Footer from "./components/Footer.js";
 
 const NoMatch = ({ location }) => (
@@ -35,6 +36,7 @@ function App() {
                     <Route exact path='/' component={LandingPage} />
                     {/* <Route path='/uiux' component={Jewelry} /> */}
                     <Route exact path='/works/uiux/:title' component={Uiux} />
+                    <Route exact path='/works/graphic/:title' component={Graphic} />
                     <Route component={NoMatch} />
                 </Switch>
                 <Footer />

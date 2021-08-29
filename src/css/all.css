@@ -6,10 +6,11 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;900&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
+  --bs-purple: #A794C6;
   --bs-pink: #d63384;
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
@@ -10754,6 +10755,7 @@ html {
 body {
   color: #2C2618;
   font-family: "Barlow Semi Condensed", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -11183,6 +11185,63 @@ header {
 .stepSection .workTogether h3:last-of-type, .stepSection .workTogether .h3:last-of-type {
   color: #94401E;
   margin-bottom: 0;
+}
+
+.graphic {
+  width: 100%;
+  background-color: #A794C6;
+  padding-top: 173px;
+  font-family: "Mulish", sans-serif;
+  color: #FFF;
+}
+.graphic .graphicHero {
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
+.graphic .graphicHero h2, .graphic .graphicHero .h2 {
+  font-size: 48px;
+}
+.graphic .graphicHero .friendsLogo {
+  position: relative;
+}
+.graphic .graphicHero .friendsLogo .door {
+  animation-name: enlarge;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-delay: 0.3s;
+}
+.graphic .graphicHero .friendsLogo .title {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 89px auto 0 auto;
+  animation-name: enlarge;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes enlarge {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.graphic .graphicHero .introduction {
+  margin: 200px 176px 0;
+}
+.graphic .graphicHero .introduction .textSection {
+  margin-top: 58px;
+}
+.graphic .graphicHero .introduction .textSection img {
+  display: block;
+  margin: 50px auto 0;
+}
+.graphic .graphicHero .introduction .textSection p {
+  font-size: 18px;
+  margin-top: 25px;
 }
 
 footer {

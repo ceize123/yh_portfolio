@@ -11,11 +11,14 @@ import { Contact } from '../general.js';
 function WorkSection() {
     
     const dataAry = [uiuxData, graphicData, codingData];
+    const url = ["uiux", "graphic", "coding"];
     // Work section selection event
     let [selection, setSelection] = useState(0);
     const [isActive, setActive] = useState("false");
     
     const slide = (event) => {
+
+        
 
         // --- useful ---
         // let preSelection = event.target.getAttribute('data-key'); 
@@ -75,8 +78,8 @@ function WorkSection() {
                     </div> */}
                     {dataAry[selection].map((item, key) => (
                         <div className={isActive ? "works slidesIn" : "d-none"} key={key}>
-                            <Link to={`/works/uiux/${item.urlName}`}>
-                                <img src="https://via.placeholder.com/515x309" alt="AK_Jewlery" />
+                            <Link to={`/works/${url[selection]}/${item.urlName}`}>
+                                <img src={item.gallery} alt="AK_Jewlery" />
                             </Link>
                             <h4>{item.mainTitle}</h4>
                             <p>{item.subtitle}</p>
