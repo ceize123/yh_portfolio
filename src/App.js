@@ -31,12 +31,13 @@ function App() {
                     <Route exact path='/' component={LandingPage} />
                     <Route path='/works/uiux/:title' component={Uiux} />
                     <Route path='/works/graphic/Icon_Guide' component={IconGuide} />
-                    <Route path='/works/graphic/Magazine_Design' component={Magazine} />
-                    <Route component={NoMatch} />
                 </Switch>
-                <Footer />
             </ScrollToTop>
             </Wrapper>
+                
+            <Switch>
+                <Route path='/works/graphic/Magazine_Design' component={Magazine} />
+            </Switch>
         </Router>
         </>
     );

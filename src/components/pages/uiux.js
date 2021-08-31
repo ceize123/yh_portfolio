@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
 import { Contact, WorkTogether } from '../general.js';
+import Footer from "../Footer.js";
 
 function SVGStar() {
     return (
@@ -228,6 +229,7 @@ function Uiux() {
                 </div>
             ))}
             <Contact />
+            <Footer />
         </main>
     );
 }

@@ -6,6 +6,7 @@ import uiuxData from '../uiuxData';
 import graphicData from '../graphicData';
 import codingData from '../codingData';
 import { Contact } from '../general.js';
+import Footer from "../Footer.js";
 
 
 function WorkSection() {
@@ -17,8 +18,6 @@ function WorkSection() {
     const [isActive, setActive] = useState("false");
     
     const slide = (event) => {
-
-        
 
         // --- useful ---
         // let preSelection = event.target.getAttribute('data-key'); 
@@ -78,8 +77,8 @@ function WorkSection() {
                     </div> */}
                     {dataAry[selection].map((item, key) => (
                         <div className={isActive ? "works slidesIn" : "d-none"} key={key}>
-                            <Link to={`/works/${url[selection]}/${item.urlName}`}>
-                                <img src={item.gallery} alt={item.urlName} />
+                            <Link to={`/works/${url[selection]}/${item.urlName}`} >
+                                <img src={item.gallery} alt={item.urlName}/>
                             </Link>
                             <h4>{item.mainTitle}</h4>
                             <p>{item.subtitle}</p>
@@ -92,6 +91,14 @@ function WorkSection() {
 }
 
 function LandingPage() { 
+
+    function changeColor() {
+        let nav = document.querySelectorAll("header a");
+        nav.forEach(item => {
+            item.style.color = "#94401E"
+        })
+    }
+    changeColor()
 
     return (
         <main>
@@ -168,6 +175,7 @@ function LandingPage() {
             </section>
 
             <Contact />
+            <Footer />
         </main>
     );
 }

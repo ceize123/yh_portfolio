@@ -6,6 +6,7 @@ import titleText from '../../imgs/work/graphic/title_text.svg';
 import titleText_sm from '../../imgs/work/graphic/title_text_small.png';
 import cover from '../../imgs/work/graphic/magazine_cover.png';
 import introduction from '../../imgs/work/graphic/introduction.png';
+import Footer from "../Footer.js";
 
 function Characters(props) {
     const { content } = props;
@@ -35,6 +36,13 @@ function SectionWithoutCharacters(props) {
 }
 
 function IconGuide() { 
+    function changeColor() {
+        let nav = document.querySelectorAll("header a");
+        nav.forEach(item => {
+            item.style.color = "#FFF"
+        })
+    }
+    changeColor()
 
     return (
         <main className="iconGuide">
@@ -70,6 +78,7 @@ function IconGuide() {
             ))}
             <WorkTogether />
             <Contact />
+            <Footer />
         </main>
     )
 }
