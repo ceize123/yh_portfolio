@@ -79,7 +79,7 @@ function WorkSection() {
                     {dataAry[selection].map((item, key) => (
                         <div className={isActive ? "works slidesIn" : "d-none"} key={key}>
                             <Link to={`/works/${url[selection]}/${item.urlName}`}>
-                                <img src={item.gallery} alt="AK_Jewlery" />
+                                <img src={item.gallery} alt={item.urlName} />
                             </Link>
                             <h4>{item.mainTitle}</h4>
                             <p>{item.subtitle}</p>

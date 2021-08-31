@@ -8,7 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;900&display=swap");
 :root {
-  --bs-blue: #0d6efd;
+  --bs-blue: #202136;
   --bs-indigo: #6610f2;
   --bs-purple: #A794C6;
   --bs-pink: #d63384;
@@ -10839,6 +10839,19 @@ path {
     bottom: 0;
   }
 }
+article {
+  margin: 0 40px;
+  margin-bottom: 100px;
+}
+
+.workTogether h3, .workTogether .h3 {
+  margin-bottom: 30px;
+}
+.workTogether h3:last-of-type, .workTogether .h3:last-of-type {
+  color: #94401E;
+  margin-bottom: 0;
+}
+
 header {
   position: relative;
 }
@@ -11080,10 +11093,6 @@ header {
   top: calc(100% + 2px);
   z-index: -1;
 }
-.stepSection article {
-  margin: 0 40px;
-  margin-bottom: 100px;
-}
 .stepSection article h3, .stepSection article .h3 {
   margin-bottom: 50px;
 }
@@ -11182,36 +11191,32 @@ header {
 .stepSection .workTogether h3, .stepSection .workTogether .h3 {
   margin-bottom: 30px;
 }
-.stepSection .workTogether h3:last-of-type, .stepSection .workTogether .h3:last-of-type {
-  color: #94401E;
-  margin-bottom: 0;
-}
 
-.graphic {
+.iconGuide {
   width: 100%;
-  background-color: #A794C6;
-  padding-top: 173px;
   font-family: "Mulish", sans-serif;
-  color: #FFF;
 }
-.graphic .graphicHero {
+.iconGuide .iconHero {
+  padding-top: 173px;
   margin-bottom: 100px;
   padding-bottom: 100px;
+  background-color: #A794C6;
+  color: #FFF;
 }
-.graphic .graphicHero h2, .graphic .graphicHero .h2 {
+.iconGuide .iconHero h2, .iconGuide .iconHero .h2 {
   font-size: 48px;
 }
-.graphic .graphicHero .heroImg {
+.iconGuide .iconHero .heroImg {
   position: relative;
 }
-.graphic .graphicHero .heroImg .enlarge {
+.iconGuide .iconHero .heroImg .enlarge {
   animation-name: enlarge;
   animation-duration: 0.4s;
   animation-iteration-count: 1;
   animation-delay: 0.4s;
   animation-timing-function: linear;
 }
-.graphic .graphicHero .heroImg .title {
+.iconGuide .iconHero .heroImg .title {
   position: absolute;
   left: 0;
   right: 0;
@@ -11226,19 +11231,64 @@ header {
     transform: scale(1);
   }
 }
-.graphic .graphicHero .introduction {
+.iconGuide .iconHero .introduction {
   margin: 200px 176px 0;
 }
-.graphic .graphicHero .introduction .textSection {
+.iconGuide .iconHero .introduction .textSection {
   margin-top: 58px;
 }
-.graphic .graphicHero .introduction .textSection img {
+.iconGuide .iconHero .introduction .textSection img {
   display: block;
   margin: 50px auto 0;
 }
-.graphic .graphicHero .introduction .textSection p {
+.iconGuide .iconHero .introduction .textSection p {
   font-size: 18px;
   margin-top: 25px;
+}
+.iconGuide .features, .iconGuide .characters {
+  position: relative;
+  margin-bottom: 100px;
+  border-left: 46px solid #A794C6;
+  padding-left: 55px;
+}
+.iconGuide .features {
+  padding: 55px 0;
+}
+.iconGuide .features:nth-of-type(4) {
+  border: none;
+  background-color: #12071C;
+}
+.iconGuide .characterText {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.magazine {
+  background-color: #202136;
+  color: #fff;
+}
+.magazine .page {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 47px;
+}
+.magazine .introduction {
+  width: 513px;
+  height: 132px;
+}
+.magazine .introduction .triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 40px 0 0;
+  border-color: #D5A537 transparent transparent transparent;
+}
+.magazine .introduction p {
+  font-size: 18px;
+  width: 467px;
 }
 
 footer {

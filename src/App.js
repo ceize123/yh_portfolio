@@ -5,7 +5,8 @@ import Navbar from './components/Navbar.js';
 import Wrapper from "./components/Wrapper.js";
 import LandingPage from "./components/pages/LandingPage.js";
 import Uiux from "./components/pages/Uiux.js";
-import Graphic from "./components/pages/Graphic.js";
+import IconGuide from "./components/pages/IconGuide.js";
+import Magazine from "./components/pages/Magazine.js";
 import Footer from "./components/Footer.js";
 import ScrollToTop from "./components/general.js";
 
@@ -22,14 +23,15 @@ function App() {
     return (
         <>
         <Router basename={process.env.PUBLIC_URL}>
-            <Wrapper>
+            {/* There's horizontal scroll page, can't use wrapper here */}
+            <Wrapper> 
             <ScrollToTop>
                 <Navbar />
                 <Switch>
                     <Route exact path='/' component={LandingPage} />
-                    {/* <Route path='/uiux' component={Jewelry} /> */}
                     <Route path='/works/uiux/:title' component={Uiux} />
-                    <Route path='/works/graphic/:title' component={Graphic} />
+                    <Route path='/works/graphic/Icon_Guide' component={IconGuide} />
+                    <Route path='/works/graphic/Magazine_Design' component={Magazine} />
                     <Route component={NoMatch} />
                 </Switch>
                 <Footer />

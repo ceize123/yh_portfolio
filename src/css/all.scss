@@ -98,6 +98,22 @@ path {
     }
 }
 
+article {
+    margin: 0 40px;
+    margin-bottom: 100px;
+}
+
+.workTogether {
+    h3 {
+        margin-bottom: 30px;
+    }
+
+    h3:last-of-type {
+        color: $secondary;
+        margin-bottom: 0;
+    }
+}
+
 // general ends
 
 // navbar starst†
@@ -404,8 +420,6 @@ header {
     }
 
     article {
-        margin: 0 40px;
-        margin-bottom: 100px;
         h3 {
             margin-bottom: 50px;
         }
@@ -532,30 +546,26 @@ header {
         h3 {
             margin-bottom: 30px;
         }
-
-        h3:last-of-type {
-            color: $secondary;
-            margin-bottom: 0;
-        }
     }
 }
 
 // step section ends
-
 // -------- work page (uiux) --------
 
-// -------- work page (graphic) --------
-// graphic hero starts
-.graphic {
-    width: 100%;
-    background-color: $purple;
-    padding-top: 173px;
-    font-family: 'Mulish', sans-serif;
-    color: #FFF;
 
-    .graphicHero {
+// -------- work page (graphic) --------
+// Icon guide starts
+.iconGuide {
+    width: 100%;
+    font-family: 'Mulish', sans-serif;
+    
+    // graphic hero starts
+    .iconHero {
+        padding-top: 173px;
         margin-bottom: 100px;
         padding-bottom: 100px;
+        background-color: $purple;
+        color: #FFF;
         h2 {
             font-size: 48px;
         }
@@ -606,9 +616,67 @@ header {
             }
         }
     }
+
+    // graphic hero ends
+
+    .features, .characters {
+        position: relative;
+        margin-bottom: 100px;
+        border-left: 46px solid $purple;
+        padding-left: 55px;
+    }
+
+    .features {
+        padding: 55px 0;
+    }
+
+    .features:nth-of-type(4) {
+        border: none;
+        background-color: #12071C;
+    }
+
+    .characterText {
+        position: absolute;
+        left: -40px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
-// graphic hero ends
+// Icon guide ends
+
+// Magazine starts
+.magazine {
+    background-color: $blue;
+    color: #fff;
+
+    .page {
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        padding-top: 47px;
+    }
+
+    .introduction {
+        width: 513px;
+        height: 132px;
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 40px 40px 0 0;
+            border-color:#D5A537 transparent transparent transparent;
+        }
+
+        p {
+            font-size: 18px;
+            width:467px;
+        }
+    }
+}
+
+// Magazine ends
 
 // -------- work page (graphic) --------
 

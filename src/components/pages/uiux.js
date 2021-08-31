@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
-import { Contact } from '../general.js';
+import { Contact, WorkTogether } from '../general.js';
 
 function SVGStar() {
     return (
@@ -222,10 +222,7 @@ function Uiux() {
                                     </svg>
                                 </span>
                             </div>
-                            <article className="workTogether">
-                                <h3>Thank you for viewing whole project, so the next step is...</h3>
-                                <h3>Let’s Work Together!!</h3>
-                            </article>
+                            <WorkTogether />
                         </div>
                     </section>
                 </div>

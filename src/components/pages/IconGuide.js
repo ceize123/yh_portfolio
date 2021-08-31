@@ -1,29 +1,46 @@
-import React, {useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import graphicData from '../graphicData';
-import { Contact } from '../general.js';
+import { Contact, WorkTogether } from '../general.js';
 import door from '../../imgs/work/graphic/door.png';
 import titleText from '../../imgs/work/graphic/title_text.svg';
 import titleText_sm from '../../imgs/work/graphic/title_text_small.png';
 import cover from '../../imgs/work/graphic/magazine_cover.png';
 import introduction from '../../imgs/work/graphic/introduction.png';
 
-function Graphic() { 
-    const { title } = useParams();
+function Characters(props) {
+    const { content } = props;
+    return (
+        <>
+            {content.map((item, key) => (
+                <section key={key} className="characters text-center">
+                    <img src={item[0]} alt={item} />
+                    <img className="characterText" src={item[1]} alt={item} />
+                </section>
+            ))}
+        </>
+    )
+}
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         const friends = document.querySelector(".title");
-    //         friends.classList.add("d-inline");
-    //     }, 400);
-    //     return () => clearTimeout(timer);
-    // }, []);
+function SectionWithoutCharacters(props) {
+    const { content } = props;
+    return (
+        <>
+            {content.map((item, key) => (
+                <section key={key} className="features text-center">
+                    <img src={item} alt={item}/>
+                </section>
+            ))}
+        </>
+    )
+}
+
+function IconGuide() { 
 
     return (
-        <main>
-            {graphicData.filter(content => content.urlName === title).map((content, key) => (
-                <div key={key} className="graphic">
-                    <div className="graphicHero text-center">
+        <main className="iconGuide">
+            {graphicData.filter(content => content.urlName === "Icon_Guide").map((content, key) => (
+                <section key={key}>
+                    <section className="iconHero text-center">
                         <div className="heroImg">
                             <img className="door enlarge" src={door} alt="door"/>
                             <img className="title enlarge" src={titleText} alt="FRIENDS"/>
@@ -46,12 +63,15 @@ function Graphic() {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </section>
+                    <SectionWithoutCharacters content={content.sectionWithoutChar} />
+                    <Characters content={content.characters} />
+                </section>
             ))}
+            <WorkTogether />
             <Contact />
         </main>
     )
 }
 
-export default Graphic;
+export default IconGuide;
