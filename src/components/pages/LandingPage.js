@@ -59,7 +59,7 @@ function WorkSection() {
             <div className="col gallery">
                 {/* 要用map拉資料，所有資訊存到object裡面(landing page也是)。
                     參考blog.js */}
-                <div className="d-flex flex-column justify-content-center">
+                <div className="d-flex flex-column justify-content-center align-items-center">
                     {/* <div className="works">
                         <Link to={`/works/uiux/${uiuxData[0].urlName}`}><img src="https://via.placeholder.com/515x309" alt="AK_Jewlery" /></Link>
                         <h4>Andrea Ko Jewelry Design Website</h4>

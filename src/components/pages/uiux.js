@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
+import dot from '../../imgs/dot.png';
 import { Contact, WorkTogether } from '../general.js';
 import Footer from "../Footer.js";
 
@@ -35,10 +36,13 @@ function Research(props) {
             <div className={item.inline === true ? 'row researchSection': 'd-block researchSection'} key={key}>
                 <div className={item.inline === true ? 'col-lg-5': 'textSection'}>
                     <h4>{item.title}</h4>
-                    <p>{item.paragraph}</p>
+                    {item.paragraph.length === 1 ? 
+                        <p>{item.paragraph}</p> :
+                        <List content={item.paragraph}/>
+                    }
                 </div>
                 <div className={item.inline === true ? 'col-lg-7 text-center': ''}>
-                    <img src={item.img} alt={item.title}/>
+                    <img className="zoomIn" src={item.img} alt={item.title}/>
                 </div>
             </div>
         ))}
@@ -46,9 +50,14 @@ function Research(props) {
     )
 }
 
-function PPAnalysis(props) {
+function List(props) {
     const { content } = props;
-    const list = content.map((item, key) => (<li key={key}>{item}</li>))
+    const list = content.map((item, key) => (
+        <div className="d-flex align-items-start">
+            <img className="dot" src={dot} alt="dot" />
+            <li key={key}>{item}</li>
+        </div>
+    ))
 
     return (
         <ul>
@@ -65,7 +74,7 @@ function InformationArchitecture(props) {
         <div className="textSection">
             <p>{content.paragraph}</p>
         </div>
-        <img src={content.img} alt="InformationArchitecture" />
+        <img className="zoomIn" src={content.img} alt="InformationArchitecture" />
         </>
     )
 }
@@ -77,21 +86,22 @@ function Mockup(props) {
         <>
            {content.map((item, key) => ( // can't use forEach, it can't display properly
                 <div className={item.inline === true ? 'd-flex mockupSection': 'd-block mockupSection'} key={key}>
-                    <div className="textSection">
+                    <div className="textSection w-100">
                         <h4>{item.title}</h4>
                         {/* display paragraph only if it exists */}
                         {item.paragraph !== undefined ? item.paragraph.map((paragraphs, idx, ary) => (
                             <>
-                                <p>{paragraphs}</p>
+                                <p className={item.frame !== undefined ? "mobileOverview" : ""}>{paragraphs}</p>
                                 { (ary.length > 1) && (idx + 1 !== ary.length) ? <br></br> : ""}
                             </>
                         )) : ""}
-                    </div>
+                   </div>
+                   
                     <div className={item.video !== undefined ? 'd-block videoSection' : 'd-none'}>
                         <img className={item.frame !== undefined ? 'd-inline' : 'd-none'} src={item.frame} alt="frame" />
 
-                        <video className={item.frame !== undefined ? 'mobileVideo' : 'desktopVideo'} controls>
-                            <source src={item.video} type="video/mp4" />
+                        <video className={item.frame !== undefined ? 'mobileVideo' : 'desktopVideo'} autoPlay muted>
+                            <source src={item.video} type="video/mp4"/>
                         </video>
                        {item.backgroundColor !== undefined ? <div className={`mockupBgc ${item.backgroundColor}`}></div> : ""} 
                     </div>
@@ -115,10 +125,14 @@ function Uiux() {
     let stepCount = 1;
 
     const handleScroll = () => {
+        
         const star = document.querySelectorAll(".star");
         const spot = document.querySelectorAll(".star path");
         const svg = document.querySelectorAll(".star svg");
         const primaryLine = document.querySelectorAll(".star .primaryLine");
+        const videoSection = document.querySelector(".videoSection");
+        const video = document.querySelector(".videoSection video");
+
         let sectionIndex = 0;
         let sectionTop = star[0].getBoundingClientRect().top;
         
@@ -150,6 +164,12 @@ function Uiux() {
             spot[sectionIndex].style.fill = "#E5E5E5";
             svg[sectionIndex].classList.remove("scale");
         }
+
+        // if (videoSection.getBoundingClientRect().top <= 400) {
+        //     video.setAttribute("autoPlay", "")
+        //     video.setAttribute("muted", "")
+        //     console.log(videoSection.getBoundingClientRect().top)
+        // }
     };
 
     useEffect(() => {
@@ -184,7 +204,7 @@ function Uiux() {
                                 <SVGStar />
                                 <article>
                                     <h3>Step {stepCount++}: Pain Point Analysis</h3>
-                                    <PPAnalysis content={content.ppAnalysis} />
+                                    <List content={content.ppAnalysis} />
                                 </article>
                             </div> : ""}
                         
@@ -202,7 +222,7 @@ function Uiux() {
                                 <SVGStar />
                                 <article>
                                     <h3>Step {stepCount++}: Wireframe</h3>
-                                    <img src={content.wireframe} alt="wireframe"/>
+                                    <img className="zoomIn" src={content.wireframe} alt="wireframe"/>
                                 </article>
                             </div> : ""}
                         

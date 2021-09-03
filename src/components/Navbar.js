@@ -5,11 +5,15 @@ function Navbar() {
     return (
         <header>
             <div className="nav d-block">
-                <ul className="d-flex justify-content-end mb-0">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">Resume</Link></li>
-                    <li><Link to="/work">Work</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                <ul className="d-flex justify-content-between mb-0">
+                    <div>
+                        <li><Link to="/">Home</Link></li>
+                    </div>
+                    <div className="d-flex">
+                        <li><Link to="/about">Resume</Link></li>
+                        <li><Link to="/work">Work</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                    </div>
                 </ul>
             </div>
         </header>

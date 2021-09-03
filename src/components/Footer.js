@@ -1,4 +1,5 @@
 import React from 'react';
+import backToTop from '../imgs/backToTop.png';
 
 function Footer() {
     const scrollTop = () => {
@@ -22,7 +23,9 @@ function Footer() {
                     <li>Let’s be Friends: Sure! Why Not!</li>
                 </ul>
             </div>
-            <div className="backToTop" onClick={scrollTop}></div>
+            <div className="backToTop" onClick={scrollTop}>
+                <img src={backToTop} alt="Back to top"/>
+            </div>
         </footer>
     );
 }

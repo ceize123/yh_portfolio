@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import graphicData from '../graphicData';
 import { Contact, WorkTogether } from '../general.js';
+import backToTop from '../../imgs/backToTop.png';
 
 function Pages(props) {
     const { content } = props;
@@ -8,9 +9,9 @@ function Pages(props) {
     return (
         <>
             {content.map((item, key) => (
-                <section key={key} className="page d-flex align-items-center justify-content-center">
-                    <div className="jolin">
-                        <img src={item} alt={item}/>
+                <section key={key} className="page d-flex justify-content-center">
+                    <div className={`jolin jolin${key}`}>
+                        {/* <img src={item} alt={item}/> */}
                     </div>
                 </section>
             ))}
@@ -61,7 +62,9 @@ function FooterForMagazine() {
                     <li>Let’s be Friends: Sure! Why Not!</li>
                 </ul>
             </div>
-            <div className="backToTop" onClick={scrollTop}></div>
+            <div className="backToTop" onClick={scrollTop}>
+                <img src={backToTop} alt="Back to top"/>
+            </div>
         </footer>
     );
 }
@@ -84,7 +87,6 @@ function Magazine() {
             }
             scroll = 0
         }
-        console.log(page)
         changeColor(page)
         
         horizontalLength.style.transform = 'translateX(-' + (page * 100) + '%)'

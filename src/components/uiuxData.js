@@ -69,13 +69,13 @@ const uiuxData = [
             {
                 inline: true,
                 title: 'Persona',
-                paragraph: 'The user is a 26 years old woman called Christine. She lives in a wealthy economic condition. Her family business is related to the jewelry industry, so she is familiar with the jewelry industry. Christine is planning to start her jewelry brand. That is why she wants to take some jewelry courses, and then she can design the product by herself.',
+                paragraph: ['The user is a 26 years old woman called Christine. She lives in a wealthy economic condition. Her family business is related to the jewelry industry, so she is familiar with the jewelry industry. Christine is planning to start her jewelry brand. That is why she wants to take some jewelry courses, and then she can design the product by herself.'],
                 img: ak1,
             },
             {
                 inline: true,
                 title: 'User Journey Map',
-                paragraph: 'I invited a person who was interested in Andrea Ko\'s jewelry design course to use the original website and speak out what she felt while browsing the website.',
+                paragraph: ['I invited a person who was interested in Andrea Ko\'s jewelry design course to use the original website and speak out what she felt while browsing the website.'],
                 img: ak2,
             }
         ],
@@ -94,7 +94,7 @@ const uiuxData = [
                 inline: true,
                 title: 'Overview',
                 paragraph: ['Most users came from Instagram and Facebook to the website, so that mobile phone experience would be significant.',
-                            'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours.Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
+                            'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours. Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
                 frame: ak5,
                 video: akVideo1,
             },
@@ -154,7 +154,7 @@ const uiuxData = [
             {
                 inline: true,
                 title: 'Persona',
-                paragraph: 'The user is a 30 years old woman called Hui-Lin Kao. She works as a purchasing with a good salary. With a stable life, Hui-Lin is planning to adopt a rabbit. Her ideal one is with white fur and red eyes. Therefore, she needs to find an organization she can trust and get clear information about adoption from the website.',
+                paragraph: ['The user is a 30 years old woman called Hui-Lin Kao. She works as a purchasing with a good salary. With a stable life, Hui-Lin is planning to adopt a rabbit. Her ideal one is with white fur and red eyes. Therefore, she needs to find an organization she can trust and get clear information about adoption from the website.'],
                 img: rb1,
             },
             {
@@ -233,13 +233,13 @@ const uiuxData = [
             {
                 inline: true,
                 title: 'Empathy Map',
-                paragraph: 'Commonly, students are hard to get the answer efficiently from school. Sometimes they don’t know who to ask for help with their school life. In such conditions, they usually feel nervous, anxious, and angry. ',
+                paragraph: ['Commonly, students are hard to get the answer efficiently from school. Sometimes they don’t know who to ask for help with their school life. In such conditions, they usually feel nervous, anxious, and angry.'],
                 img: ms1,
             },
             {
                 inline: true,
                 title: 'Six Hats',
-                paragraph: 'Through the app, students will find the answer quickly. Nevertheless, there are still some potential challenges, such as lacking mentors, unclear information, etc. However, if the app had been well organized, it could be beneficial for students.',
+                paragraph: ['Through the app, students will find the answer quickly. Nevertheless, there are still some potential challenges, such as lacking mentors, unclear information, etc. However, if the app had been well organized, it could be beneficial for students.'],
                 img: ms2,
             }
         ],

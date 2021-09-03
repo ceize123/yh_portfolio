@@ -152,11 +152,12 @@ header {
     margin-bottom: 50px;
 
     > div {
-        margin-top: 66px;
+        margin-top: 131px;
     }
 
     .description {
         width: 551px;
+        margin-top: 85px;
         margin-left: 46px;
         
         h1 {
@@ -201,7 +202,7 @@ header {
     a {
         margin-top: 36px;
         font-size: 14px;
-        color: $info;
+        color: $secondary;
     }
 }
 
@@ -437,17 +438,27 @@ header {
             letter-spacing: 0.03em;
         }
 
-        li {
-            font-size: 24px;
+        ul {
+            padding: 0;
         }
 
-        img {
+        li {
+            display: inline;
+        }
+
+        .dot {
+            margin-top: 10px;
+            margin-right: 6px;
+        }
+        
+        .zoomIn {
             position: relative;
             transition-duration: 0.3s;
         }
 
-        img:hover {
+        .zoomIn:hover {
             transform: scale(1.05);
+            cursor: zoom-in;
         }
 
         .researchSection:first-of-type {
@@ -460,6 +471,10 @@ header {
 
         .mockupSection {
             margin-bottom: 100px;
+
+            .mobileOverview {
+                width: 350px;
+            }
 
             .videoSection {
                 position: relative;
@@ -481,10 +496,10 @@ header {
                 .mobileVideo {
                     position: absolute;
                     border: 1px solid #ccc;
-                    width: 200px;
-                    height: 363px;
-                    top: 55px;
-                    left: 67px;   
+                    width: 206px;
+                    height: 365px;
+                    top: 60px;
+                    left: 15px;   
                 }
 
                 .desktopVideo {
@@ -508,6 +523,7 @@ header {
 
                 img:hover {
                     transform: scale(1);
+                    cursor: default;
                 }
             }
 
@@ -650,6 +666,17 @@ header {
 
     .element-wrapper {
         transition-duration: 0.7s;
+
+        footer {
+            padding: 0;
+
+            .backToTop {
+                img {
+
+                    transform: rotate(-90deg);
+                }
+            }
+        }
     }
 
     .magazine {
@@ -660,7 +687,6 @@ header {
             width: 100vw;
             height: 100vh;
             box-sizing: border-box;
-            padding-top: 47px;
             flex-shrink: 0;
         }
     
@@ -680,6 +706,32 @@ header {
                 font-size: 18px;
                 width:467px;
             }
+        }
+
+        .jolin {
+            max-width: 1148px;
+            max-height: 742px;
+            width: 100%;
+            height: 100%;
+            margin-top: 84px;
+        }
+
+        .jolin0 {
+            background-image: url(../imgs/work/graphic/musical_magazine.png)
+        }
+
+        .jolin1 {
+            background-image: url(../imgs/work/graphic/musical_magazine2.png)
+        }
+
+        .jolin2 {
+            background-image: url(../imgs/work/graphic/musical_magazine3.png)
+        }
+
+        .jolin0, .jolin1, .jolin2 {
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
     }
 
@@ -732,10 +784,6 @@ footer {
         position: absolute;
         bottom: 95px;
         right: 55px;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: $primary; 
     }
 
     .backToTop:hover {
