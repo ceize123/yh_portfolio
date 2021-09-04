@@ -10884,6 +10884,15 @@ header {
 .nav li:last-child {
   margin-right: 50px;
 }
+.nav .hamburger {
+  margin-right: 25px;
+}
+.nav .hamburger:hover {
+  cursor: pointer;
+}
+.nav .hamburger.open {
+  background-color: #fff;
+}
 
 .hero {
   padding-top: 79px;
@@ -10916,7 +10925,50 @@ header {
 @media only screen and (max-width: 1200px) {
   .hero {
     height: 85vw;
-    min-height: 752px;
+    min-height: 600px;
+  }
+  .hero > div {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hero {
+    position: relative;
+    background-size: cover;
+  }
+  .hero .description {
+    z-index: 1;
+    max-width: 50vw;
+    margin-left: 0;
+    margin-top: 148px;
+  }
+  .hero .description h1, .hero .description .h1 {
+    font-size: 48px;
+  }
+  .hero .description h4, .hero .description .h4 {
+    margin-bottom: 10px;
+  }
+  .hero .description h4, .hero .description .h4, .hero .description p {
+    font-size: 1rem;
+    padding-left: 0;
+  }
+  .hero img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 73px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .hero {
+    background-image: url("../imgs/heroImgMobile.svg");
+    height: 200vw;
+    margin-bottom: 0;
+  }
+  .hero .description {
+    max-width: 100vw;
+    width: 260px;
   }
 }
 .skillSection {
@@ -10935,6 +10987,7 @@ header {
 }
 .skillSection .skills li {
   margin-top: 10px;
+  letter-spacing: 0.03em;
 }
 .skillSection a {
   margin-top: 36px;
@@ -10947,7 +11000,7 @@ header {
     margin-bottom: 100px;
   }
   .skillSection .skills {
-    width: 188px;
+    width: 190px;
     margin: auto;
   }
   .skillSection .skills:not(:last-of-type) {
@@ -10963,14 +11016,22 @@ header {
 .workSection {
   position: relative;
   margin-bottom: 150px;
+  max-width: 100vw;
 }
 .workSection .workSectionBgc {
   position: absolute;
   top: -314px;
 }
+@media only screen and (max-width: 576px) {
+  .workSection .workSectionBgc {
+    position: absolute;
+    top: -100px;
+  }
+}
 .workSection .workCat {
   z-index: 1;
   margin-top: -50px;
+  max-width: 100vw;
 }
 .workSection .workCat .selection {
   animation-name: selection;
@@ -11033,9 +11094,13 @@ header {
 @media only screen and (max-width: 992px) {
   .workSection .workCat {
     margin-top: 0;
+    padding: 0;
   }
   .workSection .workCat h3, .workSection .workCat .h3 {
     margin-bottom: 30px;
+  }
+  .workSection .workCat button {
+    transition-duration: 0.3s;
   }
   .workSection .workCat button:not(:last-of-type) {
     margin-right: 5px;
@@ -11044,6 +11109,7 @@ header {
 .workSection .gallery {
   overflow: hidden;
   height: 1189px;
+  max-width: 100vw;
 }
 .workSection .gallery > div {
   position: relative;
@@ -11082,8 +11148,9 @@ header {
 @media only screen and (max-width: 992px) {
   .workSection .gallery {
     height: 100%;
+    padding: 0;
   }
-  .workSection .gallery .works img, .workSection .gallery .works p {
+  .workSection .gallery .works img, .workSection .gallery .works h4, .workSection .gallery .works .h4, .workSection .gallery .works p {
     max-width: 84vw;
   }
 }
@@ -11420,6 +11487,7 @@ footer p {
 footer ul {
   padding-left: 5px;
   margin: 0;
+  margin-top: 15px;
 }
 footer ul li {
   letter-spacing: 0.03em;
@@ -11438,6 +11506,22 @@ footer .backToTop {
 }
 footer .backToTop:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    padding-bottom: 60px;
+  }
+  footer .introduction {
+    background-color: #CABB9E;
+    padding: 25px 0;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  footer .backToTop {
+    bottom: 20px;
+    right: 20px;
+  }
 }
 
 /*# sourceMappingURL=all.css.map */

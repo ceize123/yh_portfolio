@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import workSectionImg from '../../imgs/workSectionImg.svg';
+import workSectionImgMobile from '../../imgs/workSectionImgMobile.svg';
 import portrait from '../../imgs/portrait.svg';
+import portraitMobile from '../../imgs/portraitMobile.svg';
 import uiuxData from '../uiuxData';
 import graphicData from '../graphicData';
 import codingData from '../codingData';
@@ -27,6 +29,22 @@ function WorkSection() {
         setTimeout(function(){ setActive("false"); }, 100);
     }
 
+    const mobileSlide = () => {
+        // --- change background color ---
+        let btnSelected = document.querySelectorAll(".workCat button")
+        btnSelected.forEach((item, idx) => {
+            if (idx === selection) {
+                item.style.backgroundColor = '#94401E'
+            } else {
+                item.style.backgroundColor = '#AD8255'
+            }
+        })
+
+        // --- toggle slide animation ---
+        setActive(!isActive);
+        setTimeout(function(){ setActive("false"); }, 100);
+    }
+
     return (
         <>
             <div className="col-12 col-lg-5 col-xl-6 align-self-center text-center workCat">
@@ -36,17 +54,17 @@ function WorkSection() {
                     <button
                         onClick={() => {
                         setSelection(selection = 0);
-                        slide();
+                        mobileSlide();
                     }}>UI/UX Design</button>
                     <button
                         onClick={() => {
                         setSelection(selection = 1);
-                        slide();
+                        mobileSlide();
                     }}>Graphic Design</button>
                     <button
                         onClick={() => {
                         setSelection(selection = 2);
-                        slide();
+                        mobileSlide();
                     }}>Code</button>
                 </div>
                 {/* desktop text */}
@@ -155,7 +173,7 @@ function LandingPage() {
                         </p>
                     </div>
                     <div>
-                        <img src={portrait} alt="Portrait" />
+                        <img src={windowWidth >= 576 ? portrait : portraitMobile} alt="Portrait" />
                     </div>
                 </div>
             </section>
@@ -209,7 +227,7 @@ function LandingPage() {
             </section>
 
             <section className="workSection">
-                <img className="workSectionBgc" src={workSectionImg} alt="WorkSectionImg" />
+                <img className="workSectionBgc" src={windowWidth >= 576 ? workSectionImg : workSectionImgMobile} alt="WorkSectionImg" />
                 <div className="row justify-content-center">
                     <WorkSection />
                 </div>
