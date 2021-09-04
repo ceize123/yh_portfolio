@@ -10762,6 +10762,11 @@ body {
   padding: 0;
 }
 
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
 h1, .h1 {
   font-weight: bold;
   color: #94401E;
@@ -10786,6 +10791,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
 a {
   text-decoration: none;
   color: #94401E;
+}
+
+button {
+  border: 2px solid #94401E;
+  background-color: #AD8255;
+  color: #fff;
+  font-size: 16px;
+  padding: 11px 0;
+  width: 112px;
+  margin-bottom: 50px;
+  border-radius: 5px;
 }
 
 path {
@@ -10897,6 +10913,12 @@ header {
   margin-bottom: 15px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .hero {
+    height: 85vw;
+    min-height: 752px;
+  }
+}
 .skillSection {
   margin-bottom: 150px;
 }
@@ -10920,6 +10942,24 @@ header {
   color: #94401E;
 }
 
+@media only screen and (max-width: 768px) {
+  .skillSection {
+    margin-bottom: 100px;
+  }
+  .skillSection .skills {
+    width: 188px;
+    margin: auto;
+  }
+  .skillSection .skills:not(:last-of-type) {
+    margin-bottom: 50px;
+  }
+  .skillSection button {
+    width: 153px;
+    background-color: #94401E;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+}
 .workSection {
   position: relative;
   margin-bottom: 150px;
@@ -10990,6 +11030,17 @@ header {
 .workSection .workCat p:hover {
   cursor: pointer;
 }
+@media only screen and (max-width: 992px) {
+  .workSection .workCat {
+    margin-top: 0;
+  }
+  .workSection .workCat h3, .workSection .workCat .h3 {
+    margin-bottom: 30px;
+  }
+  .workSection .workCat button:not(:last-of-type) {
+    margin-right: 5px;
+  }
+}
 .workSection .gallery {
   overflow: hidden;
   height: 1189px;
@@ -11024,6 +11075,17 @@ header {
 }
 .workSection .gallery .works:not(:last-child) p {
   margin-bottom: 35px;
+}
+.workSection .gallery .invisible {
+  opacity: 0;
+}
+@media only screen and (max-width: 992px) {
+  .workSection .gallery {
+    height: 100%;
+  }
+  .workSection .gallery .works img, .workSection .gallery .works p {
+    max-width: 84vw;
+  }
 }
 
 .contactSection {

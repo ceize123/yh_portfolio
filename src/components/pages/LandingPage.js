@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import workSectionImg from '../../imgs/workSectionImg.svg';
 import portrait from '../../imgs/portrait.svg';
@@ -29,34 +29,55 @@ function WorkSection() {
 
     return (
         <>
-            <div className="col align-self-center text-center workCat">
+            <div className="col-12 col-lg-5 col-xl-6 align-self-center text-center workCat">
                 <h3>Work</h3>
-                <p
-                    className={selection === 0 ? 'selection' : 'jumping'}
-                    // data-key="0"
-                    onClick={() => {
+                {/* mobile button */}
+                <div className="d-block d-lg-none">
+                    <button
+                        onClick={() => {
                         setSelection(selection = 0);
                         slide();
-                    }}
-                >UI/UX Design</p>
-                <p
-                    className={selection === 1 ? 'selection' : 'jumping'}
-                    // data-key="1"
-                    onClick={() => {
+                    }}>UI/UX Design</button>
+                    <button
+                        onClick={() => {
                         setSelection(selection = 1);
                         slide();
-                    }}
-                >Graphic Design</p>
-                <p
-                    className={selection === 2 ? 'selection' : 'jumping'}
-                    // data-key="2"
-                    onClick={() => {
+                    }}>Graphic Design</button>
+                    <button
+                        onClick={() => {
                         setSelection(selection = 2);
                         slide();
-                    }}
-                >Code</p>
+                    }}>Code</button>
+                </div>
+                {/* desktop text */}
+                <div className="d-lg-block d-none">
+                    <p
+                        className={selection === 0 ? 'selection' : 'jumping'}
+                        // data-key="0"
+                        onClick={() => {
+                            setSelection(selection = 0);
+                            slide();
+                        }}
+                    >UI/UX Design</p>
+                    <p
+                        className={selection === 1 ? 'selection' : 'jumping'}
+                        // data-key="1"
+                        onClick={() => {
+                            setSelection(selection = 1);
+                            slide();
+                        }}
+                    >Graphic Design</p>
+                    <p
+                        className={selection === 2 ? 'selection' : 'jumping'}
+                        // data-key="2"
+                        onClick={() => {
+                            setSelection(selection = 2);
+                            slide();
+                        }}
+                    >Code</p>
+                </div>
             </div>
-            <div className="col gallery">
+            <div className="col-12 col-lg-7 col-xl-6 gallery">
                 {/* 要用map拉資料，所有資訊存到object裡面(landing page也是)。
                     參考blog.js */}
                 <div className="d-flex flex-column justify-content-center align-items-center">
@@ -76,7 +97,7 @@ function WorkSection() {
                         <p>Design a App for Seneca’s Students to find mentors on the platform.</p>
                     </div> */}
                     {dataAry[selection].map((item, key) => (
-                        <div className={isActive ? "works slidesIn" : "d-none"} key={key}>
+                        <div className={isActive ? "works slidesIn" : "invisible"} key={key}>
                             <Link to={`/works/${url[selection]}/${item.urlName}`} >
                                 <img src={item.gallery} alt={item.urlName}/>
                             </Link>
@@ -92,6 +113,7 @@ function WorkSection() {
 
 function LandingPage() { 
 
+    // change color for nav anchor
     function changeColor() {
         let nav = document.querySelectorAll("header a");
         nav.forEach(item => {
@@ -99,6 +121,20 @@ function LandingPage() {
         })
     }
     changeColor()
+
+    // detect size
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
 
     return (
         <main>
@@ -108,10 +144,14 @@ function LandingPage() {
                         <h1>Yung-Shin Ko</h1>
                         <h4>I’d like to help you make life easier!</h4>
                         <p>
-                            I am a UI/UX designer. My job is to transform a
+                            {`${windowWidth >= 769 ? 
+                            `I am a UI/UX designer. My job is to transform a
                             complicated concept into easy understanding. I have been
                             committed to making the design look fabulous and make
-                            the user experience intuitive.
+                            the user experience intuitive.` :
+                            `I am a UI/UX designer. I have been committed to 
+                            making the design look fabulous and make the user
+                            experience intuitive.`}`}
                         </p>
                     </div>
                     <div>
@@ -122,7 +162,8 @@ function LandingPage() {
 
             <section className="skillSection">
                 <h3 className="text-center">Skill</h3>
-                <div className="d-flex justify-content-evenly">
+                <button className="d-md-none d-block">Download Resume</button>
+                <div className="d-flex flex-column flex-md-row justify-content-evenly">
                     <div className="skills">
                         <h4>UI/UX Design</h4>
                         <ul>
@@ -164,7 +205,7 @@ function LandingPage() {
                         </ul>
                     </div>
                 </div>
-                <Link className="d-block text-center">------------Download Resume------------</Link>
+                <Link className="d-md-block d-none text-center">------------Download Resume------------</Link>
             </section>
 
             <section className="workSection">
