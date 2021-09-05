@@ -5,10 +5,10 @@ import close from '../imgs/close.png';
 
 function Navbar() { 
     const handleToggle = () => {
-        const category = document.querySelector(".category");
+        const menu = document.querySelector(".menu");
         const cross = document.querySelector(".close");
         const body = document.querySelector("body")
-        category.classList.toggle("open");
+        menu.classList.toggle("open");
         cross.classList.toggle("open");
         body.classList.toggle("fixed");
     }
@@ -20,7 +20,7 @@ function Navbar() {
                     <div className="home">
                         <li className="home"><Link to="/">Home</Link></li>
                     </div>
-                    <div className="category">
+                    <div className="menu">
                         <div className="d-sm-flex">
                             <li><Link to="/about">Resume</Link></li>
                             <li><Link to="/work">Work</Link></li>

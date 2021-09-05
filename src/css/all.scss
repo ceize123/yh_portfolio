@@ -199,9 +199,9 @@ header {
     }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 575px) {
     .nav {
-        .category {
+        .menu {
             background-image: url('../imgs/menuBackground.png');
             background-position: top;
             background-size: 100%;
@@ -217,6 +217,7 @@ header {
             -webkit-clip-path: circle(50px at 90% -10%);
             transition: all 0.5s ease-out;
             pointer-events: none;
+            visibility: hidden;
 
             div {
                 li {
@@ -230,10 +231,11 @@ header {
             }
         }
 
-        .category.open {
+        .menu.open {
             clip-path: circle(50px at 90% -10%);
             -webkit-clip-path: circle(2000px at 90% -10%);
             pointer-events: all;
+            visibility: visible;
         }
 
         .close.open {
@@ -382,6 +384,10 @@ header {
 
             &:not(:last-of-type) {
                 margin-bottom: 50px;
+            }
+
+            h4 {
+                font-weight: 600;
             }
         }
         
@@ -1110,6 +1116,10 @@ footer {
 @media only screen and (max-width: 768px) {
     footer {
         padding-bottom: 60px;
+        
+        h3 {
+            font-weight: 600;
+        }
         .introduction {
             background-color: #CABB9E;
             padding: 25px 0;

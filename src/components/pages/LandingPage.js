@@ -118,15 +118,6 @@ function WorkSection() {
 
 function LandingPage() { 
 
-    // change color for nav anchor
-    function changeColor() {
-        let nav = document.querySelectorAll("header a");
-        nav.forEach(item => {
-            item.style.color = "#94401E"
-        })
-    }
-    changeColor()
-
     // detect size
     const [windowWidth, setwindowWidth] = useState(window.innerWidth)
     const handleResize = () => {
@@ -140,6 +131,25 @@ function LandingPage() {
         window.addEventListener('resize', handleResize);
         }
     }, [])
+
+    // change color for nav anchor
+    function changeColor() {
+        let nav = document.querySelectorAll("header a");
+        if (windowWidth > 575) {
+            nav.forEach(item => {
+                item.style.color = "#94401E"
+            })
+        } else {
+            nav.forEach((item, idx) => {
+                if (idx === 0) {
+                    item.style.color = "#94401E"
+                } else {
+                    item.style.color = "#FFF"
+                }
+            })
+        }
+    }
+    changeColor()
 
     return (
         <main>

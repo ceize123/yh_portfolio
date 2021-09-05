@@ -10921,8 +10921,8 @@ header {
   display: none;
 }
 
-@media only screen and (max-width: 576px) {
-  .nav .category {
+@media only screen and (max-width: 575px) {
+  .nav .menu {
     background-image: url("../imgs/menuBackground.png");
     background-position: top;
     background-size: 100%;
@@ -10938,19 +10938,21 @@ header {
     -webkit-clip-path: circle(50px at 90% -10%);
     transition: all 0.5s ease-out;
     pointer-events: none;
+    visibility: hidden;
   }
-  .nav .category div li {
+  .nav .menu div li {
     margin: 0;
     margin-bottom: 30px;
     text-align: center;
   }
-  .nav .category div a {
+  .nav .menu div a {
     color: #FFF;
   }
-  .nav .category.open {
+  .nav .menu.open {
     clip-path: circle(50px at 90% -10%);
     -webkit-clip-path: circle(2000px at 90% -10%);
     pointer-events: all;
+    visibility: visible;
   }
   .nav .close.open {
     display: inline;
@@ -11067,6 +11069,9 @@ header {
   }
   .skillSection .skills:not(:last-of-type) {
     margin-bottom: 50px;
+  }
+  .skillSection .skills h4, .skillSection .skills .h4 {
+    font-weight: 600;
   }
   .skillSection button {
     width: 153px;
@@ -11636,6 +11641,9 @@ footer .backToTop:hover {
 @media only screen and (max-width: 768px) {
   footer {
     padding-bottom: 60px;
+  }
+  footer h3, footer .h3 {
+    font-weight: 600;
   }
   footer .introduction {
     background-color: #CABB9E;

@@ -131,7 +131,7 @@ function Mockup(props) {
                     </div>
                     {/* img block */}
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
-                        <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-md-row"}>
+                        <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-lg-row"}>
                            {item.img !== undefined ? item.img.map(imgs => (
                                <img src={imgs} alt={item.title} />)) : ""}
                         </div>
@@ -154,8 +154,6 @@ function Uiux() {
         const spot = document.querySelectorAll(".star path");
         const svg = document.querySelectorAll(".star svg");
         const primaryLine = document.querySelectorAll(".star .primaryLine");
-        const videoSection = document.querySelector(".videoSection");
-        const video = document.querySelector(".videoSection video");
 
         let sectionIndex = 0;
         let sectionTop = star[0].getBoundingClientRect().top;

@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/all.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Navbar from './components/Navbar.js';
 import Wrapper from "./components/Wrapper.js";
 import LandingPage from "./components/pages/LandingPage.js";
@@ -29,14 +29,15 @@ function App() {
                 <Navbar />
                 <Switch>
                     <Route exact path='/' component={LandingPage} />
-                    <Route path='/works/uiux/:title' component={Uiux} />
-                    <Route path='/works/graphic/Icon_Guide' component={IconGuide} />
+                    <Route exact path='/works/uiux/:title' component={Uiux} />
+                    <Route exact path='/works/graphic/Icon_Guide' component={IconGuide} />
+                    <Redirect to="/" component={LandingPage}/>
                 </Switch>
             </ScrollToTop>
             </Wrapper>
                 
             <Switch>
-                <Route path='/works/graphic/Magazine_Design' component={Magazine} />
+                <Route exact path='/works/graphic/Magazine_Design' component={Magazine} />
             </Switch>
         </Router>
         </>
