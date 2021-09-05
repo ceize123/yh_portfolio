@@ -58,9 +58,9 @@ function Research(props) {
 function List(props) {
     const { content } = props;
     const list = content.map((item, key) => (
-        <div className="d-flex align-items-start imgSection">
+        <div className="d-flex align-items-start imgSection" key={key}>
             <img className="dot" src={dot} alt="dot" />
-            <li key={key}>{item}</li>
+            <li>{item}</li>
         </div>
     ))
 

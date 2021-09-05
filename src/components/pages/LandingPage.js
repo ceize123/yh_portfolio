@@ -29,6 +29,13 @@ function WorkSection() {
         setTimeout(function(){ setActive("false"); }, 100);
     }
 
+    const changeToWhite = () => {
+        let nav = document.querySelectorAll("header a");
+        nav.forEach(item => {
+            item.style.color = "#FFF"
+        })
+    }
+
     return (
         <>
             <div className="col-12 col-lg-5 col-xl-6 align-self-center text-center workCat">
@@ -70,6 +77,7 @@ function WorkSection() {
                         onClick={() => {
                             setSelection(selection = 1);
                             slide();
+                            changeToWhite();
                         }}
                     >Graphic Design</p>
                     <p
@@ -133,23 +141,23 @@ function LandingPage() {
     }, [])
 
     // change color for nav anchor
-    function changeColor() {
-        let nav = document.querySelectorAll("header a");
-        if (windowWidth > 575) {
-            nav.forEach(item => {
-                item.style.color = "#94401E"
-            })
-        } else {
-            nav.forEach((item, idx) => {
-                if (idx === 0) {
-                    item.style.color = "#94401E"
-                } else {
-                    item.style.color = "#FFF"
-                }
-            })
-        }
-    }
-    changeColor()
+    // function changeColor() {
+    //     let nav = document.querySelectorAll("header a");
+    //     if (windowWidth > 575) {
+    //         nav.forEach(item => {
+    //             item.style.color = "#94401E"
+    //         })
+    //     } else {
+    //         nav.forEach((item, idx) => {
+    //             if (idx === 0) {
+    //                 item.style.color = "#94401E"
+    //             } else {
+    //                 item.style.color = "#FFF"
+    //             }
+    //         })
+    //     }
+    // }
+    // changeColor()
 
     return (
         <main>

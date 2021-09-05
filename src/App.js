@@ -7,17 +7,7 @@ import LandingPage from "./components/pages/LandingPage.js";
 import Uiux from "./components/pages/Uiux.js";
 import IconGuide from "./components/pages/IconGuide.js";
 import Magazine from "./components/pages/Magazine.js";
-import Footer from "./components/Footer.js";
 import ScrollToTop from "./components/general.js";
-
-const NoMatch = ({ location }) => (
-  <div id='noMatch'>
-    <header>
-      <h1>No match for '<code>{location.pathname}</code>'</h1>
-      <p>Incorrect Path</p>
-    </header>
-  </div>
-)
 
 function App() {
     return (

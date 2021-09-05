@@ -36,13 +36,6 @@ function SectionWithoutCharacters(props) {
 }
 
 function IconGuide() { 
-    function changeColor() {
-        let nav = document.querySelectorAll("header a");
-        nav.forEach(item => {
-            item.style.color = "#FFF"
-        })
-    }
-    changeColor()
 
     return (
         <main className="iconGuide">

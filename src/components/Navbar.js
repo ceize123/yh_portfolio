@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import menu from '../imgs/menu.png';
 import close from '../imgs/close.png';
@@ -13,12 +13,38 @@ function Navbar() {
         body.classList.toggle("fixed");
     }
 
+    // detect size
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
+    const changeToRed = () => {
+        let nav = document.querySelectorAll("header a");
+        if (windowWidth > 575) {
+            nav.forEach(item => {
+                item.style.color = "#94401E"
+            })
+        }
+    }
+
     return (
         <header>
             <div className="nav d-block">
                 <ul className="d-flex justify-content-between mb-0">
                     <div className="home">
-                        <li className="home"><Link to="/">Home</Link></li>
+                        <li className="home">
+                            <Link to="/"
+                            onClick={changeToRed}>Home</Link>
+                        </li>
                     </div>
                     <div className="menu">
                         <div className="d-sm-flex">
