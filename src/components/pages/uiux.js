@@ -122,7 +122,7 @@ function Mockup(props) {
                     <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
                         <img className={item.frame !== undefined ? 'd-inline' : 'd-none'} src={item.frame} alt="frame" />
 
-                        <video className={item.frame !== undefined ? 'mobileVideo' : 'desktopVideo'} autoPlay muted>
+                        <video className={item.frame !== undefined ? 'mobileVideo' : 'desktopVideo'} controls>
                             <source src={item.video} type="video/mp4"/>
                         </video>
                        {item.backgroundColor !== undefined ?

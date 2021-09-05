@@ -10776,12 +10776,21 @@ h1, .h1 {
   color: #94401E;
 }
 
+h2, .h2 {
+  font-size: 48px;
+}
+
 h2, .h2, h3, .h3 {
   font-weight: bold;
 }
 
+h3, .h3 {
+  font-size: 36px;
+}
+
 h4, .h4 {
   font-weight: 600;
+  font-size: 24px;
 }
 
 p {
