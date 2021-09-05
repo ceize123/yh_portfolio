@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
 import dot from '../../imgs/dot.png';
@@ -34,14 +34,19 @@ function Research(props) {
         (although if passed a callback function, it may do so). */}
         {content.map((item, key) => ( // can't use forEach, it can't display properly
             <div className={item.inline === true ? 'row researchSection': 'd-block researchSection'} key={key}>
-                <div className={item.inline === true ? 'col-lg-5': 'textSection'}>
+                <div className={item.inline === true ? 'col-md-5 textSection': 'textSection'}>
                     <h4>{item.title}</h4>
                     {item.paragraph.length === 1 ? 
                         <p>{item.paragraph}</p> :
                         <List content={item.paragraph}/>
                     }
                 </div>
-                <div className={item.inline === true ? 'col-lg-7 text-center': ''}>
+                <div className={item.inline === true ?
+                    'col-md-7 text-center imgSection' :
+                    'imgSection'}>
+                    <div className="d-md-none d-block magnifier">
+
+                    </div>
                     <img className="zoomIn" src={item.img} alt={item.title}/>
                 </div>
             </div>
@@ -53,7 +58,7 @@ function Research(props) {
 function List(props) {
     const { content } = props;
     const list = content.map((item, key) => (
-        <div className="d-flex align-items-start">
+        <div className="d-flex align-items-start imgSection">
             <img className="dot" src={dot} alt="dot" />
             <li key={key}>{item}</li>
         </div>
@@ -74,7 +79,10 @@ function InformationArchitecture(props) {
         <div className="textSection">
             <p>{content.paragraph}</p>
         </div>
-        <img className="zoomIn" src={content.img} alt="InformationArchitecture" />
+        <div className="imgSection">
+            <div className="d-md-none d-block magnifier"></div>    
+            <img className="zoomIn" src={content.img} alt="InformationArchitecture" />
+        </div>
         </>
     )
 }
@@ -82,11 +90,25 @@ function InformationArchitecture(props) {
 function Mockup(props) {
     const { content } = props;
 
+    // detect size
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
     return (
         <>
            {content.map((item, key) => ( // can't use forEach, it can't display properly
-                <div className={item.inline === true ? 'd-flex mockupSection': 'd-block mockupSection'} key={key}>
-                    <div className="textSection w-100">
+                <div className={item.inline === true ? 'd-md-flex justify-content-between d-block mockupSection': 'd-block mockupSection'} key={key}>
+                    <div className="textSection">
                         <h4>{item.title}</h4>
                         {/* display paragraph only if it exists */}
                         {item.paragraph !== undefined ? item.paragraph.map((paragraphs, idx, ary) => (
@@ -96,18 +118,20 @@ function Mockup(props) {
                             </>
                         )) : ""}
                    </div>
-                   
-                    <div className={item.video !== undefined ? 'd-block videoSection' : 'd-none'}>
+                   {/* video block */}
+                    <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
                         <img className={item.frame !== undefined ? 'd-inline' : 'd-none'} src={item.frame} alt="frame" />
 
                         <video className={item.frame !== undefined ? 'mobileVideo' : 'desktopVideo'} autoPlay muted>
                             <source src={item.video} type="video/mp4"/>
                         </video>
-                       {item.backgroundColor !== undefined ? <div className={`mockupBgc ${item.backgroundColor}`}></div> : ""} 
+                       {item.backgroundColor !== undefined ?
+                           <div className={`${windowWidth >= 769 ? `mockupBgc ${item.backgroundColor}` : ""}`}></div> : 
+                           ""} 
                     </div>
-                    
+                    {/* img block */}
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
-                        <div className={item.inline === false ? 'd-flex flex-column' : ""}>
+                        <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-md-row"}>
                            {item.img !== undefined ? item.img.map(imgs => (
                                <img src={imgs} alt={item.title} />)) : ""}
                         </div>
@@ -137,13 +161,7 @@ function Uiux() {
         let sectionTop = star[0].getBoundingClientRect().top;
         
         star.forEach((item, idx, ary) => {
-            if (idx === 0) {
-                if (item.getBoundingClientRect().top <= 330) {
-                    primaryLine[idx].style.height = `${window.pageYOffset - 180}px`;
-                } else {
-                    primaryLine[idx].style.height = '0px';
-                }
-            } else if (ary.length > idx + 1) {
+            if (ary.length > idx + 1) {
                 if (item.getBoundingClientRect().top <= 330) {
                     primaryLine[idx].style.height = `${Math.abs(330 - item.getBoundingClientRect().top)}px`;
                 } else {
@@ -222,7 +240,10 @@ function Uiux() {
                                 <SVGStar />
                                 <article>
                                     <h3>Step {stepCount++}: Wireframe</h3>
-                                    <img className="zoomIn" src={content.wireframe} alt="wireframe"/>
+                                    <div className="imgSection">
+                                        <div className="d-md-none d-block magnifier"></div>
+                                        <img className="zoomIn" src={content.wireframe} alt="wireframe"/>
+                                    </div>
                                 </article>
                             </div> : ""}
                         

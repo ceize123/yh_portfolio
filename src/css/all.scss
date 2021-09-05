@@ -13,6 +13,10 @@ body {
     overflow-x: hidden;
 }
 
+body.fixed {
+    overflow: hidden;
+}
+
 .container {
     padding: 0;
 }
@@ -144,16 +148,30 @@ header {
     width: 100%;
     padding: 25px 0;
 
-    li {
-        margin-right: 39px;
+    ul {
+        padding: 0;
+
+        li {
+            margin-right: 30px;
+        }
+
+        li:last-child {
+            margin-right: 25px;
+        }
+
+        .home {
+            li {
+                margin-left: 25px;
+                margin-right: 0;
+            }
+        }
     }
 
-    li:last-child {
-        margin-right: 50px;
-    }
+    
 
     .hamburger {
         margin-right: 25px;
+        margin-left: 12px; // to make same width as home button
 
         &:hover {
             cursor: pointer;
@@ -163,30 +181,57 @@ header {
     .hamburger.open {
         background-color: #fff;
     }
+
+    .close {
+        position: absolute;
+        top: 35px;
+        right: 25px;
+        display: none;
+    }
 }
 
-// @media only screen and (max-width: 576px) {
-//     .nav {
-//         .category {
-//             width: 100%;
-//             height: 100vh;
-//             position: absolute;
-//             padding-top: 130px;
-//             top: 0;
-//             left: 0;
-//             font-size: 24px;
+@media only screen and (max-width: 576px) {
+    .nav {
+        .category {
+            background-image: url('../imgs/menuBackground.png');
+            background-position: top;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            padding-top: 130px;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+            clip-path: circle(50px at 90% -10%);
+            -webkit-clip-path: circle(50px at 90% -10%);
+            transition: all 0.5s ease-out;
+            pointer-events: none;
 
-//             li {
-//                 margin: 0;
-//                 margin-bottom: 30px;
-//                 text-align: center;
-//             }
-//             a {
-//                 color: #FFF;
-//             }
-//         }
-//     }
-// }
+            div {
+                li {
+                    margin: 0;
+                    margin-bottom: 30px;
+                    text-align: center;       
+                }
+                a {
+                    color: #FFF;
+                }
+            }
+        }
+
+        .category.open {
+            clip-path: circle(50px at 90% -10%);
+            -webkit-clip-path: circle(2000px at 90% -10%);
+            pointer-events: all;
+        }
+
+        .close.open {
+            display: inline;
+        }
+    }
+}
 
 // navbar ends
 
@@ -348,6 +393,10 @@ header {
     margin-bottom: 150px;
     max-width: 100vw;
 
+    .row {
+        margin: 0;
+    }
+
     .workSectionBgc {
         position: absolute;
         top: -314px;
@@ -365,11 +414,19 @@ header {
         margin-top: -50px;
         max-width: 100vw;
 
-        .selection {
-            animation-name: selection;
-            animation-duration: 0.5s;
-            animation-iteration-count: 1;
-            transform: scale(2);
+        @media only screen and (min-width: 992px) {
+            .selection {
+                animation-name: selection;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+                transform: scale(2);
+            }
+    
+            .selection:hover {
+                animation-name: jumpingSelection;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+            }
         }
 
         @keyframes selection {
@@ -382,12 +439,6 @@ header {
             100% {
                 transform: scale(2);
             }
-        }
-
-        .selection:hover {
-            animation-name: jumpingSelection;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
         }
 
         @keyframes jumpingSelection {
@@ -432,7 +483,7 @@ header {
         }
     }
 
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 991px) {
         .workCat {
             margin-top: 0;
             padding: 0;
@@ -446,6 +497,10 @@ header {
                 &:not(:last-of-type) {
                     margin-right: 5px;
                 }
+            }
+
+            .selection {
+                background-color: $secondary;
             }
         }
     }
@@ -549,11 +604,17 @@ header {
 // title starts
 .uiuxTitle {
     padding-top: 197px;
-    margin-bottom: 85px;
-    margin-left: 95px;
+    margin: 0 95px 85px 95px;
 
     h2 {
         margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .uiuxTitle {
+        padding: 100px 0;
+        margin: 0 22px;
     }
 }
 
@@ -600,6 +661,10 @@ header {
     }
 
     article {
+        .imgSection {
+            position: relative;
+        }
+        
         h3 {
             margin-bottom: 50px;
         }
@@ -625,6 +690,10 @@ header {
             display: inline;
         }
 
+        img {
+            max-width: 100%;
+        }
+
         .dot {
             margin-top: 10px;
             margin-right: 6px;
@@ -635,9 +704,11 @@ header {
             transition-duration: 0.3s;
         }
 
-        .zoomIn:hover {
-            transform: scale(1.05);
-            cursor: zoom-in;
+        @media only screen and (min-width: 768px) {
+            .zoomIn:hover {
+                transform: scale(1.05);
+                cursor: zoom-in;
+            }
         }
 
         .researchSection:first-of-type {
@@ -647,6 +718,8 @@ header {
         .textSection {
             margin-bottom: 50px;
         }
+
+        // mockup section
 
         .mockupSection {
             margin-bottom: 100px;
@@ -689,7 +762,6 @@ header {
                     margin-bottom: -10px;
                     border-radius: 10px;
                 }
-                
             }
 
             .imgSection {
@@ -726,21 +798,76 @@ header {
             .msBgc {
                 background-color: #DD8E58;
             }
+
+            &:not(:first-of-type) {
+                margin-bottom: 154px;
+            }
+            
+            &:last-of-type {
+                margin-bottom: 54px;
+            }
         }
 
-        .mockupSection:not(:first-of-type) {
-            margin-bottom: 154px;
-        }
         
-        .mockupSection:last-of-type {
-            margin-bottom: 54px;
-        }
     }
 
     .workTogether {
         h3 {
             margin-bottom: 30px;
         }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .stepSection {
+        margin-left: 0;
+
+        article {
+            margin-left: 18px;
+            margin-right: 25px;
+
+            .textSection {
+                margin-bottom: 30px;
+            }
+
+            .imgSection {
+                padding: 0;
+                .magnifier {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #000;
+                    z-index: 1;
+                    opacity: 0.5;
+                    border-radius: 10px;
+                }
+            }
+
+            .mockupSection {
+                margin-bottom: 30px;
+
+                .mobileOverview {
+                    width: 100%;
+                }
+
+                .videoSection {
+                    .mobileVideo {
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;   
+                    }
+
+                    .desktopVideo {
+                        margin-bottom: 0;
+                        width: 100%;
+                    }
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        } 
     }
 }
 

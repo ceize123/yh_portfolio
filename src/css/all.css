@@ -10758,6 +10758,10 @@ body {
   overflow-x: hidden;
 }
 
+body.fixed {
+  overflow: hidden;
+}
+
 .container {
   padding: 0;
 }
@@ -10878,14 +10882,22 @@ header {
   width: 100%;
   padding: 25px 0;
 }
-.nav li {
-  margin-right: 39px;
+.nav ul {
+  padding: 0;
 }
-.nav li:last-child {
-  margin-right: 50px;
+.nav ul li {
+  margin-right: 30px;
+}
+.nav ul li:last-child {
+  margin-right: 25px;
+}
+.nav ul .home li {
+  margin-left: 25px;
+  margin-right: 0;
 }
 .nav .hamburger {
   margin-right: 25px;
+  margin-left: 12px;
 }
 .nav .hamburger:hover {
   cursor: pointer;
@@ -10893,7 +10905,48 @@ header {
 .nav .hamburger.open {
   background-color: #fff;
 }
+.nav .close {
+  position: absolute;
+  top: 35px;
+  right: 25px;
+  display: none;
+}
 
+@media only screen and (max-width: 576px) {
+  .nav .category {
+    background-image: url("../imgs/menuBackground.png");
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    padding-top: 130px;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    clip-path: circle(50px at 90% -10%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+  }
+  .nav .category div li {
+    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .nav .category div a {
+    color: #FFF;
+  }
+  .nav .category.open {
+    clip-path: circle(50px at 90% -10%);
+    -webkit-clip-path: circle(2000px at 90% -10%);
+    pointer-events: all;
+  }
+  .nav .close.open {
+    display: inline;
+  }
+}
 .hero {
   padding-top: 79px;
   width: 100%;
@@ -11018,6 +11071,9 @@ header {
   margin-bottom: 150px;
   max-width: 100vw;
 }
+.workSection .row {
+  margin: 0;
+}
 .workSection .workSectionBgc {
   position: absolute;
   top: -314px;
@@ -11033,11 +11089,18 @@ header {
   margin-top: -50px;
   max-width: 100vw;
 }
-.workSection .workCat .selection {
-  animation-name: selection;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  transform: scale(2);
+@media only screen and (min-width: 992px) {
+  .workSection .workCat .selection {
+    animation-name: selection;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    transform: scale(2);
+  }
+  .workSection .workCat .selection:hover {
+    animation-name: jumpingSelection;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
 }
 @keyframes selection {
   0% {
@@ -11049,11 +11112,6 @@ header {
   100% {
     transform: scale(2);
   }
-}
-.workSection .workCat .selection:hover {
-  animation-name: jumpingSelection;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
 }
 @keyframes jumpingSelection {
   0% {
@@ -11091,7 +11149,7 @@ header {
 .workSection .workCat p:hover {
   cursor: pointer;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .workSection .workCat {
     margin-top: 0;
     padding: 0;
@@ -11104,6 +11162,9 @@ header {
   }
   .workSection .workCat button:not(:last-of-type) {
     margin-right: 5px;
+  }
+  .workSection .workCat .selection {
+    background-color: #94401E;
   }
 }
 .workSection .gallery {
@@ -11182,13 +11243,18 @@ header {
 
 .uiuxTitle {
   padding-top: 197px;
-  margin-bottom: 85px;
-  margin-left: 95px;
+  margin: 0 95px 85px 95px;
 }
 .uiuxTitle h2, .uiuxTitle .h2 {
   margin-bottom: 15px;
 }
 
+@media only screen and (max-width: 768px) {
+  .uiuxTitle {
+    padding: 100px 0;
+    margin: 0 22px;
+  }
+}
 .stepSection {
   margin-left: 40px;
   overflow: hidden;
@@ -11224,6 +11290,9 @@ header {
   top: calc(100% + 2px);
   z-index: -1;
 }
+.stepSection article .imgSection {
+  position: relative;
+}
 .stepSection article h3, .stepSection article .h3 {
   margin-bottom: 50px;
 }
@@ -11243,6 +11312,9 @@ header {
 .stepSection article li {
   display: inline;
 }
+.stepSection article img {
+  max-width: 100%;
+}
 .stepSection article .dot {
   margin-top: 10px;
   margin-right: 6px;
@@ -11251,9 +11323,11 @@ header {
   position: relative;
   transition-duration: 0.3s;
 }
-.stepSection article .zoomIn:hover {
-  transform: scale(1.05);
-  cursor: zoom-in;
+@media only screen and (min-width: 768px) {
+  .stepSection article .zoomIn:hover {
+    transform: scale(1.05);
+    cursor: zoom-in;
+  }
 }
 .stepSection article .researchSection:first-of-type {
   margin-bottom: 100px;
@@ -11335,6 +11409,48 @@ header {
   margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 768px) {
+  .stepSection {
+    margin-left: 0;
+  }
+  .stepSection article {
+    margin-left: 18px;
+    margin-right: 25px;
+  }
+  .stepSection article .textSection {
+    margin-bottom: 30px;
+  }
+  .stepSection article .imgSection {
+    padding: 0;
+  }
+  .stepSection article .imgSection .magnifier {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1;
+    opacity: 0.5;
+    border-radius: 10px;
+  }
+  .stepSection article .mockupSection {
+    margin-bottom: 30px;
+  }
+  .stepSection article .mockupSection .mobileOverview {
+    width: 100%;
+  }
+  .stepSection article .mockupSection .videoSection .mobileVideo {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .stepSection article .mockupSection .videoSection .desktopVideo {
+    margin-bottom: 0;
+    width: 100%;
+  }
+  .stepSection article .mockupSection:last-of-type {
+    margin-bottom: 0;
+  }
+}
 .iconGuide {
   width: 100%;
   font-family: "Mulish", sans-serif;

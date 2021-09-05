@@ -29,22 +29,6 @@ function WorkSection() {
         setTimeout(function(){ setActive("false"); }, 100);
     }
 
-    const mobileSlide = () => {
-        // --- change background color ---
-        let btnSelected = document.querySelectorAll(".workCat button")
-        btnSelected.forEach((item, idx) => {
-            if (idx === selection) {
-                item.style.backgroundColor = '#94401E'
-            } else {
-                item.style.backgroundColor = '#AD8255'
-            }
-        })
-
-        // --- toggle slide animation ---
-        setActive(!isActive);
-        setTimeout(function(){ setActive("false"); }, 100);
-    }
-
     return (
         <>
             <div className="col-12 col-lg-5 col-xl-6 align-self-center text-center workCat">
@@ -52,19 +36,22 @@ function WorkSection() {
                 {/* mobile button */}
                 <div className="d-block d-lg-none">
                     <button
+                        className={selection === 0 ? 'selection' : ''}
                         onClick={() => {
                         setSelection(selection = 0);
-                        mobileSlide();
+                        slide();
                     }}>UI/UX Design</button>
                     <button
+                        className={selection === 1 ? 'selection' : ''}
                         onClick={() => {
                         setSelection(selection = 1);
-                        mobileSlide();
+                        slide();
                     }}>Graphic Design</button>
                     <button
+                        className={selection === 2 ? 'selection' : ''}
                         onClick={() => {
                         setSelection(selection = 2);
-                        mobileSlide();
+                        slide();
                     }}>Code</button>
                 </div>
                 {/* desktop text */}
