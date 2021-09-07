@@ -13,10 +13,10 @@ const ScrollToTop = (props) => {
 
 export function WorkTogether() {
     return (
-        <article className="workTogether">
+        <div className="workTogether">
             <h3>Thank you for viewing whole project, so the next step is...</h3>
             <h3>Let’s Work Together!!</h3>
-        </article>
+        </div>
     )
 }
 

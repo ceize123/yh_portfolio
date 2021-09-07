@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
 import dot from '../../imgs/dot.png';
+import magnifier from '../../imgs/work/uiux/maginify.png';
 import { Contact, WorkTogether } from '../general.js';
 import Footer from "../Footer.js";
 
@@ -44,10 +45,26 @@ function Research(props) {
                 <div className={item.inline === true ?
                     'col-md-7 text-center imgSection' :
                     'imgSection'}>
-                    <div className="d-md-none d-block magnifier">
-
+                    <div className="d-md-none d-block">
+                        <img className="magnifier"
+                            data-bs-toggle="modal" data-bs-target={`#modal${key}`}
+                            src={magnifier} alt="magnifier" />
                     </div>
-                    <img className="zoomIn" src={item.img} alt={item.title}/>
+                    <img
+                        className="zoomIn"
+                        data-bs-toggle="modal" data-bs-target={`#modal${key}`}
+                        src={item.img} alt={item.title} />
+                    
+
+                    <div class="modal fade" id={`modal${key}`} aria-labelledby={item.title} aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src={item.img} alt={item.title} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         ))}
@@ -80,8 +97,25 @@ function InformationArchitecture(props) {
             <p>{content.paragraph}</p>
         </div>
         <div className="imgSection">
-            <div className="d-md-none d-block magnifier"></div>    
-            <img className="zoomIn" src={content.img} alt="InformationArchitecture" />
+            <div className="d-md-none d-block">
+                <img
+                    className="magnifier"
+                    data-bs-toggle="modal" data-bs-target="#infoArchModal"
+                    src={magnifier} alt="magnifier" />
+            </div>    
+                <img className="zoomIn"
+                    data-bs-toggle="modal" data-bs-target="#infoArchModal"
+                    src={content.img} alt="InformationArchitecture" />
+                
+            <div class="modal fade" id="infoArchModal" aria-labelledby="infoArchModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src={content.img} alt="InformationArchitecture" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         </>
     )
@@ -239,8 +273,24 @@ function Uiux() {
                                 <article>
                                     <h3>Step {stepCount++}: Wireframe</h3>
                                     <div className="imgSection">
-                                        <div className="d-md-none d-block magnifier"></div>
-                                        <img className="zoomIn" src={content.wireframe} alt="wireframe"/>
+                                        <div className="d-md-none d-inline">
+                                            <img
+                                                className="magnifier"
+                                                data-bs-toggle="modal" data-bs-target="#wireFrameModal"
+                                                src={magnifier} alt="magnifier" />
+                                        </div>
+                                        <img className="zoomIn"
+                                            data-bs-toggle="modal" data-bs-target="#wireFrameModal"
+                                            src={content.wireframe} alt="wireframe" />
+                                        <div class="modal fade" id="wireFrameModal" aria-labelledby="wireFrameModal" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <img src={content.wireframe} alt="wireframe" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </article>
                             </div> : ""}

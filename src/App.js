@@ -21,7 +21,7 @@ function App() {
                     <Route exact path='/' component={LandingPage} />
                     <Route exact path='/works/uiux/:title' component={Uiux} />
                     <Route exact path='/works/graphic/Icon_Guide' component={IconGuide} />
-                    <Redirect to="/" component={LandingPage}/>
+                    {/* <Redirect to="/" component={LandingPage}/> */}
                 </Switch>
             </ScrollToTop>
             </Wrapper>

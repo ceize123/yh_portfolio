@@ -10754,7 +10754,6 @@ html {
 
 body {
   color: #2C2618;
-  font-family: "Barlow Semi Condensed", sans-serif;
   overflow-x: hidden;
 }
 
@@ -10797,7 +10796,8 @@ p {
   font-size: 24px;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li, a {
+  font-family: "Barlow Semi Condensed", sans-serif;
   margin: 0;
 }
 
@@ -10873,6 +10873,10 @@ article {
   margin-bottom: 100px;
 }
 
+.workTogether {
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
 .workTogether h3, .workTogether .h3 {
   margin-bottom: 30px;
 }
@@ -10881,6 +10885,16 @@ article {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 767px) {
+  .workTogether h3, .workTogether .h3 {
+    margin-bottom: 100px;
+  }
+  .workTogether h3:last-of-type, .workTogether .h3:last-of-type {
+    position: relative;
+    white-space: nowrap;
+    left: -15px;
+  }
+}
 header {
   position: relative;
   z-index: 999;
@@ -11419,8 +11433,19 @@ header {
 .stepSection article .mockupSection:last-of-type {
   margin-bottom: 54px;
 }
-.stepSection .workTogether h3, .stepSection .workTogether .h3 {
-  margin-bottom: 30px;
+.stepSection .workTogether {
+  margin-top: 15px;
+  margin-left: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .stepSection .workTogether {
+    position: relative;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+  .stepSection .workTogether h3, .stepSection .workTogether .h3 {
+    margin-bottom: 100px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -11439,12 +11464,10 @@ header {
   }
   .stepSection article .imgSection .magnifier {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
+    right: 10px;
+    top: -15px;
+    width: 48px;
     z-index: 1;
-    opacity: 0.5;
-    border-radius: 10px;
   }
   .stepSection article .mockupSection {
     margin-bottom: 30px;
@@ -11537,6 +11560,11 @@ header {
   top: 50%;
   transform: translateY(-50%);
 }
+@media only screen and (min-width: 768px) {
+  .iconGuide .workTogether {
+    margin-left: 132px;
+  }
+}
 
 .sticky-wrapper .element-wrapper {
   transition-duration: 0.7s;
@@ -11601,6 +11629,11 @@ header {
 .sticky-wrapper .infoSection > div {
   max-width: 1320px;
   width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .sticky-wrapper .workTogether {
+    margin-left: 132px;
+  }
 }
 
 footer {

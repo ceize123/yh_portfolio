@@ -9,7 +9,6 @@ html {
 
 body {
     color: $dark;
-    font-family: 'Barlow Semi Condensed', sans-serif;
     overflow-x: hidden;
 }
 
@@ -53,7 +52,8 @@ p {
     font-size: 24px;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, li, a {
+    font-family: 'Barlow Semi Condensed', sans-serif;
     margin: 0;
 }
 
@@ -134,6 +134,8 @@ article {
 }
 
 .workTogether {
+    margin-top: 15px;
+    margin-bottom: 100px;
     h3 {
         margin-bottom: 30px;
     }
@@ -143,6 +145,20 @@ article {
         margin-bottom: 0;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    .workTogether {
+        h3 {
+            margin-bottom: 100px;
+        }
+
+        h3:last-of-type {
+            position: relative;
+            white-space: nowrap;
+            left: -15px;
+        }
+    }
+} 
 
 // general ends
 
@@ -821,16 +837,24 @@ header {
             &:last-of-type {
                 margin-bottom: 54px;
             }
-        }
-
-        
+        }  
     }
 
     .workTogether {
-        h3 {
-            margin-bottom: 30px;
-        }
+        margin-top: 15px;
+        margin-left: 40px;
     }
+
+    @media only screen and (max-width: 767px) {
+        .workTogether {
+            position: relative;
+            margin-left: 0;
+            margin-right: 20px;
+            h3 {
+                margin-bottom: 100px;
+            }
+        }
+    } 
 }
 
 @media only screen and (max-width: 768px) {
@@ -840,7 +864,6 @@ header {
         article {
             margin-left: 18px;
             margin-right: 25px;
-
             .textSection {
                 margin-bottom: 30px;
             }
@@ -849,12 +872,10 @@ header {
                 padding: 0;
                 .magnifier {
                     position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: #000;
+                    right: 10px;
+                    top: -15px;
+                    width: 48px;
                     z-index: 1;
-                    opacity: 0.5;
-                    border-radius: 10px;
                 }
             }
 
@@ -978,13 +999,18 @@ header {
         top: 50%;
         transform: translateY(-50%);
     }
+
+    @media only screen and (min-width: 768px) {
+        .workTogether {
+            margin-left: 132px;
+        }
+    }
 }
 
 // Icon guide ends
 
 // Magazine starts
 .sticky-wrapper {
-
     .element-wrapper {
         transition-duration: 0.7s;
 
@@ -1064,6 +1090,12 @@ header {
         > div {
             max-width: 1320px;
             width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .workTogether {
+            margin-left: 132px;
         }
     }
 }
