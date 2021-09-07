@@ -13,7 +13,6 @@ function App() {
     return (
         <>
         <Router basename={process.env.PUBLIC_URL}>
-            {/* There's horizontal scroll page, can't use wrapper here */}
             <Wrapper> 
             <ScrollToTop>
                 <Navbar />
@@ -26,6 +25,7 @@ function App() {
             </ScrollToTop>
             </Wrapper>
                 
+            {/* There's horizontal scroll page, can't use wrapper here */}
             <Switch>
                 <Route exact path='/works/graphic/Magazine_Design' component={Magazine} />
             </Switch>
