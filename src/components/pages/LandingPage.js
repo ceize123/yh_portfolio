@@ -31,9 +31,11 @@ function WorkSection() {
 
     const changeToWhite = () => {
         let nav = document.querySelectorAll("header a");
-        nav.forEach(item => {
-            item.style.color = "#FFF"
-        })
+        if (selection === 1) {
+            nav.forEach(item => {
+                item.style.color = "#FFF"
+            })
+        }
     }
 
     return (
@@ -77,7 +79,6 @@ function WorkSection() {
                         onClick={() => {
                             setSelection(selection = 1);
                             slide();
-                            changeToWhite();
                         }}
                     >Graphic Design</p>
                     <p
@@ -112,7 +113,9 @@ function WorkSection() {
                     {dataAry[selection].map((item, key) => (
                         <div className={isActive ? "works slidesIn" : "invisible"} key={key}>
                             <Link to={`/works/${url[selection]}/${item.urlName}`} >
-                                <img src={item.gallery} alt={item.urlName}/>
+                                <img
+                                    onClick={() => {changeToWhite();}}
+                                    src={item.gallery} alt={item.urlName} />
                             </Link>
                             <h4>{item.mainTitle}</h4>
                             <p>{item.subtitle}</p>
