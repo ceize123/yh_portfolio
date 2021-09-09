@@ -1,18 +1,18 @@
-import landingFr from '../imgs/work/graphic/landing_fr.png';
-import landingMg from '../imgs/work/graphic/landing_mg.png';
+import landingSuit from '../imgs/work/coding/landing_suit.png';
+import landingTourist from '../imgs/work/coding/landing_tourist.png';
 
 const codingData = [
     {
-        urlName: 'Icon_Guide',
-        mainTitle: 'Icon Guide Book',
-        subtitle: 'Comedy “Friends” golden ratio icons',
-        gallery: landingFr,
+        mainTitle: 'One page practice (HTML/ CSS)',
+        subtitle: 'I designed a suit shopping homepage for practicing html and css.',
+        gallery: landingSuit,
+        codingUrl: "https://ceize123.github.io/Suit_Your_Daily_Life/"
     },
     {
-        urlName: 'Magazine_Design',
-        mainTitle: 'Magazine Design',
-        subtitle: 'Interview pages of a celebrity Jolin Tsai in Magazine.',
-        gallery: landingFr,
+        mainTitle: 'One page practice (HTML/ CSS/ JS)',
+        subtitle: 'I designed a travel agency homepage for practicing html, css and js.',
+        gallery: landingTourist,
+        codingUrl: "https://ceize123.github.io/Suit_Your_Daily_Life/"
     },
 ]
 

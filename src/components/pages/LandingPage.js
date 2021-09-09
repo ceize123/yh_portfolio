@@ -112,11 +112,19 @@ function WorkSection() {
                     </div> */}
                     {dataAry[selection].map((item, key) => (
                         <div className={isActive ? "works slidesIn" : "invisible"} key={key}>
-                            <Link to={`/works/${url[selection]}/${item.urlName}`} >
-                                <img
-                                    onClick={() => {changeToWhite();}}
-                                    src={item.gallery} alt={item.urlName} />
-                            </Link>
+                            {selection !== 2 ?
+                                <Link to={`/works/${url[selection]}/${item.urlName}`} >
+                                    <img
+                                        onClick={() => {changeToWhite();}}
+                                        src={item.gallery} alt={item.urlName} />
+                                </Link> :
+                                // for coding part
+                                <a href={item.codingUrl} target="_blank" rel="noreferrer">
+                                    <img
+                                        onClick={() => {changeToWhite();}}
+                                        src={item.gallery} alt={item.urlName} />
+                                </a>}
+                            
                             <h4>{item.mainTitle}</h4>
                             <p>{item.subtitle}</p>
                         </div>

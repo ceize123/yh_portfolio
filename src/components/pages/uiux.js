@@ -57,7 +57,7 @@ function Research(props) {
                     
 
                     <div class="modal fade" id={`modal${key}`} aria-labelledby={item.title} aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-dialog modal-xl modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <img src={item.img} alt={item.title} />
@@ -96,7 +96,7 @@ function InformationArchitecture(props) {
         <div className="textSection">
             <p>{content.paragraph}</p>
         </div>
-        <div className="imgSection">
+        <div className="imgSection text-center">
             <div className="d-md-none d-block">
                 <img
                     className="magnifier"
@@ -108,7 +108,7 @@ function InformationArchitecture(props) {
                     src={content.img} alt="InformationArchitecture" />
                 
             <div class="modal fade" id="infoArchModal" aria-labelledby="infoArchModal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
                             <img src={content.img} alt="InformationArchitecture" />
@@ -214,12 +214,6 @@ function Uiux() {
             spot[sectionIndex].style.fill = "#E5E5E5";
             svg[sectionIndex].classList.remove("scale");
         }
-
-        // if (videoSection.getBoundingClientRect().top <= 400) {
-        //     video.setAttribute("autoPlay", "")
-        //     video.setAttribute("muted", "")
-        //     console.log(videoSection.getBoundingClientRect().top)
-        // }
     };
 
     useEffect(() => {
@@ -230,7 +224,7 @@ function Uiux() {
     }, []);
 
     return (
-        <main onScroll={handleScroll}>
+        <main onScroll={() => { handleScroll(); }}>
             {/* use the result of filter function */}
             {uiuxData.filter(content => content.urlName === title).map((content, key) => (
                 <div key={key}>
@@ -283,7 +277,7 @@ function Uiux() {
                                             data-bs-toggle="modal" data-bs-target="#wireFrameModal"
                                             src={content.wireframe} alt="wireframe" />
                                         <div class="modal fade" id="wireFrameModal" aria-labelledby="wireFrameModal" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-dialog modal-xl modal-dialog-centered">
                                                 <div class="modal-content">
                                                     <div class="modal-body">
                                                         <img src={content.wireframe} alt="wireframe" />

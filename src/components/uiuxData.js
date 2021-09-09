@@ -106,7 +106,7 @@ const uiuxData = [
             },
             {
                 title: 'Hamburger',
-                paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan and call to action. The second part is the access to the “About.” The third part is the latest course information for users to follow up.'],
+                paragraph: ['All the sections are in hamburger. There are deeper levels of the courses. Also, some courses divide into beginner and advanced. People are quickly finding which course is suited for them.'],
                 img: [ak10, ak11],
                 backgroundColor:'akBgc',
             },
@@ -182,8 +182,7 @@ const uiuxData = [
             {
                 title: 'Overview',
                 paragraph: [
-                    'Most users came from Instagram and Facebook to the website, so that mobile phone experience would be significant.',
-                    'The website’s style is minimalism with abstract painting. Black, grey and white are the three main colours, and dark blue and dark red are secondary colours. Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'
+                    'I use pink as the main color of website. Pink represents soft, gentle and cute impression to people. There is not much animation in this project. Everything is simple and intuitive.'
                 ],
                 video: akVideo2,
                 backgroundColor:'rbBgc',

@@ -128,9 +128,26 @@ path {
     }
 }
 
+.jumping:hover {
+    animation-name: textJumping;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes textJumping {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 article {
-    margin: 0 40px;
-    margin-bottom: 100px;
+    margin: 0 100px 100px 40px;
 }
 
 .workTogether {
@@ -484,24 +501,6 @@ header {
             }
         }
 
-        .jumping:hover {
-            animation-name: jumping;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes jumping {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.3);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
         p {
             color: $secondary;
             font-weight: 600;
@@ -692,6 +691,7 @@ header {
     }
 
     article {
+        width: 100%;
         .imgSection {
             position: relative;
         }
@@ -719,6 +719,9 @@ header {
 
         li {
             display: inline;
+            margin-bottom: 10px;
+            letter-spacing: 0.03em;
+
         }
 
         img {
@@ -753,13 +756,16 @@ header {
         // mockup section
 
         .mockupSection {
-            margin-bottom: 100px;
+            &:not(:last-of-type) {
+                padding-bottom: 100px;
+            }
 
             .mobileOverview {
                 width: 350px;
             }
 
             .videoSection {
+                margin-bottom: 54px;
                 position: relative;
 
                 img {
@@ -796,6 +802,7 @@ header {
             }
 
             .imgSection {
+                margin-bottom: 54px;
                 position: relative;
 
                 img {
@@ -811,9 +818,9 @@ header {
 
             .mockupBgc {
                 position: absolute;
-                top: 114px;
+                top: 110px;
                 width: 100%;
-                height: calc(100% - 50px);
+                height: calc(100% - 64px);
                 border-radius: 10px;
                 z-index: -1;
             }
@@ -830,13 +837,13 @@ header {
                 background-color: #DD8E58;
             }
 
-            &:not(:first-of-type) {
-                margin-bottom: 154px;
-            }
+            // &:not(:first-of-type) {
+            //     margin-bottom: 154px;
+            // }
             
-            &:last-of-type {
-                margin-bottom: 54px;
-            }
+            // &:last-of-type {
+            //     margin-bottom: 60px;
+            // }
         }  
     }
 
