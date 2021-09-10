@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import graphicData from '../graphicData';
 import { Contact, WorkTogether } from '../general.js';
 import door from '../../imgs/work/graphic/door.png';
 import titleText from '../../imgs/work/graphic/title_text.svg';
-import titleText_sm from '../../imgs/work/graphic/title_text_small.png';
+import titleText_sm from '../../imgs/work/graphic/title_text_small.svg';
 import cover from '../../imgs/work/graphic/magazine_cover.png';
 import introduction from '../../imgs/work/graphic/introduction.png';
+import introText from '../../imgs/work/graphic/introText.png';
+import introTextMobile from '../../imgs/work/graphic/introTextMobile.png';
 import Footer from "../Footer.js";
 
 function Characters(props) {
@@ -37,6 +39,19 @@ function SectionWithoutCharacters(props) {
 
 function IconGuide() { 
 
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
     return (
         <main className="iconGuide">
             {graphicData.filter(content => content.urlName === "Icon_Guide").map((content, key) => (
@@ -44,29 +59,22 @@ function IconGuide() {
                     <section className="iconHero text-center">
                         <div className="heroImg">
                             <img className="door enlarge" src={door} alt="door"/>
-                            <img className="title enlarge" src={titleText} alt="FRIENDS"/>
+                            <img className="title enlarge" src={windowWidth > 576 ? titleText : titleText_sm} alt="FRIENDS"/>
                         </div>
-                        <h2 className="mt-5">Icon Guide Book</h2>
+                        <img src={content.iconGuideBook} alt="Icon Guide Book"/>
                         <div className="introduction text-center row">
-                            <div className="col-4 text-start">
+                            <div className="col-lg-4 col-12 text-lg-start text-center">
                                 <img src={cover} alt="magazine cover" />
                             </div>
-                            <div className="col textSection ps-5">
+                            <div className="col textSection ps-lg-5">
                                 <img src={titleText_sm} alt="FRIENDS"/>
                                 <img src={introduction} alt="introduction" />
-                                <p className="text-start">
-                                    Ross Geller, Rachel Green, Monica Geller, Joey Tribbiani, 
-                                    Chandler Bing, and Phoebe Buffay are six 20 
-                                    something-year-olds living in New York City. It’s a story 
-                                    about their family, love, drama, friendship, and comedy. 
-                                    They all have clear personalities and characters in the show, 
-                                    making them a good subject of the icon.
-                                </p>
+                                <img src={windowWidth > 576 ? introText : introTextMobile} alt="briefIntroduction" />
                             </div>
                         </div>
                     </section>
-                    <SectionWithoutCharacters content={content.sectionWithoutChar} />
-                    <Characters content={content.characters} />
+                    <SectionWithoutCharacters content={windowWidth > 768 ? content.sectionWithoutChar : content.sectionWithoutCharMobile} />
+                    <Characters content={windowWidth > 576 ? content.characters : content.charactersMobile} />
                 </section>
             ))}
             <WorkTogether />
