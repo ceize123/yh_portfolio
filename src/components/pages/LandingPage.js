@@ -201,13 +201,12 @@ function LandingPage() {
                     <div className="skills">
                         <h4>UI/UX Design</h4>
                         <ul>
+                            <li>User Research</li>
                             <li>Information Architecture</li>
-                            <li>Persona</li>
-                            <li>Journey Map</li>
                             <li>Wireframe</li>
                             <li>Mockup</li>
                             <li>Prototype</li>
-                            <li>A/B Testing</li>
+                            <li>Testing</li>
                         </ul>
                     </div>
                     

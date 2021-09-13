@@ -54,7 +54,8 @@ import landingRb from '../imgs/work/uiux/landing_rb.png';
 import landingAk from '../imgs/work/uiux/landing_ak.png';
 import landingMs from '../imgs/work/uiux/landing_ms.png';
 import akVideo1 from '../imgs/work/uiux/ak_video1.mov';
-import akVideo2 from '../imgs/work/uiux/ak_video2.mov';
+import akVideo2 from '../imgs/work/uiux/ak_video2.mp4';
+import rbVideo from '../imgs/work/uiux/rb_video.mp4';
 import msVideo from '../imgs/work/uiux/ms_video.mp4';
 
 const uiuxData = [
@@ -184,7 +185,7 @@ const uiuxData = [
                 paragraph: [
                     'I use pink as the main color of website. Pink represents soft, gentle and cute impression to people. There is not much animation in this project. Everything is simple and intuitive.'
                 ],
-                video: akVideo2,
+                video: rbVideo,
                 backgroundColor:'rbBgc',
             },
             {

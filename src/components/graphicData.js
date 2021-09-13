@@ -33,6 +33,15 @@ import RossTextMobile from '../imgs/work/graphic/ross_text_mobile.svg';
 import magazine1 from '../imgs/work/graphic/musical_magazine.png';
 import magazine2 from '../imgs/work/graphic/musical_magazine2.png';
 import magazine3 from '../imgs/work/graphic/musical_magazine3.png';
+import magazineMobile1 from '../imgs/work/graphic/musical_magazine_mobile.png';
+import magazineMobile2 from '../imgs/work/graphic/musical_magazine_mobile2.png';
+import magazineMobile3 from '../imgs/work/graphic/musical_magazine_mobile3.png';
+import magazineMobile4 from '../imgs/work/graphic/musical_magazine_mobile4.png';
+import magazineMobile5 from '../imgs/work/graphic/musical_magazine_mobile5.png';
+import magazineMobile6 from '../imgs/work/graphic/musical_magazine_mobile6.png';
+import magazineMobile7 from '../imgs/work/graphic/musical_magazine_mobile7.png';
+import magazineMobile8 from '../imgs/work/graphic/musical_magazine_mobile8.png';
+import magazineMobile9 from '../imgs/work/graphic/musical_magazine_mobile9.png';
 
 const graphicData = [
     {
@@ -69,7 +78,18 @@ const graphicData = [
         mainTitle: 'Magazine Design',
         subtitle: 'Interview pages of a celebrity Jolin Tsai in Magazine.',
         gallery: landingMg,
-        pages: [magazine1, magazine2, magazine3]
+        pages: [magazine1, magazine2, magazine3],
+        pagesMobile: [
+            magazineMobile1,
+            magazineMobile2,
+            magazineMobile3,
+            magazineMobile4,
+            magazineMobile5,
+            magazineMobile6,
+            magazineMobile7,
+            magazineMobile8,
+            magazineMobile9
+        ]
     },
 ]
 

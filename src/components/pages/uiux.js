@@ -141,7 +141,7 @@ function Mockup(props) {
     return (
         <>
            {content.map((item, key) => ( // can't use forEach, it can't display properly
-                <div className={item.inline === true ? 'd-md-flex justify-content-between d-block mockupSection': 'd-block mockupSection'} key={key}>
+                <div className={item.inline === true ? 'd-lg-flex justify-content-between d-block mockupSection': 'd-block mockupSection'} key={key}>
                     <div className="textSection">
                         <h4>{item.title}</h4>
                         {/* display paragraph only if it exists */}
@@ -154,13 +154,13 @@ function Mockup(props) {
                    </div>
                    {/* video block */}
                     <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
-                        <img className={item.frame !== undefined ? 'd-inline' : 'd-none'} src={item.frame} alt="frame" />
+                        <img className={item.frame !== undefined ? 'd-inline frame' : 'd-none'} src={item.frame} alt="frame" />
 
-                        <video className={item.frame !== undefined ? 'mobileVideo' : 'desktopVideo'} controls>
+                        <video className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'} controls>
                             <source src={item.video} type="video/mp4"/>
                         </video>
                        {item.backgroundColor !== undefined ?
-                           <div className={`${windowWidth >= 769 ? `mockupBgc ${item.backgroundColor}` : ""}`}></div> : 
+                           <div className={`d-none d-lg-block mockupBgc ${item.backgroundColor}`}></div> : 
                            ""} 
                     </div>
                     {/* img block */}

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import menu from '../imgs/menu.png';
 import close from '../imgs/close.png';
 
 function Navbar() { 
@@ -57,10 +56,13 @@ function Navbar() {
                             src={close} alt="close" />
                     </div>
                     <div className="d-block d-sm-none">
-                        <img
+                        <svg
                             className="hamburger"
                             onClick={handleToggle}
-                            src={menu} alt="hamburger" />
+                            width="28" height="11" viewBox="0 0 28 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="28" height="4.125" rx="2" fill="#94401E"/>
+                            <rect y="6.875" width="18.9677" height="4.125" rx="2" fill="#94401E"/>
+                        </svg>
                     </div>
                 </ul>
             </div>

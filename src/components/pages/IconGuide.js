@@ -44,9 +44,17 @@ function IconGuide() {
         setwindowWidth(window.innerWidth)
     }
 
+    function changeColor(pageNow = 0) {
+        let hamburger = document.querySelectorAll(".hamburger rect");
+
+        hamburger.forEach(item => {
+            item.style.fill = "#FFF"
+        })
+    }
+
     useEffect(() => {
         window.addEventListener('resize', handleResize);
-
+        changeColor();
         return () => {
         window.addEventListener('resize', handleResize);
         }

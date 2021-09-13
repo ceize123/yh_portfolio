@@ -10796,7 +10796,7 @@ p {
   font-size: 24px;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li, a {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, li, a, button {
   font-family: "Barlow Semi Condensed", sans-serif;
   margin: 0;
 }
@@ -10808,7 +10808,7 @@ a {
 
 button {
   border: 2px solid #94401E;
-  background-color: #AD8255;
+  background-color: rgba(148, 64, 30, 0.65);
   color: #fff;
   font-size: 16px;
   padding: 11px 0;
@@ -11406,6 +11406,14 @@ header {
   margin-bottom: -10px;
   border-radius: 10px;
 }
+.stepSection article .mockupSection .videoSection .frame {
+  margin-right: 130px;
+}
+@media only screen and (max-width: 991px) {
+  .stepSection article .mockupSection .videoSection .frame {
+    margin-right: 0;
+  }
+}
 .stepSection article .mockupSection .imgSection {
   margin-bottom: 54px;
   position: relative;
@@ -11453,7 +11461,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .stepSection {
     margin-left: 0;
   }
@@ -11627,12 +11635,6 @@ header {
 .sticky-wrapper .element-wrapper {
   transition-duration: 0.7s;
 }
-.sticky-wrapper .element-wrapper footer {
-  padding: 0;
-}
-.sticky-wrapper .element-wrapper footer .backToTop img {
-  transform: rotate(-90deg);
-}
 .sticky-wrapper .magazine {
   background-color: #202136;
   color: #fff;
@@ -11643,13 +11645,27 @@ header {
   box-sizing: border-box;
   flex-shrink: 0;
 }
+@media only screen and (max-width: 991px) {
+  .sticky-wrapper .magazine .page {
+    width: 100%;
+    height: 100%;
+  }
+  .sticky-wrapper .magazine .page img {
+    width: 100%;
+  }
+  .sticky-wrapper .magazine .firstPage {
+    height: 100vh;
+  }
+}
 .sticky-wrapper .magazine .introduction {
+  max-width: 100%;
   width: 513px;
   height: 132px;
 }
 .sticky-wrapper .magazine .introduction .triangle {
   width: 0;
   height: 0;
+  margin-right: 6px;
   border-style: solid;
   border-width: 40px 40px 0 0;
   border-color: #D5A537 transparent transparent transparent;
@@ -11657,40 +11673,90 @@ header {
 .sticky-wrapper .magazine .introduction p {
   font-size: 18px;
   width: 467px;
+  letter-spacing: 0.03em;
 }
-.sticky-wrapper .magazine .jolin {
-  max-width: 1148px;
-  max-height: 742px;
-  width: 100%;
-  height: 100%;
-  margin-top: 84px;
+.sticky-wrapper .magazine .introduction span {
+  font-size: 24px;
 }
-.sticky-wrapper .magazine .jolin0 {
-  background-image: url(../imgs/work/graphic/musical_magazine.png);
+@media only screen and (max-width: 575px) {
+  .sticky-wrapper .magazine .introduction {
+    margin: 0 20px;
+  }
+  .sticky-wrapper .magazine .introduction p {
+    width: 288px;
+  }
 }
-.sticky-wrapper .magazine .jolin1 {
-  background-image: url(../imgs/work/graphic/musical_magazine2.png);
+@media only screen and (min-width: 992px) {
+  .sticky-wrapper .magazine .jolin {
+    max-width: 1043px;
+    max-height: 742px;
+    width: 100%;
+    height: 100%;
+    margin: 20px 30px 0;
+  }
+  .sticky-wrapper .magazine .jolin0 {
+    background-image: url(../imgs/work/graphic/musical_magazine.png);
+  }
+  .sticky-wrapper .magazine .jolin1 {
+    background-image: url(../imgs/work/graphic/musical_magazine2.png);
+  }
+  .sticky-wrapper .magazine .jolin2 {
+    background-image: url(../imgs/work/graphic/musical_magazine3.png);
+  }
+  .sticky-wrapper .magazine .jolin0, .sticky-wrapper .magazine .jolin1, .sticky-wrapper .magazine .jolin2 {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
 }
-.sticky-wrapper .magazine .jolin2 {
-  background-image: url(../imgs/work/graphic/musical_magazine3.png);
-}
-.sticky-wrapper .magazine .jolin0, .sticky-wrapper .magazine .jolin1, .sticky-wrapper .magazine .jolin2 {
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
+@media only screen and (max-width: 991px) {
+  .sticky-wrapper .magazine .jolin0, .sticky-wrapper .magazine .jolin2, .sticky-wrapper .magazine .jolin4 {
+    padding-left: 50px;
+    margin-bottom: 100px;
+  }
+  .sticky-wrapper .magazine .jolin1, .sticky-wrapper .magazine .jolin3, .sticky-wrapper .magazine .jolin5 {
+    padding-right: 50px;
+    margin-bottom: 100px;
+  }
+  .sticky-wrapper .magazine .jolin6, .sticky-wrapper .magazine .jolin7, .sticky-wrapper .magazine .jolin8 {
+    margin: 0 10px 30px;
+  }
 }
 .sticky-wrapper .infoSection {
   width: 100vw;
   flex-shrink: 0;
-  padding-top: 104px;
+  padding-top: 89px;
 }
 .sticky-wrapper .infoSection > div {
   max-width: 1320px;
   width: 100%;
 }
+.sticky-wrapper .infoSection footer {
+  padding-bottom: 0;
+}
+.sticky-wrapper .infoSection footer .backToTop {
+  bottom: 0;
+}
+.sticky-wrapper .infoSection footer .backToTop img {
+  transform: rotate(-90deg);
+}
+@media only screen and (max-width: 992px) {
+  .sticky-wrapper .infoSection footer {
+    padding-bottom: 60px;
+  }
+  .sticky-wrapper .infoSection footer .backToTop img {
+    transform: rotate(0deg);
+  }
+}
 @media only screen and (min-width: 768px) {
   .sticky-wrapper .workTogether {
     margin-left: 132px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .sticky-wrapper .workTogether {
+    margin: 0 30px;
+    margin-bottom: 100px;
   }
 }
 
