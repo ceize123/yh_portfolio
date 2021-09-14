@@ -820,6 +820,9 @@ header {
                 img {
                     z-index: 1;
                     margin: 15px 22.5px;
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
                 }
 
                 img:hover {
@@ -830,23 +833,34 @@ header {
 
             .mockupBgc {
                 position: absolute;
-                top: 110px;
                 width: 100%;
-                height: calc(100% - 64px);
                 border-radius: 10px;
                 z-index: -1;
             }
 
             .akBgc {
                 background-color: #1F2533;
+                height: calc(100% - 64px);
+                top: 110px;
             }
 
             .rbBgc {
                 background-color: #FFF1F9;
+                height: calc(100% - 195px);
+                top: 240px;
             }
 
             .msBgc {
                 background-color: #DD8E58;
+                height: calc(100% - 64px);
+                top: 110px;
+            }
+
+            @media only screen and (max-width: 1199px) {
+                .akBgc, .rbBgc, .msBgc {
+                    height: calc(100% - 92px);
+                    top: 107px;
+                }
             }
         }  
     }

@@ -130,20 +130,6 @@ function InformationArchitecture(props) {
 function Mockup(props) {
     const { content } = props;
 
-    // detect size
-    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
-    const handleResize = () => {
-        setwindowWidth(window.innerWidth)
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-        window.addEventListener('resize', handleResize);
-        }
-    }, [])
-
     return (
         <>
            {content.map((item, key) => ( // can't use forEach, it can't display properly
@@ -171,7 +157,7 @@ function Mockup(props) {
                     </div>
                     {/* img block */}
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
-                        <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-lg-row"}>
+                        <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-xl-row"}>
                            {item.img !== undefined ? item.img.map(imgs => (
                                <img src={imgs} alt={item.title} />)) : ""}
                         </div>

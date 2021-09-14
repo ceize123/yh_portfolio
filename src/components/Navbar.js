@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import close from '../imgs/close.png';
 
@@ -22,6 +22,29 @@ function Navbar() {
             item.style.fill = "#94401E"
         })
     }
+
+    // useEffect(() => {
+    //     let lastScrollTop = 0;
+    //     window.onscroll = function() {
+    //     if ( document.getElementById('nav') ) {
+    //         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    //         if (scrollTop > lastScrollTop && scrollTop > 81) {
+    //             document.getElementById('nav').style.top = '-81px';
+    //         } else {
+    //             document.getElementById('nav').style.top = '0';
+    //         }
+    //         lastScrollTop = scrollTop;
+    //         } else {
+    //         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    //         if (scrollTop > lastScrollTop && scrollTop > 56) {
+    //             document.getElementById('nav').style.top = '-56px';
+    //         } else {
+    //             document.getElementById('nav').style.top = '0';
+    //         }
+    //         lastScrollTop = scrollTop;
+    //         }
+    //     }
+    // }, []);
 
     return (
         <header>
