@@ -21,7 +21,7 @@ function Pages(props) {
 
 let scroll = 0;
 let page = 0;
-function changeColor(pageNow = 0) {
+function changeToWhite(pageNow = 0) {
     let nav = document.querySelectorAll("header a");
     let hamburger = document.querySelectorAll(".hamburger rect");
 
@@ -61,7 +61,7 @@ function FooterForMagazine() {
             horizontalLength.style.transform = 'translateX(0%)'
             scroll = 0
             page = 0
-            changeColor(page)
+            changeToWhite(page)
         } else {
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
@@ -133,7 +133,7 @@ function Magazine() {
                 }
                 scroll = 0
             }
-            changeColor(page)
+            changeToWhite(page)
             
             horizontalLength.style.transform = 'translateX(-' + (page * 100) + '%)'
         }
@@ -141,7 +141,7 @@ function Magazine() {
 
     useEffect(() => {
         window.addEventListener("wheel", horizontalScroll);
-        changeColor();
+        changeToWhite();
         return () => {
             window.removeEventListener("wheel", horizontalScroll);
         };

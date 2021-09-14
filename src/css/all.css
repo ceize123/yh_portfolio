@@ -11485,8 +11485,14 @@ header {
   .stepSection article .mockupSection {
     margin-bottom: 30px;
   }
+  .stepSection article .mockupSection:not(:last-of-type) {
+    padding-bottom: 30px;
+  }
   .stepSection article .mockupSection .mobileOverview {
     width: 100%;
+  }
+  .stepSection article .mockupSection .videoSection {
+    margin-bottom: 0;
   }
   .stepSection article .mockupSection .videoSection .mobileVideo {
     left: 0;

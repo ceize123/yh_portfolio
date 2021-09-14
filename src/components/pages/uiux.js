@@ -57,8 +57,11 @@ function Research(props) {
                     
 
                     <div class="modal fade" id={`modal${key}`} aria-labelledby={item.title} aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
                             <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
                                 <div class="modal-body">
                                     <img src={item.img} alt={item.title} />
                                 </div>
@@ -108,8 +111,11 @@ function InformationArchitecture(props) {
                     src={content.img} alt="InformationArchitecture" />
                 
             <div class="modal fade" id="infoArchModal" aria-labelledby="infoArchModal" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
                     <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body">
                             <img src={content.img} alt="InformationArchitecture" />
                         </div>
@@ -277,8 +283,11 @@ function Uiux() {
                                             data-bs-toggle="modal" data-bs-target="#wireFrameModal"
                                             src={content.wireframe} alt="wireframe" />
                                         <div class="modal fade" id="wireFrameModal" aria-labelledby="wireFrameModal" aria-hidden="true">
-                                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                            <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
                                                 <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
                                                     <div class="modal-body">
                                                         <img src={content.wireframe} alt="wireframe" />
                                                     </div>

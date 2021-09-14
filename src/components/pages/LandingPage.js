@@ -31,11 +31,17 @@ function WorkSection() {
 
     const changeToWhite = () => {
         let nav = document.querySelectorAll("header a");
+        let hamburger = document.querySelectorAll(".hamburger rect");
         if (selection === 1) {
             nav.forEach(item => {
                 item.style.color = "#FFF"
             })
+            hamburger.forEach(item => {
+                item.style.fill = "#FFF"
+            })
         }
+
+        
     }
 
     return (
@@ -150,25 +156,6 @@ function LandingPage() {
         window.addEventListener('resize', handleResize);
         }
     }, [])
-
-    // change color for nav anchor
-    // function changeColor() {
-    //     let nav = document.querySelectorAll("header a");
-    //     if (windowWidth > 575) {
-    //         nav.forEach(item => {
-    //             item.style.color = "#94401E"
-    //         })
-    //     } else {
-    //         nav.forEach((item, idx) => {
-    //             if (idx === 0) {
-    //                 item.style.color = "#94401E"
-    //             } else {
-    //                 item.style.color = "#FFF"
-    //             }
-    //         })
-    //     }
-    // }
-    // changeColor()
 
     return (
         <main>

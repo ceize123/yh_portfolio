@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import close from '../imgs/close.png';
 
@@ -12,27 +12,15 @@ function Navbar() {
         body.classList.toggle("fixed");
     }
 
-    // detect size
-    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
-    const handleResize = () => {
-        setwindowWidth(window.innerWidth)
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-        window.addEventListener('resize', handleResize);
-        }
-    }, [])
-
     const changeToRed = () => {
         let nav = document.querySelectorAll("header a");
-        if (windowWidth > 575) {
-            nav.forEach(item => {
-                item.style.color = "#94401E"
-            })
-        }
+        let hamburger = document.querySelectorAll(".hamburger rect");
+        nav.forEach(item => {
+            item.style.color = "#94401E"
+        })
+        hamburger.forEach(item => {
+            item.style.fill = "#94401E"
+        })
     }
 
     return (

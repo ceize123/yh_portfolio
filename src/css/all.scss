@@ -896,12 +896,16 @@ header {
 
             .mockupSection {
                 margin-bottom: 30px;
+                &:not(:last-of-type) {
+                    padding-bottom: 30px;
+                }
 
                 .mobileOverview {
                     width: 100%;
                 }
 
                 .videoSection {
+                    margin-bottom: 0;
                     .mobileVideo {
                         left: 0;
                         right: 0;
