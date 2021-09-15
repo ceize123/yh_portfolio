@@ -23,13 +23,16 @@ let scroll = 0;
 let page = 0;
 function changeToWhite(pageNow = 0) {
     let nav = document.querySelectorAll("header a");
+    let li = document.querySelector(".menu li");
     let hamburger = document.querySelectorAll(".hamburger rect");
 
     if (pageNow === 4) {
+        li.style.color = "#94401E"
         nav.forEach(item => {
             item.style.color = "#94401E"
         })
     } else {
+        li.style.color = "#FFF"
         nav.forEach(item => {
             item.style.color = "#FFF"
         })

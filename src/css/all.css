@@ -10912,22 +10912,36 @@ article {
     white-space: nowrap;
   }
 }
+.resume {
+  width: 100%;
+}
+
 header {
   position: relative;
   z-index: 999;
 }
+header img {
+  max-width: 100%;
+}
 
 .nav {
   position: absolute;
+  max-width: 1320px;
   width: 100%;
   padding: 25px 0;
   transition-duration: 0.5s;
+  z-index: 1;
 }
 .nav ul {
   padding: 0;
 }
 .nav ul li {
   margin-right: 30px;
+  color: #94401E;
+}
+.nav ul li:hover {
+  cursor: pointer;
+  color: #AD8255;
 }
 .nav ul li:last-child {
   margin-right: 25px;
@@ -10953,6 +10967,11 @@ header {
   display: none;
 }
 
+@media only screen and (max-width: 1400px) {
+  .nav {
+    max-width: 1180px;
+  }
+}
 @media only screen and (max-width: 575px) {
   .nav .menu {
     background-image: url("../imgs/menuBackground.png");
@@ -10976,6 +10995,7 @@ header {
     margin: 0;
     margin-bottom: 30px;
     text-align: center;
+    color: #FFF;
   }
   .nav .menu div a {
     color: #FFF;

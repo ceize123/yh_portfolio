@@ -179,25 +179,41 @@ article {
     }
 } 
 
+.resume {
+    width: 100%;
+}
+
 // general ends
 
 // navbar star†
 header {
     position: relative;
     z-index: 999;
+
+    img {
+        max-width: 100%;
+    }
 }
 
 .nav {
     position: absolute;
+    max-width: 1320px;
     width: 100%;
     padding: 25px 0;
     transition-duration: 0.5s;
+    z-index: 1;
 
     ul {
         padding: 0;
 
         li {
             margin-right: 30px;
+            color: $secondary;
+        }
+
+        li:hover {
+            cursor: pointer;
+            color: $primary;
         }
 
         li:last-child {
@@ -235,6 +251,12 @@ header {
     }
 }
 
+@media only screen and (max-width: 1400px) {
+    .nav {
+        max-width: 1180px;
+    }
+}
+
 @media only screen and (max-width: 575px) {
     .nav {
         .menu {
@@ -259,7 +281,8 @@ header {
                 li {
                     margin: 0;
                     margin-bottom: 30px;
-                    text-align: center;       
+                    text-align: center;
+                    color: #FFF;   
                 }
                 a {
                     color: #FFF;

@@ -1,8 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import close from '../imgs/close.png';
+import resume from '../imgs/Yung-Shin_resume.png';
 
 function Navbar() { 
+    // detect size
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
     const handleToggle = () => {
         const menu = document.querySelector(".menu");
         const cross = document.querySelector(".close");
@@ -23,7 +38,6 @@ function Navbar() {
         })
     }
     
-    /////////// add class to add background to menubar
     useEffect(() => {
         let count = 0
         let lastScroll = 0
@@ -32,14 +46,19 @@ function Navbar() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop === 0) {
                 menuBar.style.top = '0px'
+                menuBar.style.backgroundColor = 'transparent'
+                menuBar.style.opacity = '1'
+                menuBar.style.position = 'absolute'
             } else if (scrollTop > lastScroll) {
                 lastScroll = scrollTop
                 count = 0
                 menuBar.style.top = '-100px'
-            } else if (count > 50) {
+            } else if (count > 20) {
                 lastScroll = scrollTop
                 menuBar.style.top = '0px'
                 menuBar.style.position = 'fixed'
+                menuBar.style.backgroundColor = '#FFF'
+                menuBar.style.opacity = '0.8'
             } else {
                 count++
             }
@@ -51,6 +70,7 @@ function Navbar() {
     }, []);
 
     return (
+    <>
         <header>
             <div className="nav d-block">
                 <ul className="d-flex justify-content-between mb-0">
@@ -62,7 +82,10 @@ function Navbar() {
                     </div>
                     <div className="menu">
                         <div className="d-sm-flex">
-                            <li><Link to="/about">Resume</Link></li>
+                            <li
+                                onClick={windowWidth < 576 ? handleToggle : ""}    
+                                data-bs-toggle="modal" data-bs-target="#resumeModal"
+                            >Resume</li>
                             <li><Link to="/work">Work</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                         </div>
@@ -82,6 +105,19 @@ function Navbar() {
                 </ul>
             </div>
         </header>
+        <div class="modal fade" id="resumeModal" aria-labelledby="resumeModal" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img className="resume" src={resume} alt="resume" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </>
     );
 }
 

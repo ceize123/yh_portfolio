@@ -4,6 +4,7 @@ import workSectionImg from '../../imgs/workSectionImg.svg';
 import workSectionImgMobile from '../../imgs/workSectionImgMobile.svg';
 import portrait from '../../imgs/portrait.svg';
 import portraitMobile from '../../imgs/portraitMobile.svg';
+import resume from '../../imgs/Yung-Shin_resume.png';
 import uiuxData from '../uiuxData';
 import graphicData from '../graphicData';
 import codingData from '../codingData';
@@ -31,17 +32,17 @@ function WorkSection() {
 
     const changeToWhite = () => {
         let nav = document.querySelectorAll("header a");
+        let li = document.querySelector(".menu li");
         let hamburger = document.querySelectorAll(".hamburger rect");
         if (selection === 1) {
+            li.style.color = "#FFF"
             nav.forEach(item => {
                 item.style.color = "#FFF"
             })
             hamburger.forEach(item => {
                 item.style.fill = "#FFF"
             })
-        }
-
-        
+        }        
     }
 
     return (
