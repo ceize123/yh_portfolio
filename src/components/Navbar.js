@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import close from '../imgs/close.png';
 
@@ -22,29 +22,33 @@ function Navbar() {
             item.style.fill = "#94401E"
         })
     }
+    
+    /////////// add class to add background to menubar
+    useEffect(() => {
+        let count = 0
+        let lastScroll = 0
+        let menuBar = document.querySelector('.nav');
+        window.onscroll = function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop === 0) {
+                menuBar.style.top = '0px'
+            } else if (scrollTop > lastScroll) {
+                lastScroll = scrollTop
+                count = 0
+                menuBar.style.top = '-100px'
+            } else if (count > 50) {
+                lastScroll = scrollTop
+                menuBar.style.top = '0px'
+                menuBar.style.position = 'fixed'
+            } else {
+                count++
+            }
+            console.log("Scroll" + scrollTop)
+            console.log("ScrollTOP" + lastScroll)
 
-    // useEffect(() => {
-    //     let lastScrollTop = 0;
-    //     window.onscroll = function() {
-    //     if ( document.getElementById('nav') ) {
-    //         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    //         if (scrollTop > lastScrollTop && scrollTop > 81) {
-    //             document.getElementById('nav').style.top = '-81px';
-    //         } else {
-    //             document.getElementById('nav').style.top = '0';
-    //         }
-    //         lastScrollTop = scrollTop;
-    //         } else {
-    //         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    //         if (scrollTop > lastScrollTop && scrollTop > 56) {
-    //             document.getElementById('nav').style.top = '-56px';
-    //         } else {
-    //             document.getElementById('nav').style.top = '0';
-    //         }
-    //         lastScrollTop = scrollTop;
-    //         }
-    //     }
-    // }, []);
+            console.log(count)
+        }
+    }, []);
 
     return (
         <header>

@@ -181,7 +181,7 @@ article {
 
 // general ends
 
-// navbar starst†
+// navbar star†
 header {
     position: relative;
     z-index: 999;
@@ -191,6 +191,7 @@ header {
     position: absolute;
     width: 100%;
     padding: 25px 0;
+    transition-duration: 0.5s;
 
     ul {
         padding: 0;
