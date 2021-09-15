@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import { useLocation } from "react-router";
+import Swal from 'sweetalert2'
 
 
 const ScrollToTop = (props) => {
-  const location = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
-  return <>{props.children}</>
+  const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    return props.children
 };
 
 export function WorkTogether() {
@@ -21,16 +21,31 @@ export function WorkTogether() {
 }
 
 export function Contact() {
+    const copyText = () => {
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText("yungshin85530@gmail.com");
+        
+        /* Alert the copied text */
+        Swal.fire(
+        `You've copied my email!`,
+        "yungshin85530@gmail.com",
+        'success'
+        )
+    }
     return (
         <section className="contactSection text-center">
             <h3>Contact</h3>
             <div className="d-flex justify-content-center">
                 <div className="iconBlock">
-                    <i className="las la-envelope d-block jumping"></i>
+                    <i
+                        onClick={() => copyText()}
+                        className="las la-envelope d-block jumping"></i>
                     <small>Email</small>
                 </div>
                 <div className="iconBlock">
-                    <i className="lab la-linkedin-in d-block jumping"></i>
+                    <a href="https://www.linkedin.com/in/yung-shin-ko-48861215b/" target="_blank" rel="noreferrer">
+                        <i className="lab la-linkedin-in d-block jumping"></i></a>
                     <small>LinkedIn</small>
                 </div>
             </div>

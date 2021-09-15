@@ -208,12 +208,6 @@ header {
 
         li {
             margin-right: 30px;
-            color: $secondary;
-        }
-
-        li:hover {
-            cursor: pointer;
-            color: $primary;
         }
 
         li:last-child {
@@ -281,8 +275,7 @@ header {
                 li {
                     margin: 0;
                     margin-bottom: 30px;
-                    text-align: center;
-                    color: #FFF;   
+                    text-align: center; 
                 }
                 a {
                     color: #FFF;
@@ -451,7 +444,7 @@ header {
         }
         
         button {
-            width: 153px;
+            width: 120px;
             background-color: $secondary;
             margin: 0 auto;
             margin-bottom: 50px;

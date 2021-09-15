@@ -10937,11 +10937,6 @@ header img {
 }
 .nav ul li {
   margin-right: 30px;
-  color: #94401E;
-}
-.nav ul li:hover {
-  cursor: pointer;
-  color: #AD8255;
 }
 .nav ul li:last-child {
   margin-right: 25px;
@@ -10995,7 +10990,6 @@ header img {
     margin: 0;
     margin-bottom: 30px;
     text-align: center;
-    color: #FFF;
   }
   .nav .menu div a {
     color: #FFF;
@@ -11126,7 +11120,7 @@ header img {
     font-weight: 600;
   }
   .skillSection button {
-    width: 153px;
+    width: 120px;
     background-color: #94401E;
     margin: 0 auto;
     margin-bottom: 50px;

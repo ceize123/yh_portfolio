@@ -4,7 +4,6 @@ import workSectionImg from '../../imgs/workSectionImg.svg';
 import workSectionImgMobile from '../../imgs/workSectionImgMobile.svg';
 import portrait from '../../imgs/portrait.svg';
 import portraitMobile from '../../imgs/portraitMobile.svg';
-import resume from '../../imgs/Yung-Shin_resume.png';
 import uiuxData from '../uiuxData';
 import graphicData from '../graphicData';
 import codingData from '../codingData';
@@ -32,10 +31,8 @@ function WorkSection() {
 
     const changeToWhite = () => {
         let nav = document.querySelectorAll("header a");
-        let li = document.querySelector(".menu li");
         let hamburger = document.querySelectorAll(".hamburger rect");
         if (selection === 1) {
-            li.style.color = "#FFF"
             nav.forEach(item => {
                 item.style.color = "#FFF"
             })
@@ -184,7 +181,9 @@ function LandingPage() {
 
             <section className="skillSection">
                 <h3 className="text-center">Skill</h3>
-                <button className="d-md-none d-block">Download Resume</button>
+                <button
+                    data-bs-toggle="modal" data-bs-target="#resumeModal"
+                    className="d-md-none d-block">Resume</button>
                 <div className="d-flex flex-column flex-md-row justify-content-evenly">
                     <div className="skills">
                         <h4>UI/UX Design</h4>
@@ -226,10 +225,12 @@ function LandingPage() {
                         </ul>
                     </div>
                 </div>
-                <Link className="d-md-block d-none text-center">------------Download Resume------------</Link>
+                <Link
+                    data-bs-toggle="modal" data-bs-target="#resumeModal"
+                    className="d-md-block d-none text-center jumping">------------Resume------------</Link>
             </section>
 
-            <section className="workSection">
+            <section id="workSection" className="workSection">
                 <img className="workSectionBgc" src={windowWidth >= 576 ? workSectionImg : workSectionImgMobile} alt="WorkSectionImg" />
                 <div className="row justify-content-center">
                     <WorkSection />

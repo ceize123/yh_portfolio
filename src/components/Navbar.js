@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import close from '../imgs/close.png';
 import resume from '../imgs/Yung-Shin_resume.png';
 
 function Navbar() { 
+    let menuBar = document.querySelector('.nav');
+    let nav = document.querySelectorAll("header a");
     // detect size
     const [windowWidth, setwindowWidth] = useState(window.innerWidth)
     const handleResize = () => {
@@ -22,13 +24,19 @@ function Navbar() {
         const menu = document.querySelector(".menu");
         const cross = document.querySelector(".close");
         const body = document.querySelector("body")
+        menuBar.style.opacity = '1'
         menu.classList.toggle("open");
         cross.classList.toggle("open");
         body.classList.toggle("fixed");
+        nav.forEach((item, idx) => {
+            if (idx > 0) {
+                item.style.color = "#FFF"
+            }
+        })
     }
 
     const changeToRed = () => {
-        let nav = document.querySelectorAll("header a");
+        
         let hamburger = document.querySelectorAll(".hamburger rect");
         nav.forEach(item => {
             item.style.color = "#94401E"
@@ -41,7 +49,7 @@ function Navbar() {
     useEffect(() => {
         let count = 0
         let lastScroll = 0
-        let menuBar = document.querySelector('.nav');
+        let menuBar = document.querySelector('.nav')
         window.onscroll = function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop === 0) {
@@ -53,19 +61,15 @@ function Navbar() {
                 lastScroll = scrollTop
                 count = 0
                 menuBar.style.top = '-100px'
-            } else if (count > 20) {
+            } else if (count > 15) {
                 lastScroll = scrollTop
                 menuBar.style.top = '0px'
                 menuBar.style.position = 'fixed'
                 menuBar.style.backgroundColor = '#FFF'
-                menuBar.style.opacity = '0.8'
+                menuBar.style.opacity = '0.95'
             } else {
                 count++
             }
-            console.log("Scroll" + scrollTop)
-            console.log("ScrollTOP" + lastScroll)
-
-            console.log(count)
         }
     }, []);
 
@@ -75,9 +79,9 @@ function Navbar() {
             <div className="nav d-block">
                 <ul className="d-flex justify-content-between mb-0">
                     <div className="home">
-                        <li className="home">
+                        <li className="homeBtn">
                             <Link to="/"
-                            onClick={changeToRed}>Home</Link>
+                            onClick={() => changeToRed()}>Home</Link>
                         </li>
                     </div>
                     <div className="menu">
@@ -85,8 +89,10 @@ function Navbar() {
                             <li
                                 onClick={windowWidth < 576 ? handleToggle : ""}    
                                 data-bs-toggle="modal" data-bs-target="#resumeModal"
-                            >Resume</li>
-                            <li><Link to="/work">Work</Link></li>
+                            ><Link>Resume</Link></li>
+                            <li
+                                onClick={windowWidth < 576 ? handleToggle : ""}
+                            ><Link to="/#workSection">Work</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                         </div>
                         <img className="close"
