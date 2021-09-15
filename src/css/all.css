@@ -10948,6 +10948,7 @@ header img {
 .nav .hamburger {
   margin-right: 25px;
   margin-left: 12px;
+  z-index: 999;
 }
 .nav .hamburger:hover {
   cursor: pointer;

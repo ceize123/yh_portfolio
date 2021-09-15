@@ -225,6 +225,7 @@ header {
     .hamburger {
         margin-right: 25px;
         margin-left: 12px; // to make same width as home button
+        z-index: 999;
 
         &:hover {
             cursor: pointer;

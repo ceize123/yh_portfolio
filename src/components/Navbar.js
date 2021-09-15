@@ -4,7 +4,7 @@ import close from '../imgs/close.png';
 import resume from '../imgs/Yung-Shin_resume.png';
 
 function Navbar() { 
-    let menuBar = document.querySelector('.nav');
+    
     let nav = document.querySelectorAll("header a");
     // detect size
     const [windowWidth, setwindowWidth] = useState(window.innerWidth)
@@ -21,6 +21,7 @@ function Navbar() {
     }, [])
 
     const handleToggle = () => {
+        let menuBar = document.querySelector('.nav');
         const menu = document.querySelector(".menu");
         const cross = document.querySelector(".close");
         const body = document.querySelector("body")
@@ -81,32 +82,27 @@ function Navbar() {
                     <div className="home">
                         <li className="homeBtn">
                             <Link to="/"
-                                onTouchStart={changeToRed}
                                 onClick={changeToRed}>Home</Link>
                         </li>
                     </div>
                     <div className="menu">
                         <div className="d-sm-flex">
                             <li
-                                onTouchStart={windowWidth < 576 ? handleToggle : ""}      
                                 onClick={windowWidth < 576 ? handleToggle : ""}    
                                 data-bs-toggle="modal" data-bs-target="#resumeModal"
                             ><Link>Resume</Link></li>
                             <li
-                                onTouchStart={windowWidth < 576 ? handleToggle : ""}  
                                 onClick={windowWidth < 576 ? handleToggle : ""}
                             ><Link to="/#workSection">Work</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                         </div>
                         <img className="close"
-                            onTouchStart={handleToggle}  
                             onClick={handleToggle}
                             src={close} alt="close" />
                     </div>
                     <div className="d-block d-sm-none">
                         <svg
                             className="hamburger"
-                            onTouchStart={handleToggle}  
                             onClick={handleToggle}
                             width="28" height="11" viewBox="0 0 28 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="28" height="4.125" rx="2" fill="#94401E"/>
