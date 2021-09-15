@@ -10930,7 +10930,7 @@ header img {
   width: 100%;
   padding: 25px 0;
   transition-duration: 0.5s;
-  z-index: 1;
+  z-index: 9999;
 }
 .nav ul {
   padding: 0;
