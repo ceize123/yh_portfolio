@@ -87,22 +87,26 @@ function Navbar() {
                     <div className="menu">
                         <div className="d-sm-flex">
                             <li
-                                onClick={windowWidth < 576 ? handleToggle : ""}    
+                                onTouchStart={() => windowWidth < 576 ? handleToggle() : ""}      
+                                onClick={() => windowWidth < 576 ? handleToggle() : ""}    
                                 data-bs-toggle="modal" data-bs-target="#resumeModal"
                             ><Link>Resume</Link></li>
                             <li
-                                onClick={windowWidth < 576 ? handleToggle : ""}
+                                onTouchStart={() => windowWidth < 576 ? handleToggle() : ""}  
+                                onClick={() => windowWidth < 576 ? handleToggle() : ""}
                             ><Link to="/#workSection">Work</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
                         </div>
                         <img className="close"
-                            onClick={handleToggle}
+                            onTouchStart={() => handleToggle()}  
+                            onClick={() => handleToggle()}
                             src={close} alt="close" />
                     </div>
                     <div className="d-block d-sm-none">
                         <svg
                             className="hamburger"
-                            onClick={handleToggle}
+                            onTouchStart={() => handleToggle()}  
+                            onClick={() => handleToggle()}
                             width="28" height="11" viewBox="0 0 28 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="28" height="4.125" rx="2" fill="#94401E"/>
                             <rect y="6.875" width="18.9677" height="4.125" rx="2" fill="#94401E"/>
