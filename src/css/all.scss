@@ -907,7 +907,7 @@ header {
         margin-left: 0;
 
         article {
-            margin-left: 18px;
+            margin-left: 0;
             margin-right: 25px;
             .textSection {
                 margin-bottom: 30px;
@@ -1324,7 +1324,7 @@ footer {
     }
 
     .backToTop {
-        position: absolute;
+        position: fixed;
         bottom: 95px;
         right: 55px;
     }

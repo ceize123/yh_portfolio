@@ -14,11 +14,11 @@ function Footer() {
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
-
         return () => {
-        window.addEventListener('resize', handleResize);
+            window.addEventListener('resize', handleResize);
         }
     }, [])
+
 
     return (
         <footer className="d-flex flex-column flex-md-row justify-content-evenly align-items-center">

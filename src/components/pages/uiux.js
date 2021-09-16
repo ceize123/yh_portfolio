@@ -148,7 +148,10 @@ function Mockup(props) {
                     <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
                         <img className={item.frame !== undefined ? 'd-inline frame' : 'd-none'} src={item.frame} alt="frame" />
 
-                        <video className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'} controls>
+                       <video
+                           className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}
+                           poster="https://s3.eu-central-1.amazonaws.com/pipe.public.content/poster.png"
+                           controls>
                             <source src={item.video} type="video/mp4"/>
                         </video>
                        {item.backgroundColor !== undefined ?
@@ -173,39 +176,53 @@ function Mockup(props) {
 function Uiux() {
     const { title } = useParams();
     let stepCount = 1;
-
+    let sectionIndex = 0;
+    
     const handleScroll = () => {
-        
         const star = document.querySelectorAll(".star");
         const spot = document.querySelectorAll(".star path");
         const svg = document.querySelectorAll(".star svg");
         const primaryLine = document.querySelectorAll(".star .primaryLine");
-
-        let sectionIndex = 0;
-        let sectionTop = star[0].getBoundingClientRect().top;
+        // sectionTop = star[0].getBoundingClientRect().top;
         
         star.forEach((item, idx, ary) => {
             if (ary.length > idx + 1) {
                 if (item.getBoundingClientRect().top <= 330) {
-                    primaryLine[idx].style.height = `${Math.abs(330 - item.getBoundingClientRect().top)}px`;
+                    primaryLine[idx].style.height = `${Math.abs(300 - item.getBoundingClientRect().top)}px`;
+                    spot[sectionIndex].style.fill = "#AD8255";
+                    svg[sectionIndex].classList.add("scale");
                 } else {
                     primaryLine[idx].style.height = '0px';
                 }
             }
 
-            if (sectionTop <= 0) {
-                sectionTop = item.getBoundingClientRect().top;
-                sectionIndex = idx;
+            // handle stars
+            if (item.getBoundingClientRect().top <= 270) {
+                sectionIndex = idx
             }
+            if (sectionIndex + 1 === star.length) {
+                if (star[sectionIndex].getBoundingClientRect().top >= 300) {
+                    spot[sectionIndex].style.fill = "#E5E5E5";
+                    svg[sectionIndex].classList.remove("scale");
+                }
+            } else if (sectionIndex > 0 && sectionIndex < star.length) {
+                if (star[sectionIndex + 1].getBoundingClientRect().top >= 300) {
+                    spot[sectionIndex + 1].style.fill = "#E5E5E5";
+                    svg[sectionIndex + 1].classList.remove("scale");
+                }
+            } else if (sectionIndex === 0){
+                //for first star
+                if (star[sectionIndex].getBoundingClientRect().top >= 300) {
+                    spot[sectionIndex].style.fill = "#E5E5E5";
+                    svg[sectionIndex].classList.remove("scale");
+                    //for second star
+                } else if (star[sectionIndex + 1].getBoundingClientRect().top >= 300) {
+                    spot[sectionIndex + 1].style.fill = "#E5E5E5";
+                    svg[sectionIndex + 1].classList.remove("scale");
+                }
+            }
+            
         })
-
-        if (sectionTop <= 330) {
-            spot[sectionIndex].style.fill = "#AD8255";
-            svg[sectionIndex].classList.add("scale");
-        } else {
-            spot[sectionIndex].style.fill = "#E5E5E5";
-            svg[sectionIndex].classList.remove("scale");
-        }
     };
 
     useEffect(() => {
@@ -216,7 +233,7 @@ function Uiux() {
     }, []);
 
     return (
-        <main onScroll={() => { handleScroll(); }}>
+        <main>
             {/* use the result of filter function */}
             {uiuxData.filter(content => content.urlName === title).map((content, key) => (
                 <div key={key}>
@@ -307,7 +324,7 @@ function Uiux() {
                 </div>
             ))}
             <Contact />
-            <Footer />
+            <Footer/>
         </main>
     );
 }

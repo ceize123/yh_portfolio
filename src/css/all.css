@@ -11495,7 +11495,7 @@ header img {
     margin-left: 0;
   }
   .stepSection article {
-    margin-left: 18px;
+    margin-left: 0;
     margin-right: 25px;
   }
   .stepSection article .textSection {
@@ -11822,7 +11822,7 @@ footer ul li::before {
   width: 1rem;
 }
 footer .backToTop {
-  position: absolute;
+  position: fixed;
   bottom: 95px;
   right: 55px;
 }
