@@ -10806,6 +10806,16 @@ a {
   color: #94401E;
 }
 
+img {
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  /* Firefox */
+  image-rendering: -o-crisp-edges;
+  /* Opera */
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (non-standard naming)*/
+}
+
 button {
   border: 2px solid #94401E;
   background-color: rgba(148, 64, 30, 0.65);
@@ -11364,6 +11374,7 @@ header img {
 }
 .stepSection article img {
   max-width: 100%;
+  max-height: 100%;
 }
 .stepSection article .dot {
   margin-top: 10px;
@@ -11437,9 +11448,7 @@ header img {
 .stepSection article .mockupSection .imgSection img {
   z-index: 1;
   margin: 15px 22.5px;
-}
-.stepSection article .mockupSection .imgSection img:first-of-type {
-  margin-top: 0;
+  max-width: 100%;
 }
 .stepSection article .mockupSection .imgSection img:hover {
   transform: scale(1);
@@ -11470,6 +11479,9 @@ header img {
   .stepSection article .mockupSection .akBgc, .stepSection article .mockupSection .rbBgc, .stepSection article .mockupSection .msBgc {
     height: calc(100% - 92px);
     top: 107px;
+  }
+  .stepSection article .mockupSection .imgSection img:first-of-type {
+    margin-top: 0;
   }
 }
 .stepSection .workTogether {
@@ -11622,8 +11634,9 @@ header img {
   border-left: 46px solid #A794C6;
   padding-left: 55px;
 }
-.iconGuide .features img, .iconGuide .characters img {
-  max-width: 100%;
+.iconGuide .features .graphics, .iconGuide .characters .graphics {
+  max-width: 838px;
+  width: 100%;
 }
 .iconGuide .features {
   padding: 55px 0;
@@ -11648,7 +11661,7 @@ header img {
     padding: 0;
   }
   .iconGuide .features:nth-of-type(4) {
-    padding: 20px 0;
+    padding: 20px;
   }
   .iconGuide .characterText {
     left: -20px;
@@ -11779,6 +11792,10 @@ header img {
   .sticky-wrapper .infoSection footer {
     padding-bottom: 60px;
   }
+  .sticky-wrapper .infoSection footer .backToTop {
+    bottom: 20px;
+    right: 20px;
+  }
   .sticky-wrapper .infoSection footer .backToTop img {
     transform: rotate(0deg);
   }
@@ -11822,7 +11839,7 @@ footer ul li::before {
   width: 1rem;
 }
 footer .backToTop {
-  position: fixed;
+  position: absolute;
   bottom: 95px;
   right: 55px;
 }

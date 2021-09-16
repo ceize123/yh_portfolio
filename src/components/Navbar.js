@@ -87,14 +87,19 @@ function Navbar() {
                     </div>
                     <div className="menu">
                         <div className="d-sm-flex">
-                            <li
-                                onClick={windowWidth < 576 ? handleToggle : ""}    
-                                data-bs-toggle="modal" data-bs-target="#resumeModal"
-                            ><Link>Resume</Link></li>
-                            <li
-                                onClick={windowWidth < 576 ? handleToggle : ""}
-                            ><Link to="/#workSection">Work</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
+                            <li>
+                                <Link
+                                    onClick={windowWidth < 576 ? handleToggle : ""}    
+                                    data-bs-toggle="modal" data-bs-target="#resumeModal"
+                                >Resume</Link></li>
+                            <li>
+                                <Link
+                                    onClick={windowWidth < 576 ? handleToggle : ""}
+                                    to="/#workSection">Work</Link></li>
+                            <li>
+                                <Link
+                                    onClick={windowWidth < 576 ? handleToggle : ""}
+                                    to="/#contactSection">Contact</Link></li>
                         </div>
                         <img className="close"
                             onClick={handleToggle}

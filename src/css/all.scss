@@ -60,7 +60,13 @@ h1, h2, h3, h4, h5, h6, p, li, a, button {
 a {
     text-decoration: none;
     color: $secondary;
+}
 
+img {
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;          /* Firefox */
+    image-rendering: -o-crisp-edges;            /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
 }
 
 button {
@@ -744,6 +750,7 @@ header {
 
         img {
             max-width: 100%;
+            max-height: 100%;
         }
 
         .dot {
@@ -836,9 +843,7 @@ header {
                 img {
                     z-index: 1;
                     margin: 15px 22.5px;
-                    &:first-of-type {
-                        margin-top: 0;
-                    }
+                    max-width: 100%;
                 }
 
                 img:hover {
@@ -876,6 +881,11 @@ header {
                 .akBgc, .rbBgc, .msBgc {
                     height: calc(100% - 92px);
                     top: 107px;
+                }
+                .imgSection {
+                    img:first-of-type {
+                            margin-top: 0;
+                    }
                 }
             }
         }  
@@ -1075,8 +1085,9 @@ header {
         border-left: 46px solid $purple;
         padding-left: 55px;
 
-        img {
-            max-width: 100%;
+        .graphics {
+            max-width: 838px;
+            width: 100%;
         }
     }
 
@@ -1108,7 +1119,7 @@ header {
         }
 
         .features:nth-of-type(4) {
-            padding: 20px 0;
+            padding: 20px;
         }
 
         .characterText {
@@ -1268,6 +1279,8 @@ header {
             footer {
                 padding-bottom: 60px;
                 .backToTop {
+                    bottom: 20px;
+                    right: 20px;
                     img {
                         transform: rotate(0deg);
                     }
@@ -1324,7 +1337,7 @@ footer {
     }
 
     .backToTop {
-        position: fixed;
+        position: absolute;
         bottom: 95px;
         right: 55px;
     }

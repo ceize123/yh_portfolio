@@ -12,7 +12,7 @@ const codingData = [
         mainTitle: 'One page practice (HTML/ CSS/ JS)',
         subtitle: 'I designed a travel agency homepage for practicing html, css and js.',
         gallery: landingTourist,
-        codingUrl: "https://ceize123.github.io/Suit_Your_Daily_Life/"
+        codingUrl: "https://ceize123.github.io/travel_site/"
     },
 ]
 

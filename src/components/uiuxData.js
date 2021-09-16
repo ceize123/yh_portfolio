@@ -3,9 +3,9 @@ import ak2 from '../imgs/work/uiux/ak_step1-2.png';
 import ak3 from '../imgs/work/uiux/ak_step3.png';
 import ak4 from '../imgs/work/uiux/ak_step4.png';
 import ak5 from '../imgs/work/uiux/ak_step5-0.png';
+import ak6 from '../imgs/work/uiux/ak_step5-1.png';
 import ak7 from '../imgs/work/uiux/ak_step5-2.png';
 import ak8 from '../imgs/work/uiux/ak_step5-3.png';
-import ak9 from '../imgs/work/uiux/ak_step5-4.png';
 import ak10 from '../imgs/work/uiux/ak_step5-5.png';
 import ak11 from '../imgs/work/uiux/ak_step5-6.png';
 import ak12 from '../imgs/work/uiux/ak_step5-7.png';
@@ -102,7 +102,7 @@ const uiuxData = [
             {
                 title: 'Homepage',
                 paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan and call to action. The second part is the access to the “About.” The third part is the latest course information for users to follow up.'],
-                img: [ak7, ak8, ak9],
+                img: [ak6, ak7, ak8],
                 backgroundColor:'akBgc',
             },
             {

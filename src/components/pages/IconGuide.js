@@ -16,7 +16,7 @@ function Characters(props) {
         <>
             {content.map((item, key) => (
                 <section key={key} className="characters text-center">
-                    <img src={item[0]} alt={item} />
+                    <img className="graphics" src={item[0]} alt={item} />
                     <img className="characterText" src={item[1]} alt={item} />
                 </section>
             ))}
@@ -30,7 +30,7 @@ function SectionWithoutCharacters(props) {
         <>
             {content.map((item, key) => (
                 <section key={key} className="features text-center">
-                    <img src={item} alt={item}/>
+                    <img className="graphics" src={item} alt={item}/>
                 </section>
             ))}
         </>
@@ -44,7 +44,7 @@ function IconGuide() {
         setwindowWidth(window.innerWidth)
     }
 
-    function changeColor(pageNow = 0) {
+    function changeColor() {
         let hamburger = document.querySelectorAll(".hamburger rect");
 
         hamburger.forEach(item => {

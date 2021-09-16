@@ -34,7 +34,7 @@ export function Contact() {
         )
     }
     return (
-        <section className="contactSection text-center">
+        <section id="contactSection" className="contactSection text-center">
             <h3>Contact</h3>
             <div className="d-flex justify-content-center">
                 <div className="iconBlock">
