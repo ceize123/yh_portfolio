@@ -89,7 +89,7 @@ const uiuxData = [
             paragraph: 'The architecture of the website is not complicated. The only thing that made me hesitate was putting “Portfolio” into the “About” section. Finally, I decided to keep them in different sections because Andrea Ko is also a freelancer. It would be more convenient for a company to see the portfolio directly.',
             img: ak3,
         },
-        wireframe: ak4,
+        wireframe: { img: ak4 },
         mockup: [
             {
                 inline: true,

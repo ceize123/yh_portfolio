@@ -80,6 +80,10 @@ button {
     border-radius: 5px;
 }
 
+.modal-body img {
+    max-width: 100%;
+}
+
 // star
 path {
     fill: #E5E5E5;
@@ -840,7 +844,12 @@ header {
                 margin-bottom: 54px;
                 position: relative;
 
+                .mobileDevice {
+                    max-width: 200px;
+                }
+
                 img {
+                    flex-shrink: 0;
                     z-index: 1;
                     margin: 15px 22.5px;
                     max-width: 100%;

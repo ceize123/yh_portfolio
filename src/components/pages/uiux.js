@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
 import dot from '../../imgs/dot.png';
 import magnifier from '../../imgs/work/uiux/maginify.png';
 import { Contact, WorkTogether } from '../general.js';
 import Footer from "../Footer.js";
+import { Modal } from "react-bootstrap";
 
 function SVGStar() {
     return (
@@ -18,6 +19,36 @@ function SVGStar() {
             </div>
         </>
     )
+}
+
+function ModalDisplay(props) {
+    const { content } = props;
+    const [lgShow, setLgShow] = useState(false);
+
+    return (
+    <>
+    <div className="d-md-none d-block">
+        <img
+            onClick={() => setLgShow(true)}
+            className="magnifier"
+            src={magnifier} alt="magnifier" />
+    </div>      
+    <img className="zoomIn"
+        onClick={() => setLgShow(true)}
+        src={content.img} alt={content} />      
+    <Modal size="xl"        
+        show={lgShow}
+        fullscreen="md-down"
+        onHide={() => setLgShow(false)}
+        aria-labelledby="modal-sizes-title-lg"
+    >
+    <Modal.Header closeButton></Modal.Header>
+    <Modal.Body class="modal-body">
+        <img class="mx-auto d-block" src={content.img} alt={content} />
+    </Modal.Body>
+    </Modal>
+    </>
+    );
 }
 
 function Research(props) {
@@ -45,29 +76,7 @@ function Research(props) {
                 <div className={item.inline === true ?
                     'col-md-7 text-center imgSection' :
                     'imgSection'}>
-                    <div className="d-md-none d-block">
-                        <img className="magnifier"
-                            data-bs-toggle="modal" data-bs-target={`#modal${key}`}
-                            src={magnifier} alt="magnifier" />
-                    </div>
-                    <img
-                        className="zoomIn"
-                        data-bs-toggle="modal" data-bs-target={`#modal${key}`}
-                        src={item.img} alt={item.title} />
-                    
-
-                    <div class="modal fade" id={`modal${key}`} aria-labelledby={item.title} aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <img src={item.img} alt={item.title} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ModalDisplay content={item}/>
                 </div>
             </div>
         ))}
@@ -100,28 +109,7 @@ function InformationArchitecture(props) {
             <p>{content.paragraph}</p>
         </div>
         <div className="imgSection text-center">
-            <div className="d-md-none d-block">
-                <img
-                    className="magnifier"
-                    data-bs-toggle="modal" data-bs-target="#infoArchModal"
-                    src={magnifier} alt="magnifier" />
-            </div>    
-                <img className="zoomIn"
-                    data-bs-toggle="modal" data-bs-target="#infoArchModal"
-                    src={content.img} alt="InformationArchitecture" />
-                
-            <div class="modal fade" id="infoArchModal" aria-labelledby="infoArchModal" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src={content.img} alt="InformationArchitecture" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <ModalDisplay content={content}/>
         </div>
         </>
     )
@@ -162,7 +150,7 @@ function Mockup(props) {
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
                         <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-xl-row"}>
                            {item.img !== undefined ? item.img.map(imgs => (
-                               <img src={imgs} alt={item.title} />)) : ""}
+                               <img className={item.inline === false ? "": "mobileDevice"}src={imgs} alt={item.title} />)) : ""}
                         </div>
                         {item.backgroundColor !== undefined ? <div className={`mockupBgc ${item.backgroundColor}`}></div> : ""} 
                     </div>
@@ -171,7 +159,6 @@ function Mockup(props) {
         </>
     )
 }
-
 
 function Uiux() {
     const { title } = useParams();
@@ -183,7 +170,6 @@ function Uiux() {
         const spot = document.querySelectorAll(".star path");
         const svg = document.querySelectorAll(".star svg");
         const primaryLine = document.querySelectorAll(".star .primaryLine");
-        // sectionTop = star[0].getBoundingClientRect().top;
         
         star.forEach((item, idx, ary) => {
             if (ary.length > idx + 1) {
@@ -276,27 +262,7 @@ function Uiux() {
                                 <article>
                                     <h3>Step {stepCount++}: Wireframe</h3>
                                     <div className="imgSection">
-                                        <div className="d-md-none d-inline">
-                                            <img
-                                                className="magnifier"
-                                                data-bs-toggle="modal" data-bs-target="#wireFrameModal"
-                                                src={magnifier} alt="magnifier" />
-                                        </div>
-                                        <img className="zoomIn"
-                                            data-bs-toggle="modal" data-bs-target="#wireFrameModal"
-                                            src={content.wireframe} alt="wireframe" />
-                                        <div class="modal fade" id="wireFrameModal" aria-labelledby="wireFrameModal" aria-hidden="true">
-                                            <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <img src={content.wireframe} alt="wireframe" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <ModalDisplay content={content.wireframe} />
                                     </div>
                                 </article>
                             </div> : ""}

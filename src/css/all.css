@@ -10827,6 +10827,10 @@ button {
   border-radius: 5px;
 }
 
+.modal-body img {
+  max-width: 100%;
+}
+
 path {
   fill: #E5E5E5;
 }
@@ -11445,7 +11449,11 @@ header img {
   margin-bottom: 54px;
   position: relative;
 }
+.stepSection article .mockupSection .imgSection .mobileDevice {
+  max-width: 200px;
+}
 .stepSection article .mockupSection .imgSection img {
+  flex-shrink: 0;
   z-index: 1;
   margin: 15px 22.5px;
   max-width: 100%;
