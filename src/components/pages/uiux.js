@@ -40,11 +40,11 @@ function ModalDisplay(props) {
         show={lgShow}
         fullscreen="md-down"
         onHide={() => setLgShow(false)}
-        aria-labelledby="modal-sizes-title-lg"
+        aria-labelledby="modal-sizes-lg"
     >
     <Modal.Header closeButton></Modal.Header>
-    <Modal.Body class="modal-body">
-        <img class="mx-auto d-block" src={content.img} alt={content} />
+    <Modal.Body className="modal-body">
+        <img className="mx-auto d-block" src={content.img} alt="modal_image" />
     </Modal.Body>
     </Modal>
     </>
@@ -216,7 +216,7 @@ function Uiux() {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [handleScroll]);
 
     return (
         <main>

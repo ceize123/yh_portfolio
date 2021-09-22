@@ -9,6 +9,8 @@ import graphicData from '../graphicData';
 import codingData from '../codingData';
 import { Contact } from '../general.js';
 import Footer from "../Footer.js";
+import resume from '../../imgs/Yung-Shin_resume.png';
+import { Modal } from "react-bootstrap";
 
 
 function WorkSection() {
@@ -29,10 +31,10 @@ function WorkSection() {
         setTimeout(function(){ setActive("false"); }, 100);
     }
 
-    const changeToWhite = () => {
+    const changeToWhite = (props) => {
         let nav = document.querySelectorAll("header a");
         let hamburger = document.querySelectorAll(".hamburger rect");
-        if (selection === 1) {
+        if (selection === 1 && props === "Magazine_Design") {
             nav.forEach(item => {
                 item.style.color = "#FFF"
             })
@@ -119,14 +121,12 @@ function WorkSection() {
                             {selection !== 2 ?
                                 <Link to={`/works/${url[selection]}/${item.urlName}`} >
                                     <img
-                                        onClick={() => {changeToWhite();}}
+                                        onClick={() => {changeToWhite(item.urlName);}}
                                         src={item.gallery} alt={item.urlName} />
                                 </Link> :
                                 // for coding part
                                 <a href={item.codingUrl} target="_blank" rel="noreferrer">
-                                    <img
-                                        onClick={() => {changeToWhite();}}
-                                        src={item.gallery} alt={item.urlName} />
+                                    <img src={item.gallery} alt={item.urlName} />
                                 </a>}
                             
                             <h4>{item.mainTitle}</h4>
@@ -140,7 +140,7 @@ function WorkSection() {
 }
 
 function LandingPage() { 
-
+    const [lgShow, setLgShow] = useState(false);
     // detect size
     const [windowWidth, setwindowWidth] = useState(window.innerWidth)
     const handleResize = () => {
@@ -182,7 +182,7 @@ function LandingPage() {
             <section className="skillSection">
                 <h3 className="text-center">Skill</h3>
                 <button
-                    data-bs-toggle="modal" data-bs-target="#resumeModal"
+                    onClick={() => {setLgShow(true);}}
                     className="d-md-none d-block">Resume</button>
                 <div className="d-flex flex-column flex-md-row justify-content-evenly">
                     <div className="skills">
@@ -226,7 +226,8 @@ function LandingPage() {
                     </div>
                 </div>
                 <Link
-                    data-bs-toggle="modal" data-bs-target="#resumeModal"
+                    to="#"
+                    onClick={() => {setLgShow(true);}}
                     className="d-md-block d-none text-center jumping">------------Resume------------</Link>
             </section>
 
@@ -239,6 +240,17 @@ function LandingPage() {
 
             <Contact />
             <Footer />
+            <Modal size="xl"        
+                show={lgShow}
+                fullscreen="md-down"
+                onHide={() => setLgShow(false)}
+                aria-labelledby="modal-sizes-lg"
+            >
+            <Modal.Header closeButton></Modal.Header>
+            <Modal.Body className="modal-body">
+                <img className="resume" src={resume} alt="resume" />
+            </Modal.Body>
+            </Modal>
         </main>
     );
 }

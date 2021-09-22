@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import close from '../imgs/close.png';
 import resume from '../imgs/Yung-Shin_resume.png';
+import { Modal } from "react-bootstrap";
 
 function Navbar() { 
-    
-    let nav = document.querySelectorAll("header a");
+
+    const [lgShow, setLgShow] = useState(false);
     // detect size
     const [windowWidth, setwindowWidth] = useState(window.innerWidth)
     const handleResize = () => {
@@ -21,6 +22,7 @@ function Navbar() {
     }, [])
 
     const handleToggle = () => {
+        let nav = document.querySelectorAll("header a");
         let menuBar = document.querySelector('.nav');
         const menu = document.querySelector(".menu");
         const cross = document.querySelector(".close");
@@ -37,7 +39,7 @@ function Navbar() {
     }
 
     const changeToRed = () => {
-        
+        let nav = document.querySelectorAll("header a");
         let hamburger = document.querySelectorAll(".hamburger rect");
         nav.forEach(item => {
             item.style.color = "#94401E"
@@ -73,6 +75,7 @@ function Navbar() {
             }
         }
     }, []);
+    
 
     return (
     <>
@@ -82,23 +85,28 @@ function Navbar() {
                     <div className="home">
                         <li className="homeBtn">
                             <Link to="/"
-                                onClick={changeToRed}>Home</Link>
+                                    onClick={ () => { changeToRed(); }}>Home</Link>
                         </li>
                     </div>
                     <div className="menu">
                         <div className="d-sm-flex">
                             <li>
                                 <Link
-                                    onClick={windowWidth < 576 ? handleToggle : ""}    
-                                    data-bs-toggle="modal" data-bs-target="#resumeModal"
+                                    to="#"
+                                    onClick={windowWidth < 576 ?
+                                        () => {
+                                            handleToggle();
+                                            setLgShow(true);
+                                        } :
+                                        () => { setLgShow(true); }}
                                 >Resume</Link></li>
                             <li>
                                 <Link
-                                    onClick={windowWidth < 576 ? handleToggle : ""}
+                                    onClick={windowWidth < 576 ? () => { handleToggle(); } : ""}
                                     to="/#workSection">Work</Link></li>
                             <li>
                                 <Link
-                                    onClick={windowWidth < 576 ? handleToggle : ""}
+                                        onClick={windowWidth < 576 ? () => { handleToggle(); } : ""}
                                     to="/#contactSection">Contact</Link></li>
                         </div>
                         <img className="close"
@@ -117,18 +125,17 @@ function Navbar() {
                 </ul>
             </div>
         </header>
-        <div class="modal fade" id="resumeModal" aria-labelledby="resumeModal" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img className="resume" src={resume} alt="resume" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Modal size="xl"        
+            show={lgShow}
+            fullscreen="md-down"
+            onHide={() => setLgShow(false)}
+            aria-labelledby="modal-sizes-lg"
+        >
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body className="modal-body">
+            <img className="resume" src={resume} alt="resume" />
+        </Modal.Body>
+        </Modal>
     </>
     );
 }
