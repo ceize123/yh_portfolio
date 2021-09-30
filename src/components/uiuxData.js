@@ -25,7 +25,7 @@ import rb1 from '../imgs/work/uiux/rabbit_step1-1.png';
 import rb2 from '../imgs/work/uiux/rabbit_step1-2.png';
 import rb3 from '../imgs/work/uiux/rabbit_step3.png';
 import rb4 from '../imgs/work/uiux/rabbit_step4.png';
-import rb5 from '../imgs/work/uiux/rabbit_step5-1.png';
+import rb5 from '../imgs/work/uiux/rabbit_step5-1.svg';
 import rb6 from '../imgs/work/uiux/rabbit_step5-2.png';
 import rb7 from '../imgs/work/uiux/rabbit_step5-3.png';
 import rb8 from '../imgs/work/uiux/rabbit_step5-4.png';
@@ -33,7 +33,7 @@ import rb9 from '../imgs/work/uiux/rabbit_step5-5.png';
 import ms1 from '../imgs/work/uiux/ms_step1-1.png';
 import ms2 from '../imgs/work/uiux/ms_step1-2.png';
 import ms3 from '../imgs/work/uiux/ms_step2.png';
-import ms4 from '../imgs/work/uiux/ms_step3-1.png';
+import ms4 from '../imgs/work/uiux/ms_step3-1.svg';
 import ms5 from '../imgs/work/uiux/ms_step3-2.png';
 import ms6 from '../imgs/work/uiux/ms_step3-3.png';
 import ms7 from '../imgs/work/uiux/ms_step3-4.png';
@@ -192,6 +192,7 @@ const uiuxData = [
                 title: 'Homepage',
                 paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan ”Hello! Could you please help me? ” and a donating button under the sentence. The second part is the carousel of a bulletin board. In the third part, users can see three recommended rabbits for adoption. They also can click the “see all the rabbits” button in this section.'],
                 img: [rb5],
+                inline: false,
                 backgroundColor:'rbBgc',
             },
             {
@@ -208,12 +209,14 @@ const uiuxData = [
                 title: 'Rabbit Introduction',
                 paragraph: ['On the individual rabbit introduction page, users can see basic information and the background story of the rabbit, which stimulate users\' empathy. Further, there are detailed health records for people to know the status of the rabbit. By offering information on the up and up, it will improve credibility for the user.'],
                 img: [rb8],
+                inline: false,
                 backgroundColor:'rbBgc',
             },
             {
                 title: 'Must Know Before Adoption',
                 paragraph: ['When they click the “Adoption” button, users will come to the page with all the information they should know before they move on. This page eliminates those who aren’t qualified or aren’t well prepared to welcome a new family member. Moreover, there are common questions and answers for users to check before moving to the next step.'],
                 img: [rb9],
+                inline: false,
                 backgroundColor:'rbBgc',
             },
             {
