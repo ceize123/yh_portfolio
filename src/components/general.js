@@ -54,7 +54,13 @@ export function Contact() {
 }
 
 export function PageLoading({ title, subtitle }) {
-    
+    useEffect(() => {
+        setTimeout(function () {
+            let loading = document.querySelector('.pageLoading');
+            loading.classList.add('d-none');
+        }, 1500);
+    }, []);
+
     return (
         <div className="pageLoading text-center">
             <div className="textSec">

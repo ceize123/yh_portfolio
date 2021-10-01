@@ -4,7 +4,25 @@ import close from '../imgs/close.png';
 import resume from '../imgs/Yung-Shin_resume.png';
 import { Modal } from "react-bootstrap";
 
+const PageLoadingForHome = () => (
+  <div className="pageLoading text-center">
+        <div className="textSec">
+            <h1>Yung-Shin Ko</h1>
+            <h2>Portfolio</h2>
+        </div>
+    </div>
+)
+
 function Navbar() { 
+
+    // page loading event
+    const [pageLoadingEffect, setPageLoadingEffect] = useState(false);
+    const pageLoadingEvent = () => {
+        setPageLoadingEffect(true)
+        setTimeout(function () {
+            setPageLoadingEffect(false);
+        }, 2500);
+    };
 
     const [lgShow, setLgShow] = useState(false);
     // detect size
@@ -79,13 +97,17 @@ function Navbar() {
 
     return (
     <>
+        { pageLoadingEffect ? <PageLoadingForHome /> : null }    
         <header>
             <div className="nav d-block">
                 <ul className="d-flex justify-content-between mb-0">
                     <div className="home">
                         <li className="homeBtn">
                             <Link to="/"
-                                    onClick={ () => { changeToRed(); }}>Home</Link>
+                                    onClick={() => {
+                                        changeToRed();
+                                        pageLoadingEvent();
+                                    }}>Home</Link>
                         </li>
                     </div>
                     <div className="menu">

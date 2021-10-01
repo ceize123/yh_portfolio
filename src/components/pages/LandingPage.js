@@ -14,7 +14,7 @@ import { Modal } from "react-bootstrap";
 
 
 function WorkSection() {
-    
+
     const dataAry = [uiuxData, graphicData, codingData];
     const url = ["uiux", "graphic", "coding"];
     // Work section selection event
@@ -157,7 +157,7 @@ function LandingPage() {
 
     return (
         <main>
-            <PageLoading title="Yung-Shin Ko" subtitle="Portfolio"/>
+            {/* <PageLoading title="Yung-Shin Ko" subtitle="Portfolio"/> */}
             <section className="hero">
                 <div className="d-flex justify-content-center">
                     <div className="description">
