@@ -58,7 +58,7 @@ export function PageLoading({ title, subtitle }) {
         setTimeout(function () {
             let loading = document.querySelector('.pageLoading');
             loading.classList.add('d-none');
-        }, 1500);
+        }, 1800);
     }, []);
 
     return (

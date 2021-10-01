@@ -117,11 +117,51 @@ function InformationArchitecture(props) {
 
 function Mockup(props) {
     const { content } = props;
+    const [showVideo, setShowVideo] = useState(false);
+    const showVideoEvent = () => {
+        let videoSec = document.querySelectorAll('.videoSection');
+        let ary = [];
+        for (let i = 0; i < videoSec.length; i++) {
+            ary.push(videoSec[i].getBoundingClientRect().top - window.screen.height);
+        }
+
+        if (videoSec.length > 1) {
+            if (ary[0] < 0) {
+                setShowVideo(true);
+                if (videoSec[0].getBoundingClientRect().bottom < 0) {
+                    setShowVideo(false);
+                    if (ary[1] < 0) {
+                        setShowVideo(true);
+                    } else {
+                        setShowVideo(false);
+                    }
+                }
+            } else {
+                setShowVideo(false);
+            }
+        } else {
+            if (ary[0] < 0) {
+                    setShowVideo(true);
+                } else {
+                    setShowVideo(false);
+                }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", showVideoEvent);
+        return () => {
+            window.removeEventListener("scroll", showVideoEvent);
+        };
+    }, [showVideoEvent]);
 
     return (
         <>
            {content.map((item, key) => ( // can't use forEach, it can't display properly
-                <div className={item.inline === true ? 'd-lg-flex justify-content-between d-block mockupSection': 'd-block mockupSection'} key={key}>
+               <div className={item.inline === true ?
+                   'd-lg-flex justify-content-between d-block mockupSection' :
+                   'd-block mockupSection'} key={key}
+               >
                     <div className="textSection">
                         <h4>{item.title}</h4>
                         {/* display paragraph only if it exists */}
@@ -135,21 +175,22 @@ function Mockup(props) {
                    {/* video block */}
                    <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
                         <img className={item.frame !== undefined ? 'd-inline frame' : 'd-none'} src={item.frame} alt="frame" />
-
-                       <video
-                           className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}
-                           controls>
-                            <source src={item.video} type="video/mp4"/>
-                        </video>
-                       {item.backgroundColor !== undefined ?
-                           <div className={`d-none d-lg-block mockupBgc ${item.backgroundColor}`}></div> : 
-                           ""} 
+                       {showVideo ?
+                           <video
+                            className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}
+                            autoPlay muted loop>
+                                <source src={item.video} type="video/mp4"/>
+                           </video> :
+                           <div className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}></div> }   
+                        {item.backgroundColor !== undefined ?
+                            <div className={`d-none d-lg-block mockupBgc ${item.backgroundColor}`}></div> : 
+                            ""} 
                     </div>
                     {/* img block */}
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
                         <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-xl-row"}>
                            {item.img !== undefined ? item.img.map(imgs => (
-                               <img className={item.inline === false ? "": "mobileDevice"}src={imgs} alt={item.title} />)) : ""}
+                               <img className={item.inline === false ? "desktopImg": "mobileImg"}src={imgs} alt={item.title} />)) : ""}
                         </div>
                         {item.backgroundColor !== undefined ? <div className={`mockupBgc ${item.backgroundColor}`}></div> : ""} 
                     </div>
@@ -165,13 +206,7 @@ function Uiux() {
     let sectionIndex = 0;
     
     const handleScroll = () => {
-        // let videoSec = document.querySelectorAll('.videoSection');
-        // let ary = [];
-        // for (let i = 0; i < videoSec.length; i++) {
-        //     ary.push(videoSec[i].getBoundingClientRect().top);
-        // }
-        // console.log(ary);
-
+        
         const star = document.querySelectorAll(".star");
         const spot = document.querySelectorAll(".star path");
         const svg = document.querySelectorAll(".star svg");

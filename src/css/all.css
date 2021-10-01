@@ -10941,7 +10941,7 @@ article {
   left: 0;
   transition: 0.5s 0.5s;
   background-color: #94401E;
-  z-index: 999;
+  z-index: 9999;
 }
 .pageLoading .textSec {
   animation-name: textDropping;
@@ -11479,6 +11479,7 @@ header img {
   height: 365px;
   top: 60px;
   left: 15px;
+  transition-duration: 0.5s;
 }
 .stepSection article .mockupSection .videoSection .desktopVideo {
   width: 90%;
@@ -11487,6 +11488,7 @@ header img {
   transform: translateX(-50%);
   margin-bottom: -10px;
   border-radius: 10px;
+  transition-duration: 0.5s;
 }
 .stepSection article .mockupSection .videoSection .frame {
   margin-right: 130px;
@@ -11500,14 +11502,18 @@ header img {
   margin-bottom: 54px;
   position: relative;
 }
-.stepSection article .mockupSection .imgSection .mobileDevice {
+.stepSection article .mockupSection .imgSection .mobileImg {
   max-width: 200px;
+}
+.stepSection article .mockupSection .imgSection .desktopImg {
+  max-width: 90%;
+  display: block;
+  margin: 15px auto;
 }
 .stepSection article .mockupSection .imgSection img {
   flex-shrink: 0;
   z-index: 1;
   margin: 15px 22.5px;
-  max-width: 100%;
 }
 .stepSection article .mockupSection .imgSection img:hover {
   transform: scale(1);

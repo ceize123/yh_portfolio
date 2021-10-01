@@ -33,7 +33,7 @@ import rb9 from '../imgs/work/uiux/rabbit_step5-5.png';
 import ms1 from '../imgs/work/uiux/ms_step1-1.png';
 import ms2 from '../imgs/work/uiux/ms_step1-2.png';
 import ms3 from '../imgs/work/uiux/ms_step2.png';
-import ms4 from '../imgs/work/uiux/ms_step3-1.svg';
+import ms4 from '../imgs/work/uiux/ms_step3-1.png';
 import ms5 from '../imgs/work/uiux/ms_step3-2.png';
 import ms6 from '../imgs/work/uiux/ms_step3-3.png';
 import ms7 from '../imgs/work/uiux/ms_step3-4.png';

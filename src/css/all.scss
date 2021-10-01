@@ -204,7 +204,7 @@ article {
     left: 0;
     transition: 0.5s 0.5s;
     background-color: $secondary;
-    z-index: 999;
+    z-index: 9999;
 
     .textSec {
         animation-name: textDropping;
@@ -874,7 +874,8 @@ header {
                     width: 206px;
                     height: 365px;
                     top: 60px;
-                    left: 15px;   
+                    left: 15px;
+                    transition-duration: 0.5s;
                 }
 
                 .desktopVideo {
@@ -884,6 +885,7 @@ header {
                     transform: translateX(-50%);
                     margin-bottom: -10px;
                     border-radius: 10px;
+                    transition-duration: 0.5s;
                 }
 
                 .frame {
@@ -901,15 +903,20 @@ header {
                 margin-bottom: 54px;
                 position: relative;
 
-                .mobileDevice {
+                .mobileImg {
                     max-width: 200px;
+                }
+
+                .desktopImg {
+                    max-width: 90%;
+                    display: block;
+                    margin: 15px auto;
                 }
 
                 img {
                     flex-shrink: 0;
                     z-index: 1;
                     margin: 15px 22.5px;
-                    max-width: 100%;
                 }
 
                 img:hover {
