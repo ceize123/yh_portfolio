@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import graphicData from '../graphicData';
-import { Contact, WorkTogether } from '../general.js';
+import { Contact, WorkTogether, PageLoading } from '../general.js';
 import door from '../../imgs/work/graphic/door.png';
 import titleText from '../../imgs/work/graphic/title_text.svg';
 import titleText_sm from '../../imgs/work/graphic/title_text_small.svg';
@@ -64,6 +64,7 @@ function IconGuide() {
         <main className="iconGuide">
             {graphicData.filter(content => content.urlName === "Icon_Guide").map((content, key) => (
                 <section key={key}>
+                    <PageLoading title="Graphic Design" subtitle={content.mainTitle}/>
                     <section className="iconHero text-center">
                         <div className="heroImg">
                             <img className="door enlarge" src={door} alt="door"/>

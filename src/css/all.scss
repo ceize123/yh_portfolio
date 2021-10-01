@@ -193,6 +193,63 @@ article {
     width: 100%;
 }
 
+.pageLoading {
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -100%;
+    left: 0;
+    transition: 0.5s 0.5s;
+    background-color: $secondary;
+    z-index: 999;
+
+    .textSec {
+        animation-name: textDropping;
+        animation-duration: 0.7s;
+        animation-timing-function: ease;
+        top: 50%;
+        transform: translateY(-50%);
+        position: relative;
+
+        h1, h2 {
+            color: $dark;
+            margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 992px) {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+    
+}
+
+@keyframes loading {
+    0% {
+        top: 0;
+    }
+    75% {
+        top: 0;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+@keyframes textDropping {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
 // general ends
 
 // navbar star†
@@ -1003,7 +1060,7 @@ header {
                 animation-name: enlarge;
                 animation-duration: 0.4s;
                 animation-iteration-count: 1;
-                animation-delay: 0.4s;
+                animation-delay: 1.6s;
                 animation-timing-function: linear;
             }
 
@@ -1012,7 +1069,7 @@ header {
                 left: 0;
                 right: 0;
                 margin: 89px auto 0 auto;
-                animation-delay: 0.5s;
+                animation-delay: 1.9s;
                 
             }
 

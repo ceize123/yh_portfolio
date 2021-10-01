@@ -7,7 +7,7 @@ import portraitMobile from '../../imgs/portraitMobile.svg';
 import uiuxData from '../uiuxData';
 import graphicData from '../graphicData';
 import codingData from '../codingData';
-import { Contact } from '../general.js';
+import { Contact, PageLoading } from '../general.js';
 import Footer from "../Footer.js";
 import resume from '../../imgs/Yung-Shin_resume.png';
 import { Modal } from "react-bootstrap";
@@ -157,6 +157,7 @@ function LandingPage() {
 
     return (
         <main>
+            <PageLoading title="Yung-Shin Ko" subtitle="Portfolio"/>
             <section className="hero">
                 <div className="d-flex justify-content-center">
                     <div className="description">

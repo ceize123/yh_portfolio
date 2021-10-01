@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import graphicData from '../graphicData';
-import { Contact, WorkTogether } from '../general.js';
+import { Contact, WorkTogether, PageLoading } from '../general.js';
 import backToTop from '../../imgs/backToTop.png';
 
 //global
@@ -148,24 +148,11 @@ function Magazine() {
         };
     });
 
-    // home button
-    // let home = document.querySelector(".homeBtn a");
-    // const cleanScroll = () => {
-    //     scroll = 0
-    //     page = 0
-    // }
-    // useEffect(() => {
-    //     home.addEventListener('click', cleanScroll);
-
-    //     return () => {
-    //     home.addEventListener('click', cleanScroll);
-    //     }
-    // }, [home])
-
     return (
         <main className="sticky-wrapper" onWheel={horizontalScroll}>
             {graphicData.filter(content => content.urlName === "Magazine_Design").map((content, key) => (
                 <section className="d-lg-flex element-wrapper" key={key}>
+                    <PageLoading title="Graphic Design" subtitle={content.mainTitle} />
                     <section className="magazine d-lg-flex">
                         <section className="page firstPage d-flex align-items-center justify-content-center">
                             <div className="introduction d-flex justify-content-center">

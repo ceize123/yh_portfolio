@@ -6,6 +6,7 @@ import ak5 from '../imgs/work/uiux/ak_step5-0.png';
 import ak6 from '../imgs/work/uiux/ak_step5-1.png';
 import ak7 from '../imgs/work/uiux/ak_step5-2.png';
 import ak8 from '../imgs/work/uiux/ak_step5-3.png';
+import ak9 from '../imgs/work/uiux/ak_step5-4.png';
 import ak10 from '../imgs/work/uiux/ak_step5-5.png';
 import ak11 from '../imgs/work/uiux/ak_step5-6.png';
 import ak12 from '../imgs/work/uiux/ak_step5-7.png';
@@ -20,12 +21,11 @@ import ak20 from '../imgs/work/uiux/ak_step5-15.png';
 import ak21 from '../imgs/work/uiux/ak_step5-16.png';
 import ak22 from '../imgs/work/uiux/ak_step5-17.png';
 import ak23 from '../imgs/work/uiux/ak_step5-18.png';
-import ak24 from '../imgs/work/uiux/ak_step5-19.png';
 import rb1 from '../imgs/work/uiux/rabbit_step1-1.png';
 import rb2 from '../imgs/work/uiux/rabbit_step1-2.png';
 import rb3 from '../imgs/work/uiux/rabbit_step3.png';
 import rb4 from '../imgs/work/uiux/rabbit_step4.png';
-import rb5 from '../imgs/work/uiux/rabbit_step5-1.svg';
+import rb5 from '../imgs/work/uiux/rabbit_step5-1.png';
 import rb6 from '../imgs/work/uiux/rabbit_step5-2.png';
 import rb7 from '../imgs/work/uiux/rabbit_step5-3.png';
 import rb8 from '../imgs/work/uiux/rabbit_step5-4.png';
@@ -108,13 +108,13 @@ const uiuxData = [
             {
                 title: 'Hamburger',
                 paragraph: ['All the sections are in hamburger. There are deeper levels of the courses. Also, some courses divide into beginner and advanced. People are quickly finding which course is suited for them.'],
-                img: [ak10, ak11],
+                img: [ak9, ak10],
                 backgroundColor:'akBgc',
             },
             {
                 title: 'About',
                 paragraph: ['On the about page, the user can see the introduction of the teacher’s experience relates to the jewelry industry. Moreover, they can see the pros of taking courses in Andrea Ko\'s jewelry design class.'],
-                img: [ak12, ak13],
+                img: [ak11, ak12],
                 backgroundColor:'akBgc',
             },
             {
@@ -122,19 +122,19 @@ const uiuxData = [
                 paragraph: ['I reorganized the whole information on the beginner jewelry course page. Instead of paragraphs, I listed bullet points to present the information. By using the subjects like “Who applies to this course,” “What can you learn from the class,” and “After finish this course, you can achieve like this... ”, users can easily understand if this is the course they are looking for.',
                             'There is a Registration form right under the bottom of the page. It allows users to register on the same page without leaving it to other pages or windows. ',
                             'If users want to register for the course, but they are not able to attend the latest class, they have access to tell Andrea Ko Jewelry Design when they are available for the class. Andrea will always take students\' needs into consideration.'],
-                img: [ak14, ak15, ak16, ak17],
+                img: [ak13, ak14, ak15, ak16],
                 backgroundColor:'akBgc',
             },
             {
                 title: 'Portfolio',
                 paragraph: ['I used a black background to present the jewelry design. With the contrast of shining jewelry and black, design works can jump out at the user.'],
-                img: [ak18, ak19, ak20],
+                img: [ak17, ak18, ak19],
                 backgroundColor:'akBgc',
             },
             {
                 title: 'Blog',
                 paragraph: ['Users can click the classification, which has four sections on the bar. There are three pictures in every article. Users can also see the recommended article with a high click-through rate on the bottom.'],
-                img: [ak21, ak22, ak23, ak24],
+                img: [ak20, ak21, ak22, ak23],
                 backgroundColor:'akBgc',
             },
             {
@@ -178,7 +178,7 @@ const uiuxData = [
             paragraph: 'I confirmed information architecture with the rabbit saving association through “Card Sorting .”During the closed sort, I founded that they wanted to put everything on the homepage. Commonly, clients feel everything is essential, so they want to put everything on the homepage. It is my responsibility to help them figure out the hierarchy of the website.',
             img: rb3,
         },
-        wireframe: rb4,
+        wireframe: { img: rb4 },
         mockup: [
             {
                 title: 'Overview',

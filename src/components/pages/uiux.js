@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
 import dot from '../../imgs/dot.png';
 import magnifier from '../../imgs/work/uiux/maginify.png';
-import { Contact, WorkTogether } from '../general.js';
+import { Contact, WorkTogether, PageLoading } from '../general.js';
 import Footer from "../Footer.js";
 import { Modal } from "react-bootstrap";
 
@@ -133,12 +133,11 @@ function Mockup(props) {
                         )) : ""}
                    </div>
                    {/* video block */}
-                    <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
+                   <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
                         <img className={item.frame !== undefined ? 'd-inline frame' : 'd-none'} src={item.frame} alt="frame" />
 
                        <video
                            className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}
-                           poster="https://s3.eu-central-1.amazonaws.com/pipe.public.content/poster.png"
                            controls>
                             <source src={item.video} type="video/mp4"/>
                         </video>
@@ -166,6 +165,13 @@ function Uiux() {
     let sectionIndex = 0;
     
     const handleScroll = () => {
+        // let videoSec = document.querySelectorAll('.videoSection');
+        // let ary = [];
+        // for (let i = 0; i < videoSec.length; i++) {
+        //     ary.push(videoSec[i].getBoundingClientRect().top);
+        // }
+        // console.log(ary);
+
         const star = document.querySelectorAll(".star");
         const spot = document.querySelectorAll(".star path");
         const svg = document.querySelectorAll(".star svg");
@@ -173,7 +179,8 @@ function Uiux() {
         
         star.forEach((item, idx, ary) => {
             if (ary.length > idx + 1) {
-                if (item.getBoundingClientRect().top <= 330) {
+                // if (item.getBoundingClientRect().top <= 330)
+                if (item.getBoundingClientRect().top <= 300) {
                     primaryLine[idx].style.height = `${Math.abs(300 - item.getBoundingClientRect().top)}px`;
                     spot[sectionIndex].style.fill = "#AD8255";
                     svg[sectionIndex].classList.add("scale");
@@ -183,7 +190,8 @@ function Uiux() {
             }
 
             // handle stars
-            if (item.getBoundingClientRect().top <= 270) {
+            // if (item.getBoundingClientRect().top <= 270)
+            if (item.getBoundingClientRect().top <= 300) {
                 sectionIndex = idx
             }
             if (sectionIndex + 1 === star.length) {
@@ -211,6 +219,7 @@ function Uiux() {
         })
     };
 
+
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         return () => {
@@ -223,6 +232,7 @@ function Uiux() {
             {/* use the result of filter function */}
             {uiuxData.filter(content => content.urlName === title).map((content, key) => (
                 <div key={key}>
+                    <PageLoading title="UI/UX Design" subtitle={content.mainTitle} />
                     <section className="uiuxTitle">
                         <h2>{content.mainTitle}</h2>
                         <p>{content.description}</p>
