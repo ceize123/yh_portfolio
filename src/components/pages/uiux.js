@@ -117,41 +117,61 @@ function InformationArchitecture(props) {
 
 function Mockup(props) {
     const { content } = props;
+
+    // detect size
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
     const [showVideo, setShowVideo] = useState(false);
     const showVideoEvent = () => {
-        let videoSec = document.querySelectorAll('.videoSection');
-        let ary = [];
-        for (let i = 0; i < videoSec.length; i++) {
-            ary.push(videoSec[i].getBoundingClientRect().top - window.screen.height);
-        }
-
-        if (videoSec.length > 1) {
-            if (ary[0] < 0) {
-                setShowVideo(true);
-                if (videoSec[0].getBoundingClientRect().bottom < 0) {
+        if (window >= 1200) {
+            let videoSec = document.querySelectorAll('.videoSection');
+            let ary = [];
+            for (let i = 0; i < videoSec.length; i++) {
+                ary.push(videoSec[i].getBoundingClientRect().top - window.screen.height);
+            }
+    
+            if (videoSec.length > 1) {
+                if (ary[0] < 0) {
+                    setShowVideo(true);
+                    if (videoSec[0].getBoundingClientRect().bottom < 0) {
+                        setShowVideo(false);
+                        if (ary[1] < 0) {
+                            setShowVideo(true);
+                        } else {
+                            setShowVideo(false);
+                        }
+                    }
+                } else {
                     setShowVideo(false);
-                    if (ary[1] < 0) {
+                }
+            } else {
+                if (ary[0] < 0) {
                         setShowVideo(true);
                     } else {
                         setShowVideo(false);
                     }
-                }
-            } else {
-                setShowVideo(false);
             }
         } else {
-            if (ary[0] < 0) {
-                    setShowVideo(true);
-                } else {
-                    setShowVideo(false);
-                }
+            setShowVideo(true);
         }
     };
 
+    
     useEffect(() => {
-        window.addEventListener("scroll", showVideoEvent);
+            window.addEventListener("scroll", showVideoEvent);
         return () => {
-            window.removeEventListener("scroll", showVideoEvent);
+            window.addEventListener("scroll", showVideoEvent);
         };
     }, [showVideoEvent]);
 
@@ -174,11 +194,13 @@ function Mockup(props) {
                    </div>
                    {/* video block */}
                    <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
-                        <img className={item.frame !== undefined ? 'd-inline frame' : 'd-none'} src={item.frame} alt="frame" />
+                       <img className={item.frame !== undefined ? 'd-inline frame' : 'd-none'} src={item.frame} alt="frame" />
                        {showVideo ?
                            <video
-                            className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}
-                            autoPlay muted loop>
+                                className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}
+                                autoPlay={windowWidth >= 1200 ? true : false}
+                                controls={windowWidth >= 1200 ? false : true}
+                                muted poster={item.poster}>
                                 <source src={item.video} type="video/mp4"/>
                            </video> :
                            <div className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}></div> }   

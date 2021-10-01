@@ -57,6 +57,10 @@ import akVideo1 from '../imgs/work/uiux/ak_video1.mov';
 import akVideo2 from '../imgs/work/uiux/ak_video2.mp4';
 import rbVideo from '../imgs/work/uiux/rb_video.mp4';
 import msVideo from '../imgs/work/uiux/ms_video.mp4';
+import akVideoCover from '../imgs/work/uiux/ak_desktop_video_cover.png';
+import akVideoCoverMobile from '../imgs/work/uiux/ak_mobile_video_cover.png';
+import rbVideoCover from '../imgs/work/uiux/rabbit_desktop_video_cover.png';
+import msVideoCover from '../imgs/work/uiux/ms_mobile_video_cover.png';
 
 const uiuxData = [
     // AK_Jewelry
@@ -98,6 +102,7 @@ const uiuxData = [
                             'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours. Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
                 frame: ak5,
                 video: akVideo1,
+                poster: akVideoCoverMobile,
             },
             {
                 title: 'Homepage',
@@ -140,7 +145,8 @@ const uiuxData = [
             {
                 title: 'Desktop',
                 video: akVideo2,
-                backgroundColor:'akBgc',
+                poster: akVideoCover,
+                backgroundColor: 'akBgc',
             }
         ]
     },
@@ -186,6 +192,7 @@ const uiuxData = [
                     'I use pink as the main color of website. Pink represents soft, gentle and cute impression to people. There is not much animation in this project. Everything is simple and intuitive.'
                 ],
                 video: rbVideo,
+                poster: rbVideoCover,
                 backgroundColor:'rbBgc',
             },
             {
@@ -258,6 +265,7 @@ const uiuxData = [
                             'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours.Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
                 frame: ak5,
                 video: msVideo,
+                poster: msVideoCover
             },
             {
                 title: 'Launch Screen/ Sign up/ Sign in',
