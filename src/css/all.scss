@@ -831,10 +831,6 @@ header {
             }
         }
 
-        .researchSection:first-of-type {
-            margin-bottom: 100px;
-        }
-
         .textSection {
             margin-bottom: 50px;
         }
@@ -917,6 +913,7 @@ header {
                     flex-shrink: 0;
                     z-index: 1;
                     margin: 15px 22.5px;
+                    border-radius: 10px;
                 }
 
                 img:hover {
@@ -938,10 +935,10 @@ header {
                 top: 110px;
             }
 
-            .rbBgc {
-                background-color: #FFF1F9;
-                height: calc(100% - 195px);
-                top: 240px;
+            .nxBgc {
+                background-color: #F5F5F5;
+                height: calc(100% - 64px);
+                top: 110px;
             }
 
             .msBgc {
@@ -951,7 +948,7 @@ header {
             }
 
             @media only screen and (max-width: 1199px) {
-                .akBgc, .rbBgc, .msBgc {
+                .akBgc, .nxBgc, .msBgc {
                     height: calc(100% - 92px);
                     top: 107px;
                 }

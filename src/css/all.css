@@ -11445,9 +11445,6 @@ header img {
     cursor: zoom-in;
   }
 }
-.stepSection article .researchSection:first-of-type {
-  margin-bottom: 100px;
-}
 .stepSection article .textSection {
   margin-bottom: 50px;
 }
@@ -11514,6 +11511,7 @@ header img {
   flex-shrink: 0;
   z-index: 1;
   margin: 15px 22.5px;
+  border-radius: 10px;
 }
 .stepSection article .mockupSection .imgSection img:hover {
   transform: scale(1);
@@ -11530,10 +11528,10 @@ header img {
   height: calc(100% - 64px);
   top: 110px;
 }
-.stepSection article .mockupSection .rbBgc {
-  background-color: #FFF1F9;
-  height: calc(100% - 195px);
-  top: 240px;
+.stepSection article .mockupSection .nxBgc {
+  background-color: #F5F5F5;
+  height: calc(100% - 64px);
+  top: 110px;
 }
 .stepSection article .mockupSection .msBgc {
   background-color: #DD8E58;
@@ -11541,7 +11539,7 @@ header img {
   top: 110px;
 }
 @media only screen and (max-width: 1199px) {
-  .stepSection article .mockupSection .akBgc, .stepSection article .mockupSection .rbBgc, .stepSection article .mockupSection .msBgc {
+  .stepSection article .mockupSection .akBgc, .stepSection article .mockupSection .nxBgc, .stepSection article .mockupSection .msBgc {
     height: calc(100% - 92px);
     top: 107px;
   }

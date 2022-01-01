@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import { useLocation } from 'react-router-dom'
 import close from '../imgs/close.png';
 import resume from '../imgs/Yung-Shin_resume.png';
 import { Modal } from "react-bootstrap";
@@ -14,14 +15,21 @@ const PageLoadingForHome = () => (
 )
 
 function Navbar() { 
+    const scrollTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
 
+    
+    const location = useLocation();
     // page loading event
     const [pageLoadingEffect, setPageLoadingEffect] = useState(false);
     const pageLoadingEvent = () => {
-        setPageLoadingEffect(true)
-        setTimeout(function () {
-            setPageLoadingEffect(false);
-        }, 2500);
+        if (location.pathname !== "/") {
+            setPageLoadingEffect(true)
+            setTimeout(function () {
+                setPageLoadingEffect(false);
+            }, 2500);
+        }
     };
 
     const [lgShow, setLgShow] = useState(false);
@@ -107,6 +115,7 @@ function Navbar() {
                                     onClick={() => {
                                         changeToRed();
                                         pageLoadingEvent();
+                                        scrollTop();
                                     }}>Home</Link>
                         </li>
                     </div>

@@ -30,6 +30,37 @@ import rb6 from '../imgs/work/uiux/rabbit_step5-2.png';
 import rb7 from '../imgs/work/uiux/rabbit_step5-3.png';
 import rb8 from '../imgs/work/uiux/rabbit_step5-4.png';
 import rb9 from '../imgs/work/uiux/rabbit_step5-5.png';
+import nx1 from '../imgs/work/uiux/nx_banner.png';
+import nx2 from '../imgs/work/uiux/nx_step1-1.png';
+import nx3 from '../imgs/work/uiux/nx_step1-2.png';
+import nx4 from '../imgs/work/uiux/nx_step1-3.png';
+import nx5 from '../imgs/work/uiux/nx_step3-1.png';
+import nx6 from '../imgs/work/uiux/nx_step3-2.png';
+import nx7 from '../imgs/work/uiux/nx_step3-3.png';
+import nx8 from '../imgs/work/uiux/nx_step3-4.png';
+import nx9 from '../imgs/work/uiux/nx_step5-1.png';
+import nx10 from '../imgs/work/uiux/nx_step5-2.png';
+import nx11 from '../imgs/work/uiux/nx_step5-3.png';
+import nx12 from '../imgs/work/uiux/nx_step5-4.png';
+import nx13 from '../imgs/work/uiux/nx_step5-5.png';
+import nx14 from '../imgs/work/uiux/nx_step5-6.png';
+import nx15 from '../imgs/work/uiux/nx_step5-7.png';
+import nx16 from '../imgs/work/uiux/nx_step5-8.png';
+import nx17 from '../imgs/work/uiux/nx_step5-9.png';
+import nx18 from '../imgs/work/uiux/nx_step5-10.png';
+import nx19 from '../imgs/work/uiux/nx_step5-11.png';
+import nx20 from '../imgs/work/uiux/nx_step5-12.png';
+import nx21 from '../imgs/work/uiux/nx_step5-13.png';
+import nx22 from '../imgs/work/uiux/nx_step5-14.png';
+import nx23 from '../imgs/work/uiux/nx_step5-15.png';
+import nx24 from '../imgs/work/uiux/nx_step5-16.png';
+import nx25 from '../imgs/work/uiux/nx_step5-17.png';
+import nx26 from '../imgs/work/uiux/nx_step5-18.png';
+import nx27 from '../imgs/work/uiux/nx_step5-19.png';
+import nx28 from '../imgs/work/uiux/nx_step5-20.png';
+import nx29 from '../imgs/work/uiux/nx_step5-21.png';
+import nx30 from '../imgs/work/uiux/nx_step5-22.png';
+import nx31 from '../imgs/work/uiux/nx_step5-23.png';
 import ms1 from '../imgs/work/uiux/ms_step1-1.png';
 import ms2 from '../imgs/work/uiux/ms_step1-2.png';
 import ms3 from '../imgs/work/uiux/ms_step2.png';
@@ -72,13 +103,11 @@ const uiuxData = [
         description: '“Andrea Ko Jewelry Design Website” is mainly for recruiting students. However, the original online presence and the information were lacking. After I talked to Andrea, she told me most website visitors were first-time users, and they came to the website to search the information of jewelry beginner course. Thus, I redesigned the whole website (RWD) to make it more organized and clean, primarily focused on the user flow of the jewelry beginner course.',
         research: [
             {
-                inline: true,
                 title: 'Persona',
                 paragraph: ['The user is a 26 years old woman called Christine. She lives in a wealthy economic condition. Her family business is related to the jewelry industry, so she is familiar with the jewelry industry. Christine is planning to start her jewelry brand. That is why she wants to take some jewelry courses, and then she can design the product by herself.'],
                 img: ak1,
             },
             {
-                inline: true,
                 title: 'User Journey Map',
                 paragraph: ['I invited a person who was interested in Andrea Ko\'s jewelry design course to use the original website and speak out what she felt while browsing the website.'],
                 img: ak2,
@@ -150,87 +179,146 @@ const uiuxData = [
             }
         ]
     },
-    // TPE_Rabbit_Association
+    // Northen Xscape Rentals
     {
-        urlName: 'TPE_Rabbit_Association',
-        mainTitle: 'Taipei Rabbit Saving Association Website (RWD)',
+        urlName: 'Northen_Xscape',
+        mainTitle: 'Northen Xscape Rentals',
         subtitle: 'Redesign adopted process of the website.',
         gallery: landingRb,
         description: 'Taipei Rabbit Saving Association is a nonprofit organization that dedicates to save stray rabbits. However, they had a really complicated website. There was too much information without being well organized. Thus, I redesigned one of the vital services, the adopted process, to help them enhance the chance of adoption.',
         research: [
             {
-                inline: true,
-                title: 'Persona',
-                paragraph: ['The user is a 30 years old woman called Hui-Lin Kao. She works as a purchasing with a good salary. With a stable life, Hui-Lin is planning to adopt a rabbit. Her ideal one is with white fur and red eyes. Therefore, she needs to find an organization she can trust and get clear information about adoption from the website.'],
-                img: rb1,
+                title: 'Market Research',
+                content: [
+                    {
+                        title: 'Market Condition',
+                        paragraph: ['- The global jet skiing equipment market to grow at a CAGR of 12.12% during the period 2017-2021. (2017, Businesswire)',
+                                    '- Studies are showing that snowmobiling generates over $30 Billion worth of economic activity in North America ( $9.3 Billion in Canada).  (2020. ISMA)',
+                                    '- The most recent surveys show that snowmobilers spend over $3500 per family supporting snowmobiling activities, on average, and that does not include the purchase of a snowmobile and trailer. (2020, ISMA)',
+                                    '- For companies that specialize in mountain snowmobiles and jet ski, North America represents the single largest region. (2021, Transparency & 2020, ISMA)',
+                                    '- The registration numbers of jet ski and snowmobile continue to be steady, showing that snowmobiling continues to be an active, healthy winter sport. (2020, ISMA)']
+                    }, {
+                        title: 'Market Drivers',
+                        paragraph: ['- Introduction of eco-friendly jet skiing and snowmobile equipment.',
+                                    '- The health-conscious arises. People want to stay healthy and fit.',
+                                    '- It is a great outdoor recreation activity for families and friends.']
+                    }, {
+                        title: 'Market Challenges',
+                        paragraph: ['- High degree of accidental risks',
+                                    '- Unfavorable weather conditions',
+                                    '- High flexibility in raw material prices']
+                    }, {
+                        title: 'Market Trends',
+                        paragraph: ['- Technological innovation includes different color, shape, design etc.',
+                                    '- The participation of female is increased',
+                                    '- More preference to fitness due to changing lifestyle']
+                    }, {
+                        title: 'Demographics',
+                        paragraph: ['- Gender: Jet ski- Men accounted for 80.2%, women accounted for 19.8%. Snowmobile- Men accounted for 84% of Women accounted for 16%.',
+                                    '- Age: The majority of people interested in Jet Ski and Snowmobile between 35-45.',
+                                    '- Relationship Status: The majority of people are in a relationship of Engaged and they take a large proportion for about 43.5% in the report.',
+                                    '- Education: The majority of people have a College degree.',
+                                    '- Occupation: People work on Management have the largest audience account for 22.3%. Besides this, people work on Administrative Services and Production also have many audience',
+                                    '- Others: Over 50% of people participate in different outdoor activities such as boating, camping, fishing, ATV and Motorcycle riding. Further, over 60% of people are in jet ski and snowmobile related clubs or associations.']
+                    }
+                ],
             },
             {
-                title: 'Usability testing',
+                title: 'Competitive Analysis',
                 paragraph: [
-                    'Testing Goal: To assess the user flow of adoption on the original website',
-                    'Assess User Flow: Homepage - Click “see all rabbits” on the bottom of the page - Click in a rabbit introduction page - See the details and click “Adoption”- Read the rules before continue - Fill in a form from the outside link - Finish!',
-                    'Task: You\'re considering adopting a rabbit. Please visit Taipei Saving Rabbit Association and see how to adopt a rabbit.',
-                    'Result Of Testing: I analyze which pages participants went to, what participants were searching for on the page, what did they feel, what the status was while they were doing the task. Further, I listed the problems and difficulties and indicated which usability the original website was against. Lastly, I used effectiveness, efficiency, and satisfaction to analyze the priority of which page should be the first deal with.',
+                    "Competitors sometimes share the same problems or have their specific solutions, which will help me gather insights about their strengths and weaknesses. For jet ski and snowmobile apps, clear information is crucial since there are so many listings for users to browse. They need to find the information they want at first sight, or it will make them feel frustrated and decrease the app's credibility. Further, the booking progress plays an important role. The easy and efficient booking system is a final push for a user to have a good experience."
                 ],
-                img: rb2,
+                img: nx2,
+            }, {
+                title: 'Persona',
+                paragraph: [
+                    "Through the persona, I can know the image of the user better. According to the statistics of jet ski and snowmobile riders, the conclusion of the primary user is a 36 years manager who has a steady income. Thus, he takes the quality of equipment as a crucial factor. Moreover, he wants everything to be clear and easy that he doesn't need to spend too much time searching for the item every time."
+                ],
+                img: nx3,
+            }, {
+                title: 'Storyboard',
+                paragraph: [
+                    "I created a storyboard that makes it easier to clarify the problems users face and the solution that Xscape APP can offer. I sketch a memorable scenario where people can quickly understand the user's needs and what they care about."
+                ],
+                img: nx4,
+            }
+
+        ],
+        define: [
+            "This project mainly focuses on the flow that new users can book the equipment successfully.",
+            "Sign-up, Hompage, finding products information, and booking process are four critical parts that make a successful renting experience. ",
+            "The core concept is energetic, simple, and most importantly, raising the app's user engagement.",
+        ],
+        ideate: [
+            {
+                title: 'Information Architecture',
+                paragraph: ['Based on my research insights, I began to categorize and structure the information based on what was most useful, usable, and user-friendly.'],
+                img: nx5,
+            }, {
+                title: 'User Flow',
+                paragraph: ['The decision trees were helping me to think through what actions users would take based on their feelings with the App. It is essential to set the shortest flow for the user to complete their mission. Otherwise, they will lose patience and quit the task. Especially when they are on the booking progress, everything should be clear and straightforward. When the users feel efficient and easy to book the snowmobile or jet ski on the app, they would like to use it as their primary option for booking the equipments.'],
+                img: nx6,
+            }, {
+                title: 'Brand Guide',
+                paragraph: ["I use dark grey as my main colour and green, blue and purple as my app's secondary colours. It could both represent the ocean and aurora to match the image of two products, snowmobile and jet ski.",
+                            "Copperplate Bold is the title; Copperplate Regular is the subtitle, and Sora Regular is the body. These typographies are clean and stylish. Also, it is easy to read.",
+                            "Lastly, The logo is a mountain with wave on it. The logo's green colour is different from the green colour on the palette. I make it brighter to be more catching."],
+                img: nx7,
+            }, {
+                title: 'Wireframe (Low-Fidelity)',
+                paragraph: ["I started to capture my idea by quickly sketching the wireframe. It also enables me to examine my ideas before I move to next step."],
+                img: nx8,
+            }, {
+                title: 'Mockup',
+                content: [
+                    {
+                        title: 'Launch Screen/ Sign up/ Log in/ Forget password',
+                        paragraph: [
+                            'Sometimes it will be hard to find a login button at first sight, so I make the signup and the login buttons the same size and put them on the top. Users can switch it easily.'
+                        ],
+                        img: [nx9, nx10, nx11, nx12],
+                        backgroundColor:'nxBgc',
+                    },
+                    {
+                        title: 'Help screen/ Rental details and safety',
+                        paragraph: ["When users face any technical problem before they successfully log in to the homepage, they have access to reach the Xscape by clicking the “Help” button. They could choose either by email or online chat to connect with the company."],
+                        img: [nx13, nx14, nx15],
+                        backgroundColor:'nxBgc',
+                    },
+                    {
+                        title: 'Homepage/ Products listing page/ Filter/ Product page',
+                        paragraph: ["To avoid users feeling overwhelmed, I tried to make the homepage as simple as possible by only offering three categories, upcoming schedule, snowmobile and jet ski.",
+                                    "After entering the jet ski or snowmobile section, users can use a filter to customize their needs and quickly find suitable equipment.",
+                                    "On the product page, there is organized information that users might want to know before they rent the equipment."],
+                        img: [nx16, nx17, nx18, nx19],
+                        backgroundColor:'nxBgc',
+                    },
+                    {
+                        title: 'Booking Process',
+                        paragraph: ["I divided the booking process into three steps. Users can know which step they are working on. When they try to jump out of the booking process, there will be a pop-up window with “Are you sure you want to give up on your Amazing Adventure?”  show up."],
+                        img: [nx20, nx21, nx22, nx23],
+                        backgroundColor:'nxBgc',
+                    },
+                    {
+                        title: 'Booking Process',
+                        paragraph: ["After they complete their booking, they will receive a confirmation email, and there is a button that leads them to “My Plan.”"],
+                        img: [nx24, nx25],
+                        backgroundColor:'nxBgc',
+                    },
+                    {
+                        title: 'My Plan/ Review',
+                        paragraph: ["Users not only can see the upcoming schedule but also the history booking. They can leave their review by clicking “Make Your Review” in the history schedule and see their review on the top of the review page."],
+                        img: [nx26, nx27, nx28, nx29],
+                        backgroundColor:'nxBgc',
+                    },
+                    {
+                        title: 'Account/ Chat',
+                        img: [nx30, nx31],
+                        backgroundColor:'nxBgc',
+                    },
+                ]
             }
         ],
-        ppAnalysis: [
-            "There are too much information on the homepage.",
-            "Rabbits classification page is unclear. It’s hard finding the rabbit efficiently.",
-            "There are too many words and paragraphs on the rabbit description page. Everything seems crowded and makes users losing patience.",
-        ],
-        informationArchitecture: {
-            paragraph: 'I confirmed information architecture with the rabbit saving association through “Card Sorting .”During the closed sort, I founded that they wanted to put everything on the homepage. Commonly, clients feel everything is essential, so they want to put everything on the homepage. It is my responsibility to help them figure out the hierarchy of the website.',
-            img: rb3,
-        },
-        wireframe: { img: rb4 },
-        mockup: [
-            {
-                title: 'Overview',
-                paragraph: [
-                    'I use pink as the main color of website. Pink represents soft, gentle and cute impression to people. There is not much animation in this project. Everything is simple and intuitive.'
-                ],
-                video: rbVideo,
-                poster: rbVideoCover,
-                backgroundColor:'rbBgc',
-            },
-            {
-                title: 'Homepage',
-                paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan ”Hello! Could you please help me? ” and a donating button under the sentence. The second part is the carousel of a bulletin board. In the third part, users can see three recommended rabbits for adoption. They also can click the “see all the rabbits” button in this section.'],
-                img: [rb5],
-                inline: false,
-                backgroundColor:'rbBgc',
-            },
-            {
-                title: 'Classification',
-                paragraph: [
-                    'Users can find all rabbits on the classification page and use a left-side filter to find the rabbit efficiently. The filters\' values for users to click are gender, adopted status, variety, fur\'s colour, and so on.',
-                    'On the result part, some vital information is listed under the image, such as name, adopted status, age, variety, and weight. If there is no data for the searching result, the system will recommend other rabbits with a sentence like "These rabbits are eager for a sweet home" to stimulate the users\' empathy.',
-                ],
-                img: [rb6, rb7],
-                inline: false,
-                backgroundColor:'rbBgc',
-            },
-            {
-                title: 'Rabbit Introduction',
-                paragraph: ['On the individual rabbit introduction page, users can see basic information and the background story of the rabbit, which stimulate users\' empathy. Further, there are detailed health records for people to know the status of the rabbit. By offering information on the up and up, it will improve credibility for the user.'],
-                img: [rb8],
-                inline: false,
-                backgroundColor:'rbBgc',
-            },
-            {
-                title: 'Must Know Before Adoption',
-                paragraph: ['When they click the “Adoption” button, users will come to the page with all the information they should know before they move on. This page eliminates those who aren’t qualified or aren’t well prepared to welcome a new family member. Moreover, there are common questions and answers for users to check before moving to the next step.'],
-                img: [rb9],
-                inline: false,
-                backgroundColor:'rbBgc',
-            },
-            {
-                title: 'Adoption Form',
-                paragraph: ['As the association requires, the button will lead to a google form to apply for adoption. Therefore, the process of an adopted redesign of the website is finished.'],
-            },
-        ]
     },
     // Mentorship
     { 
@@ -241,13 +329,11 @@ const uiuxData = [
         description: 'Seneca Mentorship App is an idea for Seneca students to find mentors and ask questions. It mainly divides into two parts; one is searching mentors the other one is a discussion board. This project was done by two students and me in Seneca.',
         research: [
             {
-                inline: true,
                 title: 'Empathy Map',
                 paragraph: ['Commonly, students are hard to get the answer efficiently from school. Sometimes they don’t know who to ask for help with their school life. In such conditions, they usually feel nervous, anxious, and angry.'],
                 img: ms1,
             },
             {
-                inline: true,
                 title: 'Six Hats',
                 paragraph: ['Through the app, students will find the answer quickly. Nevertheless, there are still some potential challenges, such as lacking mentors, unclear information, etc. However, if the app had been well organized, it could be beneficial for students.'],
                 img: ms2,

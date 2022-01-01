@@ -51,7 +51,7 @@ function ModalDisplay(props) {
     );
 }
 
-function Research(props) {
+function ArticleWithImg(props) {
     const { content } = props;
     
     return (
@@ -65,19 +65,22 @@ function Research(props) {
         list of strings to uppercase). It does not mutate the array on which it is called 
         (although if passed a callback function, it may do so). */}
         {content.map((item, key) => ( // can't use forEach, it can't display properly
-            <div className={item.inline === true ? 'row researchSection': 'd-block researchSection'} key={key}>
-                <div className={item.inline === true ? 'col-md-5 textSection': 'textSection'}>
+            <div className='d-block' key={key}>
+                <div className='textSection'>
                     <h4>{item.title}</h4>
-                    {item.paragraph.length === 1 ? 
+                    {item.content ? item.title !== "Mockup" ?
+                        <List2 content={item.content} /> :
+                        <Mockup content={item.content} />
+                    : item.paragraph.length === 1 ? 
                         <p>{item.paragraph}</p> :
-                        <List content={item.paragraph}/>
-                    }
+                        <List content={item.paragraph}/>}
+                    
                 </div>
-                <div className={item.inline === true ?
-                    'col-md-7 text-center imgSection' :
-                    'imgSection'}>
-                    <ModalDisplay content={item}/>
-                </div>
+                {item.img ?
+                    <div className='imgSection'>
+                        <ModalDisplay content={item}/>
+                    </div> : <div></div>
+                }
             </div>
         ))}
         </>
@@ -90,6 +93,29 @@ function List(props) {
         <div className="d-flex align-items-start imgSection" key={key}>
             <img className="dot" src={dot} alt="dot" />
             <li>{item}</li>
+        </div>
+    ))
+
+    return (
+        <ul>
+            {list}
+        </ul>
+    )
+}
+
+function List2(props) {
+    const { content } = props;
+    const list = content.map((item, key) => (
+        <div className="imgSection" key={key}>
+            <p>{item.title}</p>
+            {
+                item.paragraph.map((par, key) => (
+                    <div className="d-flex align-items-start imgSection" key={key}>
+                        <li>{par}</li>
+                    </div>
+                ))
+            }
+            {/* <li>{item.paragraph}</li> */}
         </div>
     ))
 
@@ -134,34 +160,18 @@ function Mockup(props) {
 
     const [showVideo, setShowVideo] = useState(false);
     const showVideoEvent = () => {
-        if (window >= 1200) {
+        if (windowWidth >= 1200) {
             let videoSec = document.querySelectorAll('.videoSection');
             let ary = [];
             for (let i = 0; i < videoSec.length; i++) {
                 ary.push(videoSec[i].getBoundingClientRect().top - window.screen.height);
             }
-    
-            if (videoSec.length > 1) {
-                if (ary[0] < 0) {
-                    setShowVideo(true);
-                    if (videoSec[0].getBoundingClientRect().bottom < 0) {
-                        setShowVideo(false);
-                        if (ary[1] < 0) {
-                            setShowVideo(true);
-                        } else {
-                            setShowVideo(false);
-                        }
-                    }
-                } else {
-                    setShowVideo(false);
-                }
+            if (ary[0] < 0) {
+                setShowVideo(true);
             } else {
-                if (ary[0] < 0) {
-                        setShowVideo(true);
-                    } else {
-                        setShowVideo(false);
-                    }
+                setShowVideo(false);
             }
+            
         } else {
             setShowVideo(true);
         }
@@ -200,7 +210,7 @@ function Mockup(props) {
                                 className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}
                                 autoPlay={windowWidth >= 1200 ? true : false}
                                 controls={windowWidth >= 1200 ? false : true}
-                                muted poster={item.poster}>
+                                muted loop poster={item.poster}>
                                 <source src={item.video} type="video/mp4"/>
                            </video> :
                            <div className={item.frame !== undefined ? 'mobileVideo frame' : 'desktopVideo'}></div> }   
@@ -210,7 +220,7 @@ function Mockup(props) {
                     </div>
                     {/* img block */}
                     <div className={item.img !== undefined ? 'd-flex justify-content-center imgSection' : 'd-none'}>
-                        <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-xl-row"}>
+                        <div className={item.inline === false ? 'd-flex flex-column' : "d-flex flex-column flex-xl-row align-items-end"}>
                            {item.img !== undefined ? item.img.map(imgs => (
                                <img className={item.inline === false ? "desktopImg": "mobileImg"}src={imgs} alt={item.title} />)) : ""}
                         </div>
@@ -301,25 +311,25 @@ function Uiux() {
                                 <SVGStar />
                                 <article>
                                     <h3>Step {stepCount++}: Research</h3>
-                                    <Research content={content.research} />
+                                    <ArticleWithImg content={content.research} />
                                 </article>
                             </div> : ""}
                         
-                        {content.ppAnalysis !== undefined ?
+                        {content.define !== undefined ?
                             <div className="d-flex">
                                 <SVGStar />
                                 <article>
                                     <h3>Step {stepCount++}: Pain Point Analysis</h3>
-                                    <List content={content.ppAnalysis} />
+                                    <List content={content.define} />
                                 </article>
                             </div> : ""}
                         
-                        {content.informationArchitecture !== undefined ?
+                        {content.ideate !== undefined ?
                             <div className="d-flex">
                                 <SVGStar />
                                 <article>
                                     <h3>Step {stepCount++}:  Information Architecture</h3>
-                                    <InformationArchitecture content={content.informationArchitecture} />
+                                    <ArticleWithImg content={content.ideate} />
                                 </article>
                             </div> : ""}
                         
@@ -334,14 +344,14 @@ function Uiux() {
                                 </article>
                             </div> : ""}
                         
-                        {content.mockup !== undefined ?
+                        {/* {content.mockup !== undefined ?
                             <div className="d-flex">
                                 <SVGStar />
                                 <article>
                                     <h3>Step {stepCount++}: Mockup</h3>
                                     <Mockup content={content.mockup} />
                                 </article>
-                            </div> : ""}
+                            </div> : ""} */}
                         
                         <div className="d-flex">
                             <div className="star">
