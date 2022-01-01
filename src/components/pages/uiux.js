@@ -51,6 +51,35 @@ function ModalDisplay(props) {
     );
 }
 
+function Overview(props) {
+    const { content } = props;
+    
+    return (
+        <div className="overviewPanel">
+            <div className="row">
+                <h3 className="offset-1">Project Overview</h3>
+                <div className="offset-1 col-7">
+                    <h5>Challenges</h5>
+                    <p className="mb-4">{content.challenges}</p>
+                    <h5>Objectives</h5>
+                    <List content={content.objectives}/>
+                </div>
+                <div className="offset-1 col-3">
+                    <h5>Project Scope</h5>
+                    <p className="mb-3">{content.scope}</p>
+                    <h5>Tool</h5>
+                    <p className="mb-3">{content.tool}</p>
+                    <h5>Role</h5>
+                    <p className="mb-3">{content.role}</p>
+                    <h5>Team</h5>
+                    <p className="mb-3">{content.team}</p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
 function ArticleWithImg(props) {
     const { content } = props;
     
@@ -90,7 +119,7 @@ function ArticleWithImg(props) {
 function List(props) {
     const { content } = props;
     const list = content.map((item, key) => (
-        <div className="d-flex align-items-start imgSection" key={key}>
+        <div className="d-flex align-items-start" key={key}>
             <img className="dot" src={dot} alt="dot" />
             <li>{item}</li>
         </div>
@@ -106,11 +135,11 @@ function List(props) {
 function List2(props) {
     const { content } = props;
     const list = content.map((item, key) => (
-        <div className="imgSection" key={key}>
-            <p>{item.title}</p>
+        <div className="textSection" key={key}>
+            <p className="listTitle">{item.title}</p>
             {
                 item.paragraph.map((par, key) => (
-                    <div className="d-flex align-items-start imgSection" key={key}>
+                    <div className="d-flex align-items-start" key={key}>
                         <li>{par}</li>
                     </div>
                 ))
@@ -123,21 +152,6 @@ function List2(props) {
         <ul>
             {list}
         </ul>
-    )
-}
-
-function InformationArchitecture(props) {
-    const { content } = props;
-
-    return (
-        <>
-        <div className="textSection">
-            <p>{content.paragraph}</p>
-        </div>
-        <div className="imgSection text-center">
-                <ModalDisplay content={content}/>
-        </div>
-        </>
     )
 }
 
@@ -300,9 +314,12 @@ function Uiux() {
             {uiuxData.filter(content => content.urlName === title).map((content, key) => (
                 <div key={key}>
                     <PageLoading title="UI/UX Design" subtitle={content.mainTitle} />
-                    <section className="uiuxTitle">
-                        <h2>{content.mainTitle}</h2>
-                        <p>{content.description}</p>
+                    <section className="uiuxBanner">
+                        <img src={content.banner} alt={content.mainTitle}/>
+                    </section>
+
+                    <section className="overview">
+                        <Overview content={content.overview} />
                     </section>
                     
                     <section className="stepSection">
@@ -319,7 +336,7 @@ function Uiux() {
                             <div className="d-flex">
                                 <SVGStar />
                                 <article>
-                                    <h3>Step {stepCount++}: Pain Point Analysis</h3>
+                                    <h3>Step {stepCount++}: Define</h3>
                                     <List content={content.define} />
                                 </article>
                             </div> : ""}
@@ -328,7 +345,7 @@ function Uiux() {
                             <div className="d-flex">
                                 <SVGStar />
                                 <article>
-                                    <h3>Step {stepCount++}:  Information Architecture</h3>
+                                    <h3>Step {stepCount++}:  Ideate</h3>
                                     <ArticleWithImg content={content.ideate} />
                                 </article>
                             </div> : ""}

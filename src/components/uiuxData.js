@@ -61,6 +61,7 @@ import nx28 from '../imgs/work/uiux/nx_step5-20.png';
 import nx29 from '../imgs/work/uiux/nx_step5-21.png';
 import nx30 from '../imgs/work/uiux/nx_step5-22.png';
 import nx31 from '../imgs/work/uiux/nx_step5-23.png';
+import nx32 from '../imgs/work/uiux/nx_step4-1.png';
 import ms1 from '../imgs/work/uiux/ms_step1-1.png';
 import ms2 from '../imgs/work/uiux/ms_step1-2.png';
 import ms3 from '../imgs/work/uiux/ms_step2.png';
@@ -87,6 +88,7 @@ import landingMs from '../imgs/work/uiux/landing_ms.png';
 import akVideo1 from '../imgs/work/uiux/ak_video1.mov';
 import akVideo2 from '../imgs/work/uiux/ak_video2.mp4';
 import rbVideo from '../imgs/work/uiux/rb_video.mp4';
+import nxVideo from '../imgs/work/uiux/nx_video.mp4';
 import msVideo from '../imgs/work/uiux/ms_video.mp4';
 import akVideoCover from '../imgs/work/uiux/ak_desktop_video_cover.png';
 import akVideoCoverMobile from '../imgs/work/uiux/ak_mobile_video_cover.png';
@@ -185,7 +187,16 @@ const uiuxData = [
         mainTitle: 'Northen Xscape Rentals',
         subtitle: 'Redesign adopted process of the website.',
         gallery: landingRb,
-        description: 'Taipei Rabbit Saving Association is a nonprofit organization that dedicates to save stray rabbits. However, they had a really complicated website. There was too much information without being well organized. Thus, I redesigned one of the vital services, the adopted process, to help them enhance the chance of adoption.',
+        banner: nx1,
+        overview: {
+            challenges: "“Northern Xscape Rentals app is a convenient and reliable app for people who want to rent the jet ski and snowmobile. It offers high-quality jet ski and snowmobiles. Nevertheless, their website is old and not user-friendly. What's the most frustrating part is the booking system crashes all the time. My job was to design a new App for Northen Xscape, and I made user interface clean and straightforward, making users feel easy to understand and willing to use the app to rent the equipment every time.",
+            objectives: ["Design a Logo for the company that can be modern and energetic at the same time.",
+                        "Design an APP that makes users feel easy to get the hang of it and are willing to use it to book a jet ski or snowmobile every time."],
+            scope: "APP",
+            tool: "XD Adobe",
+            role: "UX design, UI design",
+            team: "Self-directed"
+        },
         research: [
             {
                 title: 'Market Research',
@@ -319,6 +330,29 @@ const uiuxData = [
                 ]
             }
         ],
+        prototypeAndTest: [
+            {
+                title: 'Usability testing',
+                content: [
+                    {
+                        title: 'Before the testing:',
+                        paragraph: ['Before usability testing, I wrote a usability testing plan to define what and why I want to test and get prepared for the test. It is important to set up test objectives, methodology, Testing flow, Scripts and Participants for measuring the result of the testing before conducting a test.'],
+                        img: nx32,
+                    }, {
+                        title: 'Commence the testing:',
+                        paragraph: ['I conducted usability tests with 2 participants, and created note for each participant based on my observation. I jot down their mistakes, slips, and confusions they expressed in the process. '],
+                    }, {
+                        title: 'Before the testing:',
+                        paragraph: ['Before usability testing, I wrote a usability testing plan to define what and why I want to test and get prepared for the test. It is important to set up test objectives, methodology, Testing flow, Scripts and Participants for measuring the result of the testing before conducting a test.'],
+                        img: nx32,
+                    }, {
+                        title: 'Before the testing:',
+                        paragraph: ['Before usability testing, I wrote a usability testing plan to define what and why I want to test and get prepared for the test. It is important to set up test objectives, methodology, Testing flow, Scripts and Participants for measuring the result of the testing before conducting a test.'],
+                        img: nx32,
+                    }
+                ],
+            }
+        ]
     },
     // Mentorship
     { 

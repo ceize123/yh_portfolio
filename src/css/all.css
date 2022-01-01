@@ -11351,20 +11351,34 @@ header img {
   color: #94401E;
 }
 
-.uiuxTitle {
-  padding-top: 197px;
-  margin: 0 95px 85px 95px;
-}
-.uiuxTitle h2, .uiuxTitle .h2 {
-  margin-bottom: 15px;
+.uiuxBanner img {
+  width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
-  .uiuxTitle {
-    padding: 100px 0;
-    margin: 0 22px;
-  }
+.overview {
+  background-color: #F5F5F5;
+  padding: 26px 0 55px 0;
+  margin-bottom: 100px;
 }
+.overview .overviewPanel h3, .overview .overviewPanel .h3 {
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+.overview .overviewPanel h5, .overview .overviewPanel .h5 {
+  margin-bottom: 15px;
+}
+.overview .overviewPanel p {
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+.overview .overviewPanel ul {
+  padding-left: 0;
+}
+.overview .overviewPanel .dot {
+  margin-top: 10px;
+  margin-right: 6px;
+}
+
 .stepSection {
   margin-left: 40px;
   overflow: hidden;
@@ -11446,10 +11460,23 @@ header img {
   }
 }
 .stepSection article .textSection {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+.stepSection article .textSection .listTitle {
+  color: #AD8255;
+}
+.stepSection article .textSection li {
+  margin-bottom: 0;
+}
+.stepSection article .imgSection {
+  margin-bottom: 70px;
 }
 .stepSection article .mockupSection:not(:last-of-type) {
-  padding-bottom: 100px;
+  padding-bottom: 70px;
+}
+.stepSection article .mockupSection h4, .stepSection article .mockupSection .h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 .stepSection article .mockupSection .mobileOverview {
   width: 350px;
@@ -11530,8 +11557,8 @@ header img {
 }
 .stepSection article .mockupSection .nxBgc {
   background-color: #F5F5F5;
-  height: calc(100% - 64px);
-  top: 110px;
+  height: 334px;
+  bottom: -20px;
 }
 .stepSection article .mockupSection .msBgc {
   background-color: #DD8E58;

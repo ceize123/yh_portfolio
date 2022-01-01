@@ -25,10 +25,7 @@ function Footer() {
             <div className="introduction d-flex justify-content-center">
                 <div>
                     <h3>Yung-Shin Ko</h3>
-                    <p>{`${windowWidth > 992 ?
-                        `Taiwanese designer, currently stay in Toronto Canada` :
-                        `Taiwanese designer,`}`}
-                    </p>
+                    <p>currently stay in Toronto Canada</p>
                     <p className="d-block d-lg-none">currently stay in Toronto Canada</p>
                 </div>
             </div>
