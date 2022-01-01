@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/ys_portfolio/static/css/main.96e2c1c0.chunk.css",
-    "main.js": "/ys_portfolio/static/js/main.06135c40.chunk.js",
-    "main.js.map": "/ys_portfolio/static/js/main.06135c40.chunk.js.map",
+    "main.css": "/ys_portfolio/static/css/main.8a2d0100.chunk.css",
+    "main.js": "/ys_portfolio/static/js/main.893cb75f.chunk.js",
+    "main.js.map": "/ys_portfolio/static/js/main.893cb75f.chunk.js.map",
     "runtime-main.js": "/ys_portfolio/static/js/runtime-main.f37347b1.js",
     "runtime-main.js.map": "/ys_portfolio/static/js/runtime-main.f37347b1.js.map",
     "static/js/2.26a48689.chunk.js": "/ys_portfolio/static/js/2.26a48689.chunk.js",
     "static/js/2.26a48689.chunk.js.map": "/ys_portfolio/static/js/2.26a48689.chunk.js.map",
     "index.html": "/ys_portfolio/index.html",
-    "static/css/main.96e2c1c0.chunk.css.map": "/ys_portfolio/static/css/main.96e2c1c0.chunk.css.map",
+    "static/css/main.8a2d0100.chunk.css.map": "/ys_portfolio/static/css/main.8a2d0100.chunk.css.map",
     "static/js/2.26a48689.chunk.js.LICENSE.txt": "/ys_portfolio/static/js/2.26a48689.chunk.js.LICENSE.txt",
     "static/media/Yung-Shin_resume.5d966c4d.png": "/ys_portfolio/static/media/Yung-Shin_resume.5d966c4d.png",
     "static/media/ak_desktop_video_cover.419d653a.png": "/ys_portfolio/static/media/ak_desktop_video_cover.419d653a.png",
@@ -97,7 +97,7 @@
     "static/media/musical_magazine_mobile7.04b3a59c.png": "/ys_portfolio/static/media/musical_magazine_mobile7.04b3a59c.png",
     "static/media/musical_magazine_mobile8.2cf72cfb.png": "/ys_portfolio/static/media/musical_magazine_mobile8.2cf72cfb.png",
     "static/media/musical_magazine_mobile9.82400f68.png": "/ys_portfolio/static/media/musical_magazine_mobile9.82400f68.png",
-    "static/media/nx_banner.f87366f6.png": "/ys_portfolio/static/media/nx_banner.f87366f6.png",
+    "static/media/nx_banner.5e0f323c.png": "/ys_portfolio/static/media/nx_banner.5e0f323c.png",
     "static/media/nx_step1-1.f2f49a53.png": "/ys_portfolio/static/media/nx_step1-1.f2f49a53.png",
     "static/media/nx_step1-2.8ecb0537.png": "/ys_portfolio/static/media/nx_step1-2.8ecb0537.png",
     "static/media/nx_step1-3.6deb7716.png": "/ys_portfolio/static/media/nx_step1-3.6deb7716.png",
@@ -105,6 +105,7 @@
     "static/media/nx_step3-2.72ff37f6.png": "/ys_portfolio/static/media/nx_step3-2.72ff37f6.png",
     "static/media/nx_step3-3.43c6749f.png": "/ys_portfolio/static/media/nx_step3-3.43c6749f.png",
     "static/media/nx_step3-4.0971ecff.png": "/ys_portfolio/static/media/nx_step3-4.0971ecff.png",
+    "static/media/nx_step4-1.26111327.png": "/ys_portfolio/static/media/nx_step4-1.26111327.png",
     "static/media/nx_step5-1.afd042a5.png": "/ys_portfolio/static/media/nx_step5-1.afd042a5.png",
     "static/media/nx_step5-10.937dec94.png": "/ys_portfolio/static/media/nx_step5-10.937dec94.png",
     "static/media/nx_step5-11.da95957a.png": "/ys_portfolio/static/media/nx_step5-11.da95957a.png",
@@ -128,6 +129,7 @@
     "static/media/nx_step5-7.0cb9e1a6.png": "/ys_portfolio/static/media/nx_step5-7.0cb9e1a6.png",
     "static/media/nx_step5-8.8e43ef1b.png": "/ys_portfolio/static/media/nx_step5-8.8e43ef1b.png",
     "static/media/nx_step5-9.e1dc1f0d.png": "/ys_portfolio/static/media/nx_step5-9.e1dc1f0d.png",
+    "static/media/nx_video.58874e4f.mp4": "/ys_portfolio/static/media/nx_video.58874e4f.mp4",
     "static/media/phoebe.a9ffb4af.png": "/ys_portfolio/static/media/phoebe.a9ffb4af.png",
     "static/media/phoebe_mobile.966ed623.png": "/ys_portfolio/static/media/phoebe_mobile.966ed623.png",
     "static/media/phoebe_text.8c0f3c94.svg": "/ys_portfolio/static/media/phoebe_text.8c0f3c94.svg",
@@ -162,7 +164,7 @@
   "entrypoints": [
     "static/js/runtime-main.f37347b1.js",
     "static/js/2.26a48689.chunk.js",
-    "static/css/main.96e2c1c0.chunk.css",
-    "static/js/main.06135c40.chunk.js"
+    "static/css/main.8a2d0100.chunk.css",
+    "static/js/main.893cb75f.chunk.js"
   ]
 }
