@@ -11435,11 +11435,12 @@ header img {
 }
 .stepSection article ul {
   padding: 0;
+  margin-bottom: 0;
 }
 .stepSection article li {
   display: inline;
-  margin-bottom: 10px;
   letter-spacing: 0.03em;
+  margin-bottom: 12px;
 }
 .stepSection article img {
   max-width: 100%;
@@ -11460,16 +11461,19 @@ header img {
   }
 }
 .stepSection article .textSection {
-  margin-bottom: 30px;
+  margin-bottom: 70px;
 }
-.stepSection article .textSection .listTitle {
+.stepSection article .listSection .listTitle {
   color: #AD8255;
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
-.stepSection article .textSection li {
+.stepSection article .listSection li {
   margin-bottom: 0;
 }
 .stepSection article .imgSection {
   margin-bottom: 70px;
+  margin-top: 30px;
 }
 .stepSection article .mockupSection:not(:last-of-type) {
   padding-bottom: 70px;
@@ -11480,6 +11484,9 @@ header img {
 }
 .stepSection article .mockupSection .mobileOverview {
   width: 350px;
+}
+.stepSection article .mockupSection .textSection {
+  margin-bottom: 30px;
 }
 .stepSection article .mockupSection .videoSection {
   margin-bottom: 54px;

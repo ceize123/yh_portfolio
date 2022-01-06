@@ -79,7 +79,6 @@ function Overview(props) {
     )
 }
 
-
 function ArticleWithImg(props) {
     const { content } = props;
     
@@ -94,15 +93,23 @@ function ArticleWithImg(props) {
         list of strings to uppercase). It does not mutate the array on which it is called 
         (although if passed a callback function, it may do so). */}
         {content.map((item, key) => ( // can't use forEach, it can't display properly
-            <div className='d-block' key={key}>
-                <div className='textSection'>
+            <div className='d-block textSection' key={key}>
+                <div className="mb-4">
                     <h4>{item.title}</h4>
                     {item.content ? item.title !== "Mockup" ?
                         <List2 content={item.content} /> :
                         <Mockup content={item.content} />
                     : item.paragraph.length === 1 ? 
-                        <p>{item.paragraph}</p> :
-                        <List content={item.paragraph}/>}
+                            <p>{item.paragraph}</p> : 
+                            item.bullet === undefined ? 
+                                <List content={item.paragraph} /> :
+                                item.paragraph.map((paragraphs, idx, ary) => (
+                                <>
+                                    <p>{paragraphs}</p>
+                                    {idx + 1!== ary.length ? <br></br> : ""}    
+                                    
+                                </>))
+                        }
                     
                 </div>
                 {item.img ?
@@ -135,7 +142,7 @@ function List(props) {
 function List2(props) {
     const { content } = props;
     const list = content.map((item, key) => (
-        <div className="textSection" key={key}>
+        <div className="listSection" key={key}>
             <p className="listTitle">{item.title}</p>
             {
                 item.paragraph.map((par, key) => (
@@ -144,12 +151,16 @@ function List2(props) {
                     </div>
                 ))
             }
-            {/* <li>{item.paragraph}</li> */}
+            {item.img ?
+                <div className='imgSection d-flex justify-content-center'>
+                    <ModalDisplay content={item}/>
+                </div> : <div></div>
+            }
         </div>
     ))
 
     return (
-        <ul>
+        <ul className="textSection">
             {list}
         </ul>
     )
@@ -242,6 +253,23 @@ function Mockup(props) {
                     </div>
                 </div>
             ))}
+        </>
+    )
+}
+
+function PrototypeAndTest(props) {
+    const { content } = props;
+    
+    return (
+        <>
+        {content.map((item, key) => ( // can't use forEach, it can't display properly
+            <div className='d-block textSection prototype' key={key}>
+                <div className="mb-4">
+                    <h4>{item.title}</h4>
+                    {item.content !== undefined ? <List2 content={item.content} /> : ""}
+                </div>
+            </div>
+        ))}
         </>
     )
 }
@@ -350,25 +378,14 @@ function Uiux() {
                                 </article>
                             </div> : ""}
                         
-                        {content.wireframe !== undefined ?
+                        {content.prototypeAndTest !== undefined ?
                             <div className="d-flex">
                                 <SVGStar />
                                 <article>
-                                    <h3>Step {stepCount++}: Wireframe</h3>
-                                    <div className="imgSection">
-                                        <ModalDisplay content={content.wireframe} />
-                                    </div>
+                                    <h3>Step {stepCount++}: Prototype and Test</h3>
+                                    <PrototypeAndTest content={content.prototypeAndTest} />
                                 </article>
                             </div> : ""}
-                        
-                        {/* {content.mockup !== undefined ?
-                            <div className="d-flex">
-                                <SVGStar />
-                                <article>
-                                    <h3>Step {stepCount++}: Mockup</h3>
-                                    <Mockup content={content.mockup} />
-                                </article>
-                            </div> : ""} */}
                         
                         <div className="d-flex">
                             <div className="star">

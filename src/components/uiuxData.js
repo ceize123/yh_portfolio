@@ -273,7 +273,8 @@ const uiuxData = [
                 title: 'Brand Guide',
                 paragraph: ["I use dark grey as my main colour and green, blue and purple as my app's secondary colours. It could both represent the ocean and aurora to match the image of two products, snowmobile and jet ski.",
                             "Copperplate Bold is the title; Copperplate Regular is the subtitle, and Sora Regular is the body. These typographies are clean and stylish. Also, it is easy to read.",
-                            "Lastly, The logo is a mountain with wave on it. The logo's green colour is different from the green colour on the palette. I make it brighter to be more catching."],
+                        "Lastly, The logo is a mountain with wave on it. The logo's green colour is different from the green colour on the palette. I make it brighter to be more catching."],
+                bullet: false,
                 img: nx7,
             }, {
                 title: 'Wireframe (Low-Fidelity)',
@@ -342,15 +343,19 @@ const uiuxData = [
                         title: 'Commence the testing:',
                         paragraph: ['I conducted usability tests with 2 participants, and created note for each participant based on my observation. I jot down their mistakes, slips, and confusions they expressed in the process. '],
                     }, {
-                        title: 'Before the testing:',
-                        paragraph: ['Before usability testing, I wrote a usability testing plan to define what and why I want to test and get prepared for the test. It is important to set up test objectives, methodology, Testing flow, Scripts and Participants for measuring the result of the testing before conducting a test.'],
-                        img: nx32,
-                    }, {
-                        title: 'Before the testing:',
-                        paragraph: ['Before usability testing, I wrote a usability testing plan to define what and why I want to test and get prepared for the test. It is important to set up test objectives, methodology, Testing flow, Scripts and Participants for measuring the result of the testing before conducting a test.'],
-                        img: nx32,
+                        title: 'Testing Result:',
+                        paragraph: ['Booking step1 subtotal text is too small.',
+                            'Users are confused what the map for in the product detail page.',
+                            'Choosing the length and started time would make booking progress more intuitive at booking Step1 .'],
                     }
                 ],
+            }, {
+                title: 'Final Version',
+                // content: [
+                //     {
+                //         video: ""
+                //     }
+                // ]
             }
         ]
     },
