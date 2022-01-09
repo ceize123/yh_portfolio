@@ -631,6 +631,7 @@ header {
 
         img {
             margin-bottom: 9px;
+            max-width: 100vw;
         }
         h4 {
             margin-bottom: 0;
@@ -722,6 +723,12 @@ header {
         width: 100%;
     }
 }
+
+@media only screen and (max-width: 991px) {
+   .uiuxBanner {
+        padding-top: 50px;
+    } 
+}
 // banner ends
 
 // overview starts
@@ -735,10 +742,12 @@ header {
         h3 {
             margin-bottom: 50px;
             font-weight: 400;
+            width: 90%;
         }
     
         h5 {
-            margin-bottom: 15px;
+            // margin-bottom: 10px;
+            font-weight: 600;
         }
     
         p {
@@ -753,6 +762,12 @@ header {
         .dot {
             margin-top: 10px;
             margin-right: 6px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .overviewRight {
+                width: 300px;
+            }
         }
     }
 }
@@ -854,7 +869,7 @@ header {
             }
         }
 
-        .textSection {
+        .textSection:not(:last-of-type) {
             margin-bottom: 70px;
         }
 
@@ -874,6 +889,23 @@ header {
         .imgSection {
             margin-bottom: 70px;
             margin-top: 30px;
+        }
+
+        .videoSection {
+            .mobileVideo {
+                max-width: 235px;
+                border-radius: 10px;
+            }
+
+            .desktopVideo {
+                width: 90%;
+                height: auto;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                margin-bottom: -10px;
+                border-radius: 10px;
+                transition-duration: 0.5s;
+            }
         }
 
         // mockup section
@@ -954,7 +986,8 @@ header {
                 }
 
                 .desktopImg {
-                    max-width: 90%;
+                    max-width: 768px;
+                    width: 100%;
                     display: block;
                     margin: 15px auto;
                 }
@@ -980,9 +1013,9 @@ header {
             }
 
             .akBgc {
-                background-color: #1F2533;
-                height: calc(100% - 64px);
-                top: 110px;
+                background-color: #C2B2A2;
+                height: 334px;
+                bottom: -20px;
             }
 
             .nxBgc {
@@ -1009,6 +1042,13 @@ header {
                 }
             }
         }  
+
+        // prototype
+        .prototype {
+            img {
+                max-width: 400px;
+            }
+        }
     }
 
     .workTogether {
@@ -1064,22 +1104,23 @@ header {
                     width: 100%;
                 }
 
-                .videoSection {
-                    margin-bottom: 0;
-                    .mobileVideo {
-                        left: 0;
-                        right: 0;
-                        margin: 0 auto;   
-                    }
-
-                    .desktopVideo {
-                        margin-bottom: 0;
-                        width: 100%;
-                    }
-                }
-
                 &:last-of-type {
                     margin-bottom: 0;
+                }
+            }
+
+            .videoSection {
+                margin-bottom: 0;
+                .mobileVideo {
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto; 
+                    max-width: 100%;  
+                }
+
+                .desktopVideo {
+                    margin-bottom: 0;
+                    width: 100%;
                 }
             }
         } 

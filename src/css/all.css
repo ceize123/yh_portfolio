@@ -11288,6 +11288,7 @@ header img {
 }
 .workSection .gallery img {
   margin-bottom: 9px;
+  max-width: 100vw;
 }
 .workSection .gallery h4, .workSection .gallery .h4 {
   margin-bottom: 0;
@@ -11355,6 +11356,11 @@ header img {
   width: 100%;
 }
 
+@media only screen and (max-width: 991px) {
+  .uiuxBanner {
+    padding-top: 50px;
+  }
+}
 .overview {
   background-color: #F5F5F5;
   padding: 26px 0 55px 0;
@@ -11363,9 +11369,10 @@ header img {
 .overview .overviewPanel h3, .overview .overviewPanel .h3 {
   margin-bottom: 50px;
   font-weight: 400;
+  width: 90%;
 }
 .overview .overviewPanel h5, .overview .overviewPanel .h5 {
-  margin-bottom: 15px;
+  font-weight: 600;
 }
 .overview .overviewPanel p {
   font-size: 1rem;
@@ -11377,6 +11384,11 @@ header img {
 .overview .overviewPanel .dot {
   margin-top: 10px;
   margin-right: 6px;
+}
+@media only screen and (max-width: 767px) {
+  .overview .overviewPanel .overviewRight {
+    width: 300px;
+  }
 }
 
 .stepSection {
@@ -11460,7 +11472,7 @@ header img {
     cursor: zoom-in;
   }
 }
-.stepSection article .textSection {
+.stepSection article .textSection:not(:last-of-type) {
   margin-bottom: 70px;
 }
 .stepSection article .listSection .listTitle {
@@ -11474,6 +11486,19 @@ header img {
 .stepSection article .imgSection {
   margin-bottom: 70px;
   margin-top: 30px;
+}
+.stepSection article .videoSection .mobileVideo {
+  max-width: 235px;
+  border-radius: 10px;
+}
+.stepSection article .videoSection .desktopVideo {
+  width: 90%;
+  height: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: -10px;
+  border-radius: 10px;
+  transition-duration: 0.5s;
 }
 .stepSection article .mockupSection:not(:last-of-type) {
   padding-bottom: 70px;
@@ -11537,7 +11562,8 @@ header img {
   max-width: 200px;
 }
 .stepSection article .mockupSection .imgSection .desktopImg {
-  max-width: 90%;
+  max-width: 768px;
+  width: 100%;
   display: block;
   margin: 15px auto;
 }
@@ -11558,9 +11584,9 @@ header img {
   z-index: -1;
 }
 .stepSection article .mockupSection .akBgc {
-  background-color: #1F2533;
-  height: calc(100% - 64px);
-  top: 110px;
+  background-color: #C2B2A2;
+  height: 334px;
+  bottom: -20px;
 }
 .stepSection article .mockupSection .nxBgc {
   background-color: #F5F5F5;
@@ -11580,6 +11606,9 @@ header img {
   .stepSection article .mockupSection .imgSection img:first-of-type {
     margin-top: 0;
   }
+}
+.stepSection article .prototype img {
+  max-width: 400px;
 }
 .stepSection .workTogether {
   margin-top: 15px;
@@ -11629,20 +11658,21 @@ header img {
   .stepSection article .mockupSection .mobileOverview {
     width: 100%;
   }
-  .stepSection article .mockupSection .videoSection {
+  .stepSection article .mockupSection:last-of-type {
     margin-bottom: 0;
   }
-  .stepSection article .mockupSection .videoSection .mobileVideo {
+  .stepSection article .videoSection {
+    margin-bottom: 0;
+  }
+  .stepSection article .videoSection .mobileVideo {
     left: 0;
     right: 0;
     margin: 0 auto;
+    max-width: 100%;
   }
-  .stepSection article .mockupSection .videoSection .desktopVideo {
+  .stepSection article .videoSection .desktopVideo {
     margin-bottom: 0;
     width: 100%;
-  }
-  .stepSection article .mockupSection:last-of-type {
-    margin-bottom: 0;
   }
 }
 .iconGuide {

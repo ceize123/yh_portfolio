@@ -56,23 +56,31 @@ function Overview(props) {
     
     return (
         <div className="overviewPanel">
-            <div className="row">
+            <div className="row gx-0">
                 <h3 className="offset-1">Project Overview</h3>
-                <div className="offset-1 col-7">
-                    <h5>Challenges</h5>
+                <div className="offset-1 col-md-7 col-10">
+                    <h5 className="mb-2">Challenges</h5>
                     <p className="mb-4">{content.challenges}</p>
-                    <h5>Objectives</h5>
+                    <h5 className="mb-2">Objectives</h5>
                     <List content={content.objectives}/>
                 </div>
-                <div className="offset-1 col-3">
-                    <h5>Project Scope</h5>
-                    <p className="mb-3">{content.scope}</p>
-                    <h5>Tool</h5>
-                    <p className="mb-3">{content.tool}</p>
-                    <h5>Role</h5>
-                    <p className="mb-3">{content.role}</p>
-                    <h5>Team</h5>
-                    <p className="mb-3">{content.team}</p>
+                <div className="offset-1 col-md-3 col-10">
+                    <div className="d-flex d-md-block align-items-center overviewRight justify-content-between">
+                        <h5 className="mb-md-2 mb-1">Project Scope</h5>
+                        <p className="mb-md-3">{content.scope}</p>
+                    </div>
+                    <div className="d-flex d-md-block align-items-center overviewRight justify-content-between">
+                        <h5 className="mb-md-2 mb-1">Tool</h5>
+                        <p className="mb-md-3">{content.tool}</p>
+                    </div>
+                    <div className="d-flex d-md-block align-items-center overviewRight justify-content-between">
+                        <h5 className="mb-md-2 mb-1">Role</h5>
+                        <p className="mb-md-3">{content.role}</p>
+                    </div>
+                    <div className="d-flex d-md-block align-items-center overviewRight justify-content-between">
+                        <h5 className="mb-md-2 mb-1">Team</h5>
+                        <p className="mb-md-3">{content.team}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -259,14 +267,64 @@ function Mockup(props) {
 
 function PrototypeAndTest(props) {
     const { content } = props;
+
+    // detect size
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
+    const [showVideo, setShowVideo] = useState(false);
+    const showVideoEvent = () => {
+        if (windowWidth >= 1200) {
+            let videoSec = document.querySelectorAll('.videoSection');
+            let ary = [];
+            for (let i = 0; i < videoSec.length; i++) {
+                ary.push(videoSec[i].getBoundingClientRect().top - window.screen.height);
+            }
+            if (ary[0] < 0) {
+                setShowVideo(true);
+            } else {
+                setShowVideo(false);
+            }
+            
+        } else {
+            setShowVideo(true);
+        }
+    };
+
+    useEffect(() => {
+            window.addEventListener("scroll", showVideoEvent);
+        return () => {
+            window.addEventListener("scroll", showVideoEvent);
+        };
+    }, [showVideoEvent]);
     
     return (
         <>
-        {content.map((item, key) => ( // can't use forEach, it can't display properly
+            {content.map((item, key) => ( // can't use forEach, it can't display properly
             <div className='d-block textSection prototype' key={key}>
                 <div className="mb-4">
                     <h4>{item.title}</h4>
                     {item.content !== undefined ? <List2 content={item.content} /> : ""}
+                </div>
+                <div className={item.video !== undefined ? 'd-block videoSection text-center' : 'd-none'}>
+                    {showVideo ?
+                        <video
+                            className={item.mobile === true ? 'mobileVideo' : 'desktopVideo'}
+                            autoPlay={true}
+                            controls={false}
+                            muted loop poster={item.poster}>
+                            <source src={item.video} type="video/mp4"/>
+                        </video> : ""} 
                 </div>
             </div>
         ))}

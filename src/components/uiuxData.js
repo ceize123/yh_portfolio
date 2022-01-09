@@ -1,35 +1,18 @@
-import ak1 from '../imgs/work/uiux/ak_step1-1.png';
-import ak2 from '../imgs/work/uiux/ak_step1-2.png';
-import ak3 from '../imgs/work/uiux/ak_step3.png';
-import ak4 from '../imgs/work/uiux/ak_step4.png';
-import ak5 from '../imgs/work/uiux/ak_step5-0.png';
-import ak6 from '../imgs/work/uiux/ak_step5-1.png';
-import ak7 from '../imgs/work/uiux/ak_step5-2.png';
-import ak8 from '../imgs/work/uiux/ak_step5-3.png';
-import ak9 from '../imgs/work/uiux/ak_step5-4.png';
-import ak10 from '../imgs/work/uiux/ak_step5-5.png';
-import ak11 from '../imgs/work/uiux/ak_step5-6.png';
-import ak12 from '../imgs/work/uiux/ak_step5-7.png';
-import ak13 from '../imgs/work/uiux/ak_step5-8.png';
-import ak14 from '../imgs/work/uiux/ak_step5-9.png';
-import ak15 from '../imgs/work/uiux/ak_step5-10.png';
-import ak16 from '../imgs/work/uiux/ak_step5-11.png';
-import ak17 from '../imgs/work/uiux/ak_step5-12.png';
-import ak18 from '../imgs/work/uiux/ak_step5-13.png';
-import ak19 from '../imgs/work/uiux/ak_step5-14.png';
-import ak20 from '../imgs/work/uiux/ak_step5-15.png';
-import ak21 from '../imgs/work/uiux/ak_step5-16.png';
-import ak22 from '../imgs/work/uiux/ak_step5-17.png';
-import ak23 from '../imgs/work/uiux/ak_step5-18.png';
-import rb1 from '../imgs/work/uiux/rabbit_step1-1.png';
-import rb2 from '../imgs/work/uiux/rabbit_step1-2.png';
-import rb3 from '../imgs/work/uiux/rabbit_step3.png';
-import rb4 from '../imgs/work/uiux/rabbit_step4.png';
-import rb5 from '../imgs/work/uiux/rabbit_step5-1.png';
-import rb6 from '../imgs/work/uiux/rabbit_step5-2.png';
-import rb7 from '../imgs/work/uiux/rabbit_step5-3.png';
-import rb8 from '../imgs/work/uiux/rabbit_step5-4.png';
-import rb9 from '../imgs/work/uiux/rabbit_step5-5.png';
+import ak1 from '../imgs/work/uiux/ak_banner.png';
+import ak2 from '../imgs/work/uiux/ak_step1-1.png';
+import ak3 from '../imgs/work/uiux/ak_step1-2.png';
+import ak4 from '../imgs/work/uiux/ak_step1-3.png';
+import ak5 from '../imgs/work/uiux/ak_step3-1.png';
+import ak6 from '../imgs/work/uiux/ak_step3-2.png';
+import ak7 from '../imgs/work/uiux/ak_step3-3.png';
+import ak8 from '../imgs/work/uiux/ak_step3-4.png';
+import ak9 from '../imgs/work/uiux/ak_step5-1.png';
+import ak10 from '../imgs/work/uiux/ak_step5-2.png';
+import ak11 from '../imgs/work/uiux/ak_step5-3.png';
+import ak12 from '../imgs/work/uiux/ak_step5-4.png';
+import ak13 from '../imgs/work/uiux/ak_step5-5.png';
+import ak14 from '../imgs/work/uiux/ak_step5-6.png';
+import ak15 from '../imgs/work/uiux/ak_step4-1.png';
 import nx1 from '../imgs/work/uiux/nx_banner.png';
 import nx2 from '../imgs/work/uiux/nx_step1-1.png';
 import nx3 from '../imgs/work/uiux/nx_step1-2.png';
@@ -82,102 +65,181 @@ import ms17 from '../imgs/work/uiux/ms_step3-14.png';
 import ms18 from '../imgs/work/uiux/ms_step3-15.png';
 import ms19 from '../imgs/work/uiux/ms_step3-16.png';
 import ms20 from '../imgs/work/uiux/ms_step3-17.png';
-import landingRb from '../imgs/work/uiux/landing_rb.png';
 import landingAk from '../imgs/work/uiux/landing_ak.png';
-import landingMs from '../imgs/work/uiux/landing_ms.png';
-import akVideo1 from '../imgs/work/uiux/ak_video1.mov';
-import akVideo2 from '../imgs/work/uiux/ak_video2.mp4';
-import rbVideo from '../imgs/work/uiux/rb_video.mp4';
+import landingNx from '../imgs/work/uiux/landing_nx.png';
+import landingIp from '../imgs/work/uiux/in_progress.png';
+import akVideo from '../imgs/work/uiux/ak_video.mov';
 import nxVideo from '../imgs/work/uiux/nx_video.mp4';
 import msVideo from '../imgs/work/uiux/ms_video.mp4';
-import akVideoCover from '../imgs/work/uiux/ak_desktop_video_cover.png';
-import akVideoCoverMobile from '../imgs/work/uiux/ak_mobile_video_cover.png';
-import rbVideoCover from '../imgs/work/uiux/rabbit_desktop_video_cover.png';
-import msVideoCover from '../imgs/work/uiux/ms_mobile_video_cover.png';
 
 const uiuxData = [
     // AK_Jewelry
     { 
         urlName: 'AK_Jewelry',
-        mainTitle: 'Andrea Ko Jewelry Design (RWD)',
-        subtitle: 'Redesign the website of jewelry design courses.',
+        mainTitle: 'Andrea Ko Jewelry Design Course Website',
+        subtitle: 'Responsive Website Redesign',
         gallery: landingAk,
-        description: '“Andrea Ko Jewelry Design Website” is mainly for recruiting students. However, the original online presence and the information were lacking. After I talked to Andrea, she told me most website visitors were first-time users, and they came to the website to search the information of jewelry beginner course. Thus, I redesigned the whole website (RWD) to make it more organized and clean, primarily focused on the user flow of the jewelry beginner course.',
+        banner: ak1,
+        overview: {
+            challenges: "“Andrea Ko Jewelry Design Course Website” lets students know more about their courses and guides them to other platforms to buy the course. However, the original online presence and the information were lacking. According to Andrea, most website visitors were first-time users. Thus, I redesigned the whole website (RWD) to make it more organized and clean. Make the new user quickly find the information and buy the course.",
+            objectives: ["Redesign the whole website to present the information clear for the new user.",
+                        "Design a responsive website"],
+            scope: "APP",
+            tool: "Figma",
+            role: "UX design, UI design",
+            team: "Self-directed"
+        },
         research: [
             {
-                title: 'Persona',
-                paragraph: ['The user is a 26 years old woman called Christine. She lives in a wealthy economic condition. Her family business is related to the jewelry industry, so she is familiar with the jewelry industry. Christine is planning to start her jewelry brand. That is why she wants to take some jewelry courses, and then she can design the product by herself.'],
-                img: ak1,
+                title: 'Market Research',
+                content: [
+                    {
+                        title: 'Market Condition',
+                        paragraph: ['- The current value of the global jewelry market is $230 billion.(2021, ILIC)',
+                                    '- China and India account for 57% of the global gold consumption. (2021, ILIC)',
+                                    '- The jewelry industry drives 36.83% of the global gold demand. (2021, ILIC)',
+                                    '- Over 51% of women aged 25–40 buy jewelry for themselves. (2021, ILIC)']
+                    }, {
+                        title: 'Market Drivers',
+                        paragraph: ['- Eager to start a new business.',
+                                    '- Passion for the fashion and jewelry industry',
+                                    '- Take jewelry designer as future career']
+                    }, {
+                        title: 'Market Challenges',
+                        paragraph: ['- Many competitors in a small market',
+                                    '- Plagiarism']
+                    }, {
+                        title: 'Market Trends',
+                        paragraph: ['- The costume jewelry market is expected to reach $52.4 billion by 2025. (2021, ILIC)',
+                                    '- Online video class',
+                                    '- Men’s jewelry sales statistics report a growth trend in the jewelry market.']
+                    }, {
+                        title: 'Demographics',
+                        paragraph: ['-	Gender: Women account for the majority.',
+                                    '- Age: According to the AK jewelry design, there are two groups of students. One is between 20-30, and another one is around 40-50.',
+                                    '- Relationship Status: They are either college students or married woman.',
+                                    '- Education: The majority of people have a College degree.',
+                                    '- Occupation: Most AK jewelry students have jewelry experience and wealthy family backgrounds.',
+                                    '- Others: Studies on the global jewelry market for 2018 show that millennials are the largest group of jewelry buyers.']
+                    }
+                ],
             },
             {
-                title: 'User Journey Map',
-                paragraph: ['I invited a person who was interested in Andrea Ko\'s jewelry design course to use the original website and speak out what she felt while browsing the website.'],
+                title: 'Competitive Analysis',
+                paragraph: [
+                    "Many Jewelry Design Course websites share the same problems, like lacking credibility. The information is not detailed enough, making users doubt that this course suits them. Many competitors have a clean interface for reading though some content may be unnecessary. Users will lose their patient in words ocean."
+                ],
                 img: ak2,
+            }, {
+                title: 'Persona',
+                paragraph: [
+                    "According to my research and Andrea’s previous students, the user image is a 28 years old woman called Christine. She lives in a wealthy economic condition. Her family business is related to the jewelry industry, so she is familiar with the jewelry industry. Christine is planning to start her jewelry brand. That is why she wants to take some jewelry courses, and then she can design the product by herself."
+                ],
+                img: ak3,
+            }, {
+                title: 'User Journey Map',
+                paragraph: [
+                    "I invited a person who was interested in Andrea Ko's jewelry design course to use the original website and speak out what she felt while browsing the website."
+                ],
+                img: ak4,
+            }
+
+        ],
+        define: [
+            "This project mainly focuses on the flow that new users can book the equipment successfully.",
+            "Sign-up, Hompage, finding products information, and booking process are four critical parts that make a successful renting experience.",
+            "The core concept is energetic, simple, and most importantly, raising the app's user engagement.",
+        ],
+        ideate: [
+            {
+                title: 'Information Architecture',
+                paragraph: ['The structure of the website is simple, easy and straightforward. The only thing that made me hesitate was putting the portfolio as an independent category. Although Andrea has many outstanding works, students would like to know the teacher’s information on one page. It is the shortest flow for them to get the information they want. Finally, I decided to put Andrea’s work in “About.”'],
+                img: ak5,
+            }, {
+                title: 'User Flow',
+                paragraph: ['I create a flow based on a scenario that a new user wants to know the course information and book the course. There are two possibilities, one is very direct to the course page and buys the course, the other one is they might want to know more about the teacher, and then back to the course detail page again to buy the course.'],
+                img: ak6,
+            }, {
+                title: 'Brand Guide',
+                paragraph: ["I tried to express the feeling of elegance and classicism; meanwhile, I don’t want to give them a feeling that jewelry design is untouchable. Therefore, I used a warm colour palette to shorten the distance with the user.",
+                            "Typography EB Garamond has much weight to make a website have a clear hierarchy. It is elegant and easy to read.",
+                            "The logo is a diamond. The most remarkable part is the pattern on the diamond is the combination of A and K.",],
+                bullet: false,
+                img: ak7,
+            }, {
+                title: 'Wireframe',
+                paragraph: ["I started to capture my idea by quickly sketching the wireframe. It also enables me to examine my ideas before I move to next step."],
+                img: ak8,
+            }, {
+                title: 'Mockup',
+                content: [
+                    {
+                        inline: false,
+                        title: 'Select Language',
+                        paragraph: [
+                            'This time is focusing on English website design.'
+                        ],
+                        img: [ak9],
+                        backgroundColor:'akBgc',
+                    },
+                    {
+                        inline: false,
+                        title: 'Homepage',
+                        paragraph: ["Basically, I divided the homepage into three sections. One is a call to action button to the course page; another shows the courses we currently offer; the other is “about.”"],
+                        img: [ak10],
+                        backgroundColor:'akBgc',
+                    },
+                    {
+                        inline: false,
+                        title: 'Courses page',
+                        paragraph: ["Students can find different courses here. I listed some essential information such as price, class length, level, and the course's type on the listing card. There is also a categories button that users can find the lessons faster."],
+                        img: [ak11],
+                        backgroundColor:'akBgc',
+                    },
+                    {
+                        inline: false,
+                        title: 'Course Detail Page',
+                        paragraph: ["I reorganized the whole information on the beginner jewelry course page. Instead of paragraphs, I listed bullet points to present the information. By using the subjects like “Who applies to this course,” “What can you learn from the class,” and “After finish this course, you can achieve like this... ”, users can easily understand if this is the course they are looking for."],
+                        img: [ak12],
+                        backgroundColor:'akBgc',
+                    },
+                    {
+                        inline: false,
+                        title: 'About',
+                        paragraph: ["On the about page, the user can see the introduction of the teacher’s experience relates to the jewelry industry. Moreover, they can see the works done by Andrea on this page."],
+                        img: [ak13],
+                        backgroundColor:'akBgc',
+                    },
+                    {
+                        inline: false,
+                        title: 'Q&A',
+                        img: [ak14],
+                        backgroundColor:'akBgc',
+                    },
+                ]
             }
         ],
-        ppAnalysis: [
-            "Information is presented unclear and confusing.",
-            "There is no hierarchy among the fonts. All of fonts are in same size and same weight.",
-            "Sentences need to be simplified.",
-        ],
-        informationArchitecture: {
-            paragraph: 'The architecture of the website is not complicated. The only thing that made me hesitate was putting “Portfolio” into the “About” section. Finally, I decided to keep them in different sections because Andrea Ko is also a freelancer. It would be more convenient for a company to see the portfolio directly.',
-            img: ak3,
-        },
-        wireframe: { img: ak4 },
-        mockup: [
+        prototypeAndTest: [
             {
-                inline: true,
-                title: 'Overview',
-                paragraph: ['Most users came from Instagram and Facebook to the website, so that mobile phone experience would be significant.',
-                            'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours. Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
-                frame: ak5,
-                video: akVideo1,
-                poster: akVideoCoverMobile,
-            },
-            {
-                title: 'Homepage',
-                paragraph: ['I divided the homepage into three sections. First is the hero image with the slogan and call to action. The second part is the access to the “About.” The third part is the latest course information for users to follow up.'],
-                img: [ak6, ak7, ak8],
-                backgroundColor:'akBgc',
-            },
-            {
-                title: 'Hamburger',
-                paragraph: ['All the sections are in hamburger. There are deeper levels of the courses. Also, some courses divide into beginner and advanced. People are quickly finding which course is suited for them.'],
-                img: [ak9, ak10],
-                backgroundColor:'akBgc',
-            },
-            {
-                title: 'About',
-                paragraph: ['On the about page, the user can see the introduction of the teacher’s experience relates to the jewelry industry. Moreover, they can see the pros of taking courses in Andrea Ko\'s jewelry design class.'],
-                img: [ak11, ak12],
-                backgroundColor:'akBgc',
-            },
-            {
-                title: 'Jewelry Design Course-Beginner',
-                paragraph: ['I reorganized the whole information on the beginner jewelry course page. Instead of paragraphs, I listed bullet points to present the information. By using the subjects like “Who applies to this course,” “What can you learn from the class,” and “After finish this course, you can achieve like this... ”, users can easily understand if this is the course they are looking for.',
-                            'There is a Registration form right under the bottom of the page. It allows users to register on the same page without leaving it to other pages or windows. ',
-                            'If users want to register for the course, but they are not able to attend the latest class, they have access to tell Andrea Ko Jewelry Design when they are available for the class. Andrea will always take students\' needs into consideration.'],
-                img: [ak13, ak14, ak15, ak16],
-                backgroundColor:'akBgc',
-            },
-            {
-                title: 'Portfolio',
-                paragraph: ['I used a black background to present the jewelry design. With the contrast of shining jewelry and black, design works can jump out at the user.'],
-                img: [ak17, ak18, ak19],
-                backgroundColor:'akBgc',
-            },
-            {
-                title: 'Blog',
-                paragraph: ['Users can click the classification, which has four sections on the bar. There are three pictures in every article. Users can also see the recommended article with a high click-through rate on the bottom.'],
-                img: [ak20, ak21, ak22, ak23],
-                backgroundColor:'akBgc',
-            },
-            {
-                title: 'Desktop',
-                video: akVideo2,
-                poster: akVideoCover,
-                backgroundColor: 'akBgc',
+                title: 'Usability testing',
+                content: [
+                    {
+                        title: 'Before the testing:',
+                        paragraph: ['Before usability testing, I wrote a usability testing plan to define what and why I want to test and get prepared for the test. It is important to set up test objectives, methodology, Testing flow, Scripts and Participants for measuring the result of the testing before conducting a test.'],
+                        img: ak15,
+                    }, {
+                        title: 'Commence the testing:',
+                        paragraph: ['I conducted usability tests with 3 participants, and created note for each participant based on my observation. I jot down their mistakes, slips, and confusions they expressed in the process.'],
+                    }, {
+                        title: 'Testing Result:',
+                        paragraph: ['There are 3 free lessons on the curriculum with button “free to lean.” However, most participants felt weird about the button, so I revised it to “Free.”',
+                            'Some participants want to know the review from previous students.'],
+                    }
+                ],
+            }, {
+                title: 'Final Version',
+                video: akVideo,
+                mobile: false,
             }
         ]
     },
@@ -185,8 +247,8 @@ const uiuxData = [
     {
         urlName: 'Northen_Xscape',
         mainTitle: 'Northen Xscape Rentals',
-        subtitle: 'Redesign adopted process of the website.',
-        gallery: landingRb,
+        subtitle: 'Design a App for Northen Xscape',
+        gallery: landingNx,
         banner: nx1,
         overview: {
             challenges: "“Northern Xscape Rentals app is a convenient and reliable app for people who want to rent the jet ski and snowmobile. It offers high-quality jet ski and snowmobiles. Nevertheless, their website is old and not user-friendly. What's the most frustrating part is the booking system crashes all the time. My job was to design a new App for Northen Xscape, and I made user interface clean and straightforward, making users feel easy to understand and willing to use the app to rent the equipment every time.",
@@ -277,7 +339,7 @@ const uiuxData = [
                 bullet: false,
                 img: nx7,
             }, {
-                title: 'Wireframe (Low-Fidelity)',
+                title: 'Wireframe',
                 paragraph: ["I started to capture my idea by quickly sketching the wireframe. It also enables me to examine my ideas before I move to next step."],
                 img: nx8,
             }, {
@@ -341,7 +403,7 @@ const uiuxData = [
                         img: nx32,
                     }, {
                         title: 'Commence the testing:',
-                        paragraph: ['I conducted usability tests with 2 participants, and created note for each participant based on my observation. I jot down their mistakes, slips, and confusions they expressed in the process. '],
+                        paragraph: ['I conducted usability tests with 2 participants, and created note for each participant based on my observation. I jot down their mistakes, slips, and confusions they expressed in the process.'],
                     }, {
                         title: 'Testing Result:',
                         paragraph: ['Booking step1 subtotal text is too small.',
@@ -351,20 +413,17 @@ const uiuxData = [
                 ],
             }, {
                 title: 'Final Version',
-                // content: [
-                //     {
-                //         video: ""
-                //     }
-                // ]
+                video: nxVideo,
+                mobile: true,
             }
         ]
     },
-    // Mentorship
+    // Travel Bookkeeping App
     { 
-        urlName: 'Mentorship_App',
-        mainTitle: 'Seneca Collage Mentorship App',
-        subtitle: 'Design a App for Seneca’s Students to find mentors on the platform.',
-        gallery: landingMs,
+        urlName: 'Travel_Bookkeeping_App',
+        mainTitle: 'Travel Bookkeeping App',
+        subtitle: 'Coming Soon...',
+        gallery: landingIp,
         description: 'Seneca Mentorship App is an idea for Seneca students to find mentors and ask questions. It mainly divides into two parts; one is searching mentors the other one is a discussion board. This project was done by two students and me in Seneca.',
         research: [
             {
@@ -390,7 +449,6 @@ const uiuxData = [
                             'The website’s style is minimalism with abstract painting.Black, grey and white are the three main colours, and dark blue and dark red are secondary colours.Further, I used some animations to improve the experience, such as the shining earring or fading up effect.'],
                 frame: ak5,
                 video: msVideo,
-                poster: msVideoCover
             },
             {
                 title: 'Launch Screen/ Sign up/ Sign in',
