@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import uiuxData from '../uiuxData';
 import dot from '../../imgs/dot.png';
-import magnifier from '../../imgs/work/uiux/maginify.png';
+import magnifier from '../../imgs/work/uiux/magnify.png';
 import { Contact, WorkTogether, PageLoading } from '../general.js';
 import Footer from "../Footer.js";
 import { Modal } from "react-bootstrap";
@@ -322,7 +322,7 @@ function PrototypeAndTest(props) {
                             className={item.mobile === true ? 'mobileVideo' : 'desktopVideo'}
                             autoPlay={windowWidth >= 1200 ? true : false}
                             controls={windowWidth >= 1200 ? false : true}
-                            muted loop>
+                            muted loop poster={item.poster}>
                             <source src={item.video} type="video/mp4"/>
                         </video> : ""} 
                 </div>

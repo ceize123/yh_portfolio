@@ -68,6 +68,8 @@ import ms20 from '../imgs/work/uiux/ms_step3-17.png';
 import landingAk from '../imgs/work/uiux/landing_ak.png';
 import landingNx from '../imgs/work/uiux/landing_nx.png';
 import landingIp from '../imgs/work/uiux/in_progress.png';
+import akVideoCover from '../imgs/work/uiux/ak_video_cover.png';
+import nxVideoCover from '../imgs/work/uiux/nx_video_cover.png';
 import akVideo from '../imgs/work/uiux/ak_video.mov';
 import nxVideo from '../imgs/work/uiux/nx_video.mp4';
 import msVideo from '../imgs/work/uiux/ms_video.mp4';
@@ -240,6 +242,7 @@ const uiuxData = [
                 title: 'Final Version',
                 video: akVideo,
                 mobile: false,
+                poster: akVideoCover
             }
         ]
     },
@@ -415,6 +418,7 @@ const uiuxData = [
                 title: 'Final Version',
                 video: nxVideo,
                 mobile: true,
+                poster: nxVideoCover
             }
         ]
     },
