@@ -320,9 +320,9 @@ function PrototypeAndTest(props) {
                     {showVideo ?
                         <video
                             className={item.mobile === true ? 'mobileVideo' : 'desktopVideo'}
-                            autoPlay={true}
-                            controls={false}
-                            muted loop poster={item.poster}>
+                            autoPlay={windowWidth >= 1200 ? true : false}
+                            controls={windowWidth >= 1200 ? false : true}
+                            muted loop>
                             <source src={item.video} type="video/mp4"/>
                         </video> : ""} 
                 </div>

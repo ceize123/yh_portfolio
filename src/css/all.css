@@ -11607,8 +11607,18 @@ header img {
     margin-top: 0;
   }
 }
+@media only screen and (max-width: 767px) {
+  .stepSection article .mockupSection .imgSection img:first-of-type {
+    width: 90%;
+  }
+}
 .stepSection article .prototype img {
   max-width: 400px;
+}
+@media only screen and (max-width: 767px) {
+  .stepSection article .prototype img {
+    width: 100%;
+  }
 }
 .stepSection .workTogether {
   margin-top: 15px;

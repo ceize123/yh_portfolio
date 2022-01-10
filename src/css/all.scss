@@ -1041,12 +1041,27 @@ header {
                     }
                 }
             }
+
+            @media only screen and (max-width: 767px) {
+                .imgSection {
+                    img:first-of-type {
+                            width: 90%;
+                    }
+                }
+            }
         }  
 
         // prototype
         .prototype {
             img {
                 max-width: 400px;
+            }
+
+            @media only screen and (max-width: 767px) {
+
+                img {
+                    width: 100%;
+                } 
             }
         }
     }
