@@ -44,17 +44,17 @@ function IconGuide() {
         setwindowWidth(window.innerWidth)
     }
 
-    function changeColor() {
-        let hamburger = document.querySelectorAll(".hamburger rect");
+    // function changeColor() {
+    //     let hamburger = document.querySelectorAll(".hamburger rect");
 
-        hamburger.forEach(item => {
-            item.style.fill = "#FFF"
-        })
-    }
+    //     hamburger.forEach(item => {
+    //         item.style.fill = "#FFF"
+    //     })
+    // }
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
-        changeColor();
+        // changeColor();
         return () => {
         window.addEventListener('resize', handleResize);
         }

@@ -59,10 +59,10 @@ function FooterForMagazine() {
     const scrollTop = () => {
         if (windowWidth > 992) {
             let horizontalLength = document.querySelector(".element-wrapper");
-            horizontalLength.style.transform = 'translateX(0%)'
-            scroll = 0
-            page = 0
-            changeToWhite(page)
+            horizontalLength.style.transform = 'translateX(0%)';
+            scroll = 0;
+            page = 0;
+            changeToWhite(page);
         } else {
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
@@ -73,10 +73,6 @@ function FooterForMagazine() {
             <div className="introduction d-flex justify-content-center">
                 <div>
                     <h3>Yung-Shin Ko</h3>
-                    <p>{`${windowWidth > 992 ?
-                        `Taiwanese designer, currently stay in Toronto Canada` :
-                        `Taiwanese designer,`}`}
-                    </p>
                     <p className="d-block d-lg-none">currently stay in Toronto Canada</p>
                 </div>
             </div>
@@ -142,7 +138,7 @@ function Magazine() {
 
     useEffect(() => {
         window.addEventListener("wheel", horizontalScroll);
-        changeToWhite();
+        // changeToWhite();
         return () => {
             window.removeEventListener("wheel", horizontalScroll);
         };

@@ -11818,6 +11818,9 @@ header img {
   }
 }
 
+.sticky-wrapper {
+  overflow: hidden;
+}
 .sticky-wrapper .element-wrapper {
   transition-duration: 0.7s;
 }

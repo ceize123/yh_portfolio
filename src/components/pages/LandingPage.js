@@ -15,6 +15,20 @@ import { Modal } from "react-bootstrap";
 
 function WorkSection() {
 
+    // detect size
+    const [windowWidth, setwindowWidth] = useState(window.innerWidth)
+    const handleResize = () => {
+        setwindowWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.addEventListener('resize', handleResize);
+        }
+    }, [])
+
     const dataAry = [uiuxData, graphicData, codingData];
     const url = ["uiux", "graphic", "coding"];
     // Work section selection event
@@ -33,15 +47,17 @@ function WorkSection() {
 
     const changeToWhite = (props) => {
         let nav = document.querySelectorAll("header a");
-        let hamburger = document.querySelectorAll(".hamburger rect");
-        if (selection === 1 && props === "Magazine_Design") {
-            nav.forEach(item => {
-                item.style.color = "#FFF"
-            })
-            hamburger.forEach(item => {
-                item.style.fill = "#FFF"
-            })
-        }        
+        let hamburger = document.querySelectorAll(".hamburger rect"); 
+        if (windowWidth >= 991) {
+            if (selection === 1 && props === "Magazine_Design") {
+                nav.forEach(item => {
+                    item.style.color = "#FFF"
+                })
+                hamburger.forEach(item => {
+                    item.style.fill = "#FFF"
+                })
+            }
+        }
     }
 
     return (

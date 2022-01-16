@@ -1322,6 +1322,8 @@ header {
 
 // Magazine starts
 .sticky-wrapper {
+    overflow: hidden;
+    
     .element-wrapper {
         transition-duration: 0.7s;
     }
