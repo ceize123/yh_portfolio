@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/all.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from './components/Navbar.js';
 import Wrapper from "./components/Wrapper.js";
 import LandingPage from "./components/pages/LandingPage.js";
