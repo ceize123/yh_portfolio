@@ -533,6 +533,7 @@ header {
     .workSectionBgc {
         position: absolute;
         top: -314px;
+        z-index: -1;
     }
 
     @media only screen and (max-width: 576px) {
@@ -741,12 +742,11 @@ header {
 
         h3 {
             margin-bottom: 50px;
-            font-weight: 400;
+            font-weight: 600;
             width: 90%;
         }
     
         h5 {
-            // margin-bottom: 10px;
             font-weight: 600;
         }
     

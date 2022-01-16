@@ -26,7 +26,6 @@ function Footer() {
                 <div>
                     <h3>Yung-Shin Ko</h3>
                     <p>currently stay in Toronto Canada</p>
-                    <p className="d-block d-lg-none">currently stay in Toronto Canada</p>
                 </div>
             </div>
             <div>
