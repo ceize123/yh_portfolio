@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.b492a214.chunk.css",
-    "main.js": "/static/js/main.2bde8911.chunk.js",
-    "main.js.map": "/static/js/main.2bde8911.chunk.js.map",
+    "main.js": "/static/js/main.efaa1e04.chunk.js",
+    "main.js.map": "/static/js/main.efaa1e04.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.043149fa.js",
     "runtime-main.js.map": "/static/js/runtime-main.043149fa.js.map",
     "static/js/2.f5e843b2.chunk.js": "/static/js/2.f5e843b2.chunk.js",
@@ -10,7 +10,7 @@
     "index.html": "/index.html",
     "static/css/main.b492a214.chunk.css.map": "/static/css/main.b492a214.chunk.css.map",
     "static/js/2.f5e843b2.chunk.js.LICENSE.txt": "/static/js/2.f5e843b2.chunk.js.LICENSE.txt",
-    "static/media/Yung-Shin_resume.5d966c4d.png": "/static/media/Yung-Shin_resume.5d966c4d.png",
+    "static/media/Yung-Shin_resume.00bfe86a.png": "/static/media/Yung-Shin_resume.00bfe86a.png",
     "static/media/ak_banner.5e1ff867.png": "/static/media/ak_banner.5e1ff867.png",
     "static/media/ak_step1-1.4b45f7bd.png": "/static/media/ak_step1-1.4b45f7bd.png",
     "static/media/ak_step1-2.d9aa678b.png": "/static/media/ak_step1-2.d9aa678b.png",
@@ -143,6 +143,6 @@
     "static/js/runtime-main.043149fa.js",
     "static/js/2.f5e843b2.chunk.js",
     "static/css/main.b492a214.chunk.css",
-    "static/js/main.2bde8911.chunk.js"
+    "static/js/main.efaa1e04.chunk.js"
   ]
 }
