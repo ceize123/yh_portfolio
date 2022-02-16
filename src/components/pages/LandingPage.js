@@ -9,7 +9,7 @@ import graphicData from '../graphicData';
 import codingData from '../codingData';
 import { Contact, PageLoading } from '../general.js';
 import Footer from "../Footer.js";
-import resume from '../../imgs/Yung-Shin_resume.png';
+import resume from '../../imgs/Resume_Yung-Shin Ko.pdf';
 import { Modal } from "react-bootstrap";
 
 
@@ -279,8 +279,9 @@ function LandingPage() {
                 aria-labelledby="modal-sizes-lg"
             >
             <Modal.Header closeButton></Modal.Header>
-            <Modal.Body className="modal-body">
-                <img className="resume" src={resume} alt="resume" />
+                <Modal.Body className="modal-body">
+                    <embed src={resume}></embed>
+                {/* <img className="resume" src={resume} alt="resume" /> */}
             </Modal.Body>
             </Modal>
         </main>

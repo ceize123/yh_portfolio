@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { useLocation } from 'react-router-dom'
 import close from '../imgs/close.png';
-import resume from '../imgs/Yung-Shin_resume.png';
+import resume from '../imgs/Resume_Yung-Shin Ko.pdf';
 import { Modal } from "react-bootstrap";
 
 const PageLoadingForHome = () => (
@@ -163,8 +163,9 @@ function Navbar() {
             aria-labelledby="modal-sizes-lg"
         >
         <Modal.Header closeButton></Modal.Header>
-        <Modal.Body className="modal-body">
-            <img className="resume" src={resume} alt="resume" />
+            <Modal.Body className="modal-body">
+                    <embed src={resume}></embed>
+            {/* <img className="resume" src={resume} alt="resume" /> */}
         </Modal.Body>
         </Modal>
     </>
