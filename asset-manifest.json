@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.b492a214.chunk.css",
-    "main.js": "/static/js/main.efaa1e04.chunk.js",
-    "main.js.map": "/static/js/main.efaa1e04.chunk.js.map",
+    "main.css": "/static/css/main.844437ab.chunk.css",
+    "main.js": "/static/js/main.78b59e54.chunk.js",
+    "main.js.map": "/static/js/main.78b59e54.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.043149fa.js",
     "runtime-main.js.map": "/static/js/runtime-main.043149fa.js.map",
     "static/js/2.f5e843b2.chunk.js": "/static/js/2.f5e843b2.chunk.js",
     "static/js/2.f5e843b2.chunk.js.map": "/static/js/2.f5e843b2.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b492a214.chunk.css.map": "/static/css/main.b492a214.chunk.css.map",
+    "static/css/main.844437ab.chunk.css.map": "/static/css/main.844437ab.chunk.css.map",
     "static/js/2.f5e843b2.chunk.js.LICENSE.txt": "/static/js/2.f5e843b2.chunk.js.LICENSE.txt",
-    "static/media/Yung-Shin_resume.00bfe86a.png": "/static/media/Yung-Shin_resume.00bfe86a.png",
+    "static/media/Resume_Yung-Shin Ko.c8329b1f.pdf": "/static/media/Resume_Yung-Shin Ko.c8329b1f.pdf",
     "static/media/ak_banner.5e1ff867.png": "/static/media/ak_banner.5e1ff867.png",
     "static/media/ak_step1-1.4b45f7bd.png": "/static/media/ak_step1-1.4b45f7bd.png",
     "static/media/ak_step1-2.d9aa678b.png": "/static/media/ak_step1-2.d9aa678b.png",
@@ -142,7 +142,7 @@
   "entrypoints": [
     "static/js/runtime-main.043149fa.js",
     "static/js/2.f5e843b2.chunk.js",
-    "static/css/main.b492a214.chunk.css",
-    "static/js/main.efaa1e04.chunk.js"
+    "static/css/main.844437ab.chunk.css",
+    "static/js/main.78b59e54.chunk.js"
   ]
 }
