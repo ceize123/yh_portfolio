@@ -148,9 +148,9 @@ const uiuxData = [
 
         ],
         define: [
-            "This project mainly focuses on the flow that new users can book the equipment successfully.",
-            "Sign-up, Hompage, finding products information, and booking process are four critical parts that make a successful renting experience.",
-            "The core concept is energetic, simple, and most importantly, raising the app's user engagement.",
+            "The expression of the content is important for use to find the information they want.",
+            "Lacking of reliability for user to buy the courses.",
+            "A clear contact access for user to ask question or find the answer for their question.",
         ],
         ideate: [
             {
@@ -234,7 +234,7 @@ const uiuxData = [
                         paragraph: ['I conducted usability tests with 3 participants, and created note for each participant based on my observation. I jot down their mistakes, slips, and confusions they expressed in the process.'],
                     }, {
                         title: 'Testing Result:',
-                        paragraph: ['There are 3 free lessons on the curriculum with button “free to lean.” However, most participants felt weird about the button, so I revised it to “Free.”',
+                        paragraph: ['There are 3 free lessons on the curriculum with button “free to learn.” However, most participants felt weird about the button, so I revised it to “Free.”',
                             'Some participants want to know the review from previous students.'],
                     }
                 ],
